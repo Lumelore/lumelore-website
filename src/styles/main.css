@@ -1,0 +1,17 @@
+.background {
+    background-image: url("/backgrounds/SpaceBricksIsoTile.gif");
+    background-repeat: repeat;
+    background-size: 176px;
+    image-rendering: pixelated;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: static;
+}
+
+.front-field {
+    position: relative;
+    width: 80vw;
+    height: min(100vh);
+    background: rgba(11, 46, 116, 0.947);
+}
