@@ -4,6 +4,9 @@ interface Props {
 }
 
 const { error } = Astro.props;
+
+import '@fontsource/dejavu-sans/400.css';
+import '@fontsource/dejavu-mono/400.css';
 ---
 
 <html lang="en">
@@ -17,19 +20,61 @@ const { error } = Astro.props;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+
+                margin: 8rem 1rem 8rem 1rem;
+                padding: 0;
+                font-family: "DejaVu Sans", sans-serif;
+                color: #f6f4e6;
+
+                background: #3d2431;
+                
             }
+
+            main {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                padding: 2rem;
+
+                background: #543d46;
+                border-radius: 2rem;
+                border: 0.25rem solid #1a0e15;
+            }
+
+            #error-msg-border {
+                border-radius: 2.25rem;
+                background: linear-gradient(200deg, #97d442, #ad2860);
+            }
+
             #error-msg {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                
+                padding: 0rem 2rem 1.5rem 2rem;
+                margin: 0.25rem;
+                font-family: "DejaVu Mono", monospace;
+
+                background: #1a0e15;
+                border-radius: 2rem;
             }
+
+            img {
+                margin-bottom: 1.25rem;
+            }
+            
 
         </style>
 	</head>
 	<body>
-		<h1>Oopsie Whoopsie! I made a fucky wucky!</h1>
-        <p> Please forgive me uwu</p>
-		<img src="/faces/pixel-dragon-blush.svg" width="120" height="120" />
-        <div id="error-msg">{error instanceof Error ? error.message : (<p>Unknown error</p> <small>(or perhaps there is no error and you purposely went here?)</small>)}</div>
+        <main>
+            <h1>Oopsie Whoopsie! I made a fucky wucky!</h1>
+            <p> Please forgive me uwu</p>
+            <img src="/faces/pixel-dragon-blush.svg" width="120" height="120" />
+            <div id="error-msg-border">
+                <div id="error-msg">{error instanceof Error ? error.message : (<p>Unknown error</p> <small>(or perhaps there is no error and you purposely went here?)</small>)}</div>
+            </div>
+        </main>
 	</body>
 </html>
