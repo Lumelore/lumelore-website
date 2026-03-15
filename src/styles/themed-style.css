@@ -51,13 +51,13 @@
     --fg-border-left-style: 1rem solid var(--secondary-main);
     --fg-border-right-style: var(--fg-border-left-style);
 
-    --primary-below: #208ba8;
-    --primary-main: #44bdbd;
-    --primary-above: #84f5e6;
+    --primary-below: #baa9b0;
+    --primary-main: #d1c2c9;
+    --primary-above: #f7f0eb;
 
-    --secondary-below: #b02e71;
+    --secondary-below: #3b75cc;
     --secondary-main: #4eb0e6;
-    --secondary-above: #faafca;
+    --secondary-above: #6ec2f0;
     
     --text-color: #e1faf7;
     --link-color: var(--secondary-main);
