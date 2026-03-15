@@ -1,0 +1,77 @@
+---
+import '../styles/global.css';
+import '../styles/themed-style.css';
+
+import '@fontsource/opendyslexic';
+import '@fontsource/dejavu-sans';
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, viewport-fit=cover" />
+		<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+		<script src="../scripts/save-theme.ts" />
+		<title>{title}</title>
+
+		
+
+	</head>
+	<body>
+
+		<!-- All page content aside from background belongs in here  -->
+		<div class="primary">
+			<aside>
+				<form class="theme-selector">
+					<fieldset>
+						<legend>Choose a theme: </legend>
+						
+						<label for="spacetiles" class="sr-only">Space Tiles</label><input type="radio" name="theme-option" id="spacetiles" checked>
+
+						<label for="queertiles" class="sr-only">Queer Tiles</label><input type="radio" name="theme-option" id="queertiles">
+
+					</fieldset>
+				</form>
+			</aside>
+
+			<main>
+				<slot />
+			</main>
+
+			<div class="side-margin" />
+		</div>
+
+
+		
+	</body>
+</html>
+
+<!--
+
+
+		
+		<form>
+			<fieldset>
+				<legend>Choose a theme: </legend>
+				
+				<label for="spacetiles" class="visually-hidden">Space Tiles</label><input type="radio" name="themepicker" id="spacetiles" checked>
+
+				<label for="queertiles" class="visually-hidden">Queer Tiles</label><input type="radio" name="themepicker" id="queertiles">
+
+			</fieldset>
+		</form>
+
+		<div class="front-field">
+			<slot />
+		</div>
+
+		<div class="side-spacer"></div>
+
+-->

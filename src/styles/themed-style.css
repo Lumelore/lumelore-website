@@ -1,0 +1,176 @@
+:root {
+    --bg-image: url("/backgrounds/SpaceBricksIsoTile.gif");
+    --bg-html: rgb(39, 68, 140);;
+    --bg-image-size: 176px;
+
+    --fg-color: rgba(29, 44, 128, 0.95);
+    --fg-filter: none;
+    --fg-border-left-style: 5px solid var(--secondary-main);
+    --fg-border-right-style: var(--fg-border-left-style);
+
+    --primary-below: #208ba8;
+    --primary-main: #44bdbd;
+    --primary-above: #84f5e6;
+
+    --secondary-below: #b02e71;
+    --secondary-main: #f26f9f;
+    --secondary-above: #faafca;
+    
+    --text-color: #e1faf7;
+    --link-color: var(--secondary-above);
+}
+
+:root:has(#spacetiles:checked) {
+    --bg-image: url("/backgrounds/SpaceBricksIsoTile.gif");
+    --bg-html: rgb(39, 68, 140);;
+    --bg-image-size: 176px;
+
+    --fg-color: rgba(29, 44, 128, 0.95);
+    --fg-filter: blur(2px);
+    --fg-border-left-style: 5px solid var(--secondary-main);
+    --fg-border-right-style: var(--fg-border-left-style);
+
+    --primary-below: #208ba8;
+    --primary-main: #44bdbd;
+    --primary-above: #84f5e6;
+
+    --secondary-below: #b02e71;
+    --secondary-main: #f26f9f;
+    --secondary-above: #faafca;
+    
+    --text-color: #e1faf7;
+    --link-color: var(--secondary-main);
+}
+
+:root:has(#queertiles:checked) {
+    --bg-image: url("/backgrounds/QueerTileIso.png");
+    --bg-html: #69b3cf;
+    --bg-image-size: 176px;
+
+    --fg-color: #ed80b3;
+    --fg-border-left-style: 1rem solid var(--secondary-main);
+    --fg-border-right-style: var(--fg-border-left-style);
+
+    --primary-below: #208ba8;
+    --primary-main: #44bdbd;
+    --primary-above: #84f5e6;
+
+    --secondary-below: #b02e71;
+    --secondary-main: #4eb0e6;
+    --secondary-above: #faafca;
+    
+    --text-color: #e1faf7;
+    --link-color: var(--secondary-main);
+}
+
+.primary {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+
+    font-family: 'DejaVu Sans', sans-serif, system-ui;
+    color: var(--text-color);
+}
+
+.side-margin {
+    flex-basis: 6.25%;
+}
+
+/* Screen Reader Only */
+.sr-only {
+    height: 0px; width: 0px;
+    position: absolute;
+    white-space: nowrap;
+    clip-path: inset(50%);
+    overflow: hidden;
+}
+
+html {
+    background: var(--bg-html);
+    background-image: var(--bg-image);
+    background-size: var(--bg-image-size);
+    background-repeat: repeat;
+    image-rendering: pixelated;
+    width: 100vw;
+    height: 100vh;
+}
+
+main {
+    color: var(--text-color);
+    background: var(--fg-color);
+    backdrop-filter: var(--fg-filter);
+    border-left: var(--fg-border-left-style);
+    border-right: var(--fg-border-right-style);
+
+    min-height: 100vh; /* Fallback if browser doesn't support lvh */
+    min-height: 100lvh;
+    flex-grow: 2;
+
+    padding: 0 2rem 0 2rem;
+}
+
+aside {
+    flex-basis: 12.5%;
+}
+
+.theme-selector fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+
+a {
+    color: var(--link-color);
+}
+
+.theme-selector input[type="radio"] {
+    cursor: pointer;
+    outline-offset: 1px;
+    outline: 1px solid black;
+}
+
+.theme-selector input[type="radio"]:checked {
+    outline: 2px solid red;
+}
+
+
+
+/*
+
+input[type="radio"] {
+    style all radio buttons
+}
+
+input[type="radio"]:checked {
+    style specifically the chosen button
+}
+
+input[type="radio"]#themename {
+    style specific theme buttons
+}
+
+}
+
+
+*/
+
+@media screen and (max-width: 767px) {
+
+    /* TODO: Make aside be a dropdown on mobile */
+
+    .primary {
+        flex-direction: column;
+    }
+
+    .side-margin {
+        flex-basis: 0;
+    }
+
+    main {
+        border-left: none;
+        border-right: none;
+        border-top: var(--fg-border-left-style);
+        border-bottom: var(--fg-border-right-style);
+    }
+}
