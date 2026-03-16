@@ -2,7 +2,7 @@ const colorThemes: NodeListOf<HTMLInputElement> = document.querySelectorAll('[na
 
 const cookieStoreTheme = function (theme: string) {
     try {
-        document.cookie = `theme=${theme}; Max-Age=604800; Secure;`;
+        document.cookie = `theme=${theme}; Max-Age=604800; Path=/; Secure;`;
     }
     catch (e) { console.error("Unable to save theme as cookie.") }
 }
