@@ -37,16 +37,17 @@ const setTheme = function () {
     });
 }
 
+// Add click event for each radio button
 colorThemes.forEach((themeOption) => {
     themeOption.addEventListener("click", () => {
         cookieStoreTheme(themeOption.id);
     })
 });
 
+// Apply theme when returning to saved pages
 window.addEventListener('pageshow', (event) => {
     if (event.persisted) {
         setTheme();
-        console.log("triggered theme set");
     }
 });
 
