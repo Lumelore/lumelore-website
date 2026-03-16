@@ -43,6 +43,13 @@ colorThemes.forEach((themeOption) => {
     })
 });
 
+window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+        setTheme();
+        console.log("triggered theme set");
+    }
+});
+
 setTheme();
 
-addEventListener("popstate", () => { setTheme(); console.log("POP STATE"); } );
+
