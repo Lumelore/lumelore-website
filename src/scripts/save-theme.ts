@@ -1,13 +1,13 @@
 const colorThemes: NodeListOf<HTMLInputElement> = document.querySelectorAll('[name="theme-option"]');
 
-const tempStoreTheme = function (theme: string) {
+const cookieStoreTheme = function (theme: string) {
     try {
-        sessionStorage.setItem("theme", theme);
+        document.cookie = `theme=${theme}; Max-Age=604800; Secure;`;
     }
-    catch (e) { console.error("Unable to save theme to sessionStorage.") }
+    catch (e) { console.error("Unable to save theme as cookie.") }
 }
 
-const permaStoreTheme = function (theme: string) {
+const localStoreTheme = function (theme: string) {
     try {
         localStorage.setItem("theme", theme);
     }
@@ -15,13 +15,18 @@ const permaStoreTheme = function (theme: string) {
 }
 
 const setTheme = function () {
-    // Get the local theme, which may be null
-    const localTheme = localStorage.getItem("theme");
-    let theme = localTheme;
 
-    // If local theme is null, grab the session theme
-    if (localTheme === null) {
-        theme = sessionStorage.getItem("theme");
+    // Get the cookie theme
+    const cookieTheme = document.cookie.split(";").find((row) => row.startsWith("theme="))?.split("=")[1];
+    let theme: string | undefined | null = cookieTheme;
+
+    // If null grab from local storage
+    if (cookieTheme === undefined) {
+        theme = localStorage.getItem("theme");
+        // store local storage theme in cookie
+        if (theme !== null) { 
+            cookieStoreTheme(theme) 
+        }
     }
 
     // Set the correct theme to checked
@@ -34,9 +39,8 @@ const setTheme = function () {
 
 colorThemes.forEach((themeOption) => {
     themeOption.addEventListener("click", () => {
-        tempStoreTheme(themeOption.id);
+        cookieStoreTheme(themeOption.id);
     })
 });
 
 setTheme();
-
