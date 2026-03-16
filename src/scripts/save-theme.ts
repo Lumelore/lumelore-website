@@ -44,3 +44,5 @@ colorThemes.forEach((themeOption) => {
 });
 
 setTheme();
+
+addEventListener("popstate", () => { setTheme(); console.log("POP STATE"); } );
