@@ -15,7 +15,8 @@ const localStoreTheme = function (theme: string) {
 }
 
 const setTheme = function () {
-
+    
+    /*
     // Get the cookie theme
     const cookieTheme = document.cookie.split(";").find((row) => row.startsWith("theme="))?.split("=")[1];
     let theme: string | undefined | null = cookieTheme;
@@ -27,7 +28,9 @@ const setTheme = function () {
         if (theme !== null) { 
             cookieStoreTheme(theme) 
         }
-    }
+    }*/
+
+    const theme = localStorage.getItem("theme");
 
     // Set the correct theme to checked
     colorThemes.forEach((themeOption) => {
@@ -40,7 +43,7 @@ const setTheme = function () {
 // Add click event for each radio button
 colorThemes.forEach((themeOption) => {
     themeOption.addEventListener("click", () => {
-        cookieStoreTheme(themeOption.id);
+        localStoreTheme(themeOption.id);
     })
 });
 
