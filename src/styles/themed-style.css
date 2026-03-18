@@ -43,7 +43,7 @@
 }
 
 :root:has(#queertiles:checked) {
-    --bg-image: url("/backgrounds/QueerTileIso.png");
+    --bg-image: url("/backgrounds/QueerTilesIso.png");
     --bg-html: #69b3cf;
     --bg-image-size: 176px;
 
