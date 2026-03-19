@@ -20,25 +20,34 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
 		<script src="../scripts/save-theme.ts" />
 		<title>{title}</title>
-
-		
-
 	</head>
 	<body>
 
-		<!-- All page content aside from background belongs in here  -->
 		<div class="primary">
+
 			<aside>
 				<form class="theme-selector">
 					<fieldset>
-						<legend>Choose a theme: </legend>
+						<legend class="sr-only">Choose a theme: </legend>
 						
-						<label for="spacetiles" class="sr-only">Space Tiles</label><input type="radio" name="theme-option" id="spacetiles" checked>
+						<label for="spacetiles">
+							<img src="/backgrounds/icon/SpaceTile.png" height="64" width="64" />
+							<span class="theme-option-name">Space Tiles</span>
+							<input type="radio" name="theme-option" id="spacetiles" checked>
+						</label>
 
-						<label for="queertiles" class="sr-only">Queer Tiles</label><input type="radio" name="theme-option" id="queertiles">
+						<label for="queertiles">
+							<img src="/backgrounds/icon/QueerTile.png" height="64" width="64" />
+							<span class="theme-option-name">Queer Tiles</span>
+							<input type="radio" name="theme-option" id="queertiles">
+						</label>
 
 					</fieldset>
 				</form>
+
+				<nav>
+
+				</nav>
 			</aside>
 
 			<main>
@@ -46,10 +55,9 @@ const { title } = Astro.props;
 			</main>
 
 			<div class="side-margin" />
+
 		</div>
 
-
-		
 	</body>
 </html>
 
