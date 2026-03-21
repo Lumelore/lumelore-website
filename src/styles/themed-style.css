@@ -51,13 +51,13 @@
     --fg-border-left-style: 1rem solid var(--secondary-main);
     --fg-border-right-style: var(--fg-border-left-style);
 
-    --primary-below: #baa9b0;
-    --primary-main: #d1c2c9;
-    --primary-above: #f7f0eb;
+    --primary-below: #3b75cc;
+    --primary-main: #4eb0e6;
+    --primary-above: #6ec2f0;
 
-    --secondary-below: #3b75cc;
-    --secondary-main: #4eb0e6;
-    --secondary-above: #6ec2f0;
+    --secondary-below: #baa9b0;
+    --secondary-main: #d1c2c9;
+    --secondary-above: #f7ebf0;
     
     --text-color: #e1faf7;
     --link-color: var(--secondary-main);
@@ -95,6 +95,8 @@ html {
     image-rendering: pixelated;
     width: 100vw;
     height: 100vh;
+
+    transition: background-color 0.33s ease;
 }
 
 main {
@@ -111,10 +113,17 @@ main {
     padding: 0 2rem 0 2rem;
     outline: solid 2.5px var(--secondary-above);
     outline-offset: 1px;
+
+    transition: color 0.33s ease;
+    transition: background-color 0.33s ease;
+    transition: border 0.25s ease;
+    
 }
 
 a {
     color: var(--link-color);
+
+    transition: color 0.33s ease;
 }
 
 aside {
@@ -125,7 +134,12 @@ aside {
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
+    
 }
+
+/* ================ *
+ *  Theme Selector  *
+ * ================ */
 
 
 .theme-selector {
@@ -146,6 +160,17 @@ aside {
 
     background: var(--fg-color);
     border-radius: 0.75rem;
+
+    transition: background-color 0.33s ease;
+}
+
+.theme-selector fieldset legend {
+    margin: auto;
+    padding: 0.5rem 2rem 0.15rem 2rem;
+    background: var(--fg-color);
+    border-radius: 0.75rem;
+
+    transition: background-color 0.33s ease;
 }
 
 /* Hide all theme selector radio buttons */
@@ -159,37 +184,64 @@ aside {
     margin: 0;
 }
 
-/* Style for all theme selector buttons */
+/*  
+    Theme selector labels are split into the label itself and the content.
+    Unless checked or hovered, the label is entirely behind the content it holds.
+*/
+
+/* Style for all theme selector labels (background) */
 .theme-selector label {
     width: 100%;
     box-sizing: border-box;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    
+    background: var(--secondary-main);
+    border-radius: 0.5rem;
+    
+    transition: border-radius 0.5s ease;
+    transition: width 0.5s ease;
+}
+
+
+/* Style for chosen theme selector label (background) */
+.theme-selector label:has(input:checked)  {
+    width: 100%;
+    background: var(--secondary-below);
+}
+
+/* Style for theme selector content (foreground) */
+.theme-selector label .label-content {
+    width: 100%;
+    box-sizing: border-box;
+
+    background: var(--primary-main);
+    border-radius: 0.5rem;
+    border-left: solid 3px var(--secondary-main);
+    border-right: solid 3px var(--secondary-main);
 
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
-    
-
-    cursor: pointer;
-    background: var(--primary-main);
-    border-radius: 0.5rem;
-    border-left: solid 3px var(--secondary-main);
-    border-right: solid 3px var(--secondary-main);
-    
+    transition: width 0.5s ease;
 }
 
-/* Style for hovered theme selector buttons */
-.theme-selector label:hover {
-    background: var(--primary-above);
-    border-left: solid 3px var(--secondary-above);
-    border-right: solid 3px var(--secondary-above);
+/* Style for hovered theme selector content (foreground) */
+.theme-selector label:hover .label-content {
+    width: 97%;
 }
 
-/* Style for chosen theme selector button */
-.theme-selector label:has(input:checked) {
-    background: var(--primary-below);
-    border-left: solid 3px var(--secondary-below);
-    border-right: solid 3px var(--secondary-below);
+
+/* Style for chosen theme selector content (foreground)  */
+.theme-selector label:has(input:checked) .label-content {
+    width: 97%;
+    border-left-color: var(--secondary-below);
+    border-right-color: var(--secondary-below);
 }
 
 .theme-selector label img {
@@ -203,33 +255,6 @@ aside {
     padding-right: 1.125rem;
 }
 
-
-/*
-
-.theme-selector label:has(input#queertiles) {
-    background: lemonchiffon;
-}
-
-.theme-selector label:has(input#queertiles:checked) {
-    background: slateblue;
-}
-
-input[type="radio"] {
-    style all radio buttons
-}
-
-input[type="radio"]:checked {
-    style specifically the chosen button
-}
-
-input[type="radio"]#themename {
-    style specific theme buttons
-}
-
-}
-
-
-*/
 
 @media screen and (max-width: 767px) {
 
