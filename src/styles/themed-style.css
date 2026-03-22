@@ -7,6 +7,8 @@
     --fg-filter: none;
     --fg-border-left-style: 5px solid var(--secondary-main);
     --fg-border-right-style: var(--fg-border-left-style);
+    --outline-style: solid 2.5px var(--secondary-above);
+    --outline-offset: 1px;
 
     --primary-below: #208ba8;
     --primary-main: #44bdbd;
@@ -17,7 +19,14 @@
     --secondary-above: #faafca;
     
     --text-color: #e1faf7;
+    --text-shadow: 1px 1px 2px var(--secondary-below);
     --link-color: var(--secondary-above);
+    --link-text-shadow: 1px 1px 2px var(--text-shadow);
+
+    --aside-fg: var(--fg-color);
+    --aside-btn-fg: var(--primary-main);
+    --aside-btn-bg: var(--secondary-main);
+    --aside-btn-pressed-bg: var(--secondary-below);
 }
 
 :root:has(#spacetiles:checked) {
@@ -29,6 +38,8 @@
     --fg-filter: blur(2px);
     --fg-border-left-style: 5px solid var(--secondary-main);
     --fg-border-right-style: var(--fg-border-left-style);
+    --outline-style: solid 2.5px var(--secondary-above);
+    --outline-offset: 1px;
 
     --primary-below: #208ba8;
     --primary-main: #44bdbd;
@@ -37,9 +48,14 @@
     --secondary-below: #b02e71;
     --secondary-main: #f26f9f;
     --secondary-above: #faafca;
-    
+
     --text-color: #e1faf7;
     --link-color: var(--secondary-main);
+
+    --aside-fg: var(--fg-color);
+    --aside-btn-fg: var(--primary-main);
+    --aside-btn-bg: var(--secondary-main);
+    --aside-btn-pressed-bg: var(--secondary-below);
 }
 
 :root:has(#queertiles:checked) {
@@ -47,20 +63,29 @@
     --bg-html: #69b3cf;
     --bg-image-size: 176px;
 
-    --fg-color: #ed80b3;
-    --fg-border-left-style: 1rem solid var(--secondary-main);
+    --fg-color: linear-gradient(90deg,rgba(78, 176, 230, 1) 8%, rgba(237, 128, 179, 1) 20%, rgba(237, 128, 179, 1) 32%, rgba(247, 240, 235, 1) 35%, rgba(247, 240, 235, 1) 50%, rgba(247, 240, 235, 1) 65%, rgba(237, 128, 179, 1) 68%, rgba(237, 128, 179, 1) 80%, rgba(78, 176, 230, 1) 92%);
+    --fg-border-left-style: 1rem solid var(--secondary-below);
     --fg-border-right-style: var(--fg-border-left-style);
+    --outline-style: none;
+    --outline-offset: 0;
 
-    --primary-below: #3b75cc;
-    --primary-main: #4eb0e6;
-    --primary-above: #6ec2f0;
+    --primary-below: #baa9b0;
+    --primary-main: #d1c2c9;
+    --primary-above: #f7ebf0;
 
-    --secondary-below: #baa9b0;
-    --secondary-main: #d1c2c9;
-    --secondary-above: #f7ebf0;
-    
+    --secondary-below: #3b75cc;
+    --secondary-main: #4eb0e6;
+    --secondary-above: #6ec2f0;
+
     --text-color: #e1faf7;
+    --text-shadow: 1px 1px 0.1rem rgb(4, 3, 23);
     --link-color: var(--secondary-main);
+    --link-text-shadow: 1px 1px 0.1rem #0d3167;
+
+    --aside-fg: repeating-linear-gradient(286deg, #de2c0dff 0%, #f28518ff 2%, #fcea45ff 3%, #42b61bff 5%, #0c7fe4ff 7%, #6b45deff 9%, #a810daff 11%, #de2c0dff 12%);
+    --aside-btn-fg: var(--fg-color);
+    --aside-btn-bg: var(--secondary-below);
+    --aside-btn-pressed-bg: var(--secondary-below);
 }
 
 .primary {
@@ -70,6 +95,7 @@
 
     font-family: 'DejaVu Sans', sans-serif, system-ui;
     color: var(--text-color);
+    text-shadow: var(--text-shadow);
 }
 
 .side-margin {
@@ -111,8 +137,8 @@ main {
     flex-grow: 2;
 
     padding: 0 2rem 0 2rem;
-    outline: solid 2.5px var(--secondary-above);
-    outline-offset: 1px;
+    outline: var(--outline-style);
+    outline-offset: var(--outline-offset);
 
     transition: color 0.33s ease;
     transition: background-color 0.33s ease;
@@ -122,6 +148,7 @@ main {
 
 a {
     color: var(--link-color);
+    text-shadow: var(--link-text-shadow);
 
     transition: color 0.33s ease;
 }
@@ -158,7 +185,8 @@ aside {
     margin: 0.5rem;
     border: none;
 
-    background: var(--fg-color);
+    background: var(--aside-fg);
+    background-attachment: fixed; /* Allows gradient to apply without seams between this element and the legend */
     border-radius: 0.75rem;
 
     transition: background-color 0.33s ease;
@@ -167,7 +195,8 @@ aside {
 .theme-selector fieldset legend {
     margin: auto;
     padding: 0.5rem 2rem 0.15rem 2rem;
-    background: var(--fg-color);
+    background: var(--aside-fg);
+    background-attachment: fixed; /* Allows gradient to apply without seams between this element and the fieldset */
     border-radius: 0.75rem;
 
     transition: background-color 0.33s ease;
@@ -200,7 +229,7 @@ aside {
     flex-direction: row;
     flex-wrap: nowrap;
     
-    background: var(--secondary-main);
+    background: var(--aside-btn-bg);
     border-radius: 0.5rem;
     
     transition: border-radius 0.5s ease;
@@ -211,7 +240,7 @@ aside {
 /* Style for chosen theme selector label (background) */
 .theme-selector label:has(input:checked)  {
     width: 100%;
-    background: var(--secondary-below);
+    background: var(--aside-btn-pressed-bg);
 }
 
 /* Style for theme selector content (foreground) */
@@ -219,10 +248,10 @@ aside {
     width: 100%;
     box-sizing: border-box;
 
-    background: var(--primary-main);
+    background: var(--aside-btn-fg);
     border-radius: 0.5rem;
-    border-left: solid 3px var(--secondary-main);
-    border-right: solid 3px var(--secondary-main);
+    border-left: solid 3px var(--aside-btn-bg);
+    border-right: solid 3px var(--aside-btn-bg);
 
     display: flex;
     flex-direction: row;
@@ -240,8 +269,8 @@ aside {
 /* Style for chosen theme selector content (foreground)  */
 .theme-selector label:has(input:checked) .label-content {
     width: 97%;
-    border-left-color: var(--secondary-below);
-    border-right-color: var(--secondary-below);
+    border-left-color: var(--aside-btn-pressed-bg);
+    border-right-color: var(--aside-btn-pressed-bg);
 }
 
 .theme-selector label img {
