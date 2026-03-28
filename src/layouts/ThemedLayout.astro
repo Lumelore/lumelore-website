@@ -19,6 +19,7 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width, viewport-fit=cover" />
 		<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
 		<script src="../scripts/save-theme.ts" />
+		<script src="../scripts/block-css-transitions-on-load.ts" />
 		<title>{title}</title>
 	</head>
 	<body>
@@ -58,7 +59,12 @@ const { title } = Astro.props;
 				</form>
 
 				<nav>
+					<h3>Links</h3>
 
+					<div class="nav-links">
+						<a href="/testing">Testing</a>
+						<a href="/blog/testblog">Testing Blog</a>
+					</div>
 				</nav>
 			</aside>
 
