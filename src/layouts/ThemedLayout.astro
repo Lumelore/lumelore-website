@@ -58,13 +58,13 @@ const { title } = Astro.props;
 					</fieldset>
 				</form>
 
-				<nav>
+				<nav class="links-container">
 					<h3>Links</h3>
 
-					<div class="nav-links">
-						<a href="/">Home</a>
-						<a href="/testing">Testing</a>
-						<a href="/blog/testblog">Testing Blog</a>
+					<div class="link-list">
+						<a href="/" class="link" id="index"><div class="link-content">Home</div></a>
+						<a href="/testing" class="link"><div class="link-content">Test</div></a>
+						<a href="/blog/testblog" class="link"><div class="link-content">Test Blog</div></a>
 					</div>
 				</nav>
 			</aside>

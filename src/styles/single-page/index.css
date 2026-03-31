@@ -1,0 +1,11 @@
+/* This is to indicate that home page is the current page, WITH NO JS!!!! */
+
+#index {
+    background: var(--aside-btn-pressed-bg);
+}
+
+#index .link-content {
+    width: 97%;
+    border-left-color: var(--aside-btn-pressed-bg);
+    border-right-color: var(--aside-btn-pressed-bg);
+}
