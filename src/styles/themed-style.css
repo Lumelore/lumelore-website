@@ -88,10 +88,6 @@
     --aside-btn-pressed-bg: var(--secondary-below);
 }
 
-.preload * {
-    transition: none !important;
-}
-
 .primary {
     display: flex;
     flex-wrap: nowrap;

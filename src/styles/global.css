@@ -2,3 +2,15 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.preload * {
+    transition: none !important;
+}
+
+.pix-img {
+    image-rendering: pixelated !important;
+}
+
+.smooth-img {
+    image-rendering: optimizeQuality !important;
+}
