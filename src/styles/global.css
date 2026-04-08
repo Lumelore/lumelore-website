@@ -12,5 +12,5 @@ body {
 }
 
 .smooth-img {
-    image-rendering: optimizeQuality !important;
+    image-rendering: smooth !important;
 }
