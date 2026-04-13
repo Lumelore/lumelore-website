@@ -27,85 +27,108 @@ const { title } = Astro.props;
 		<div class="primary">
 
 			<aside>
-				<form class="theme-selector">
-					<fieldset>
-						<legend>Theme</legend>
-						
-						<label for="spacetiles">
-							<div class="label-content">
-								<img src="/backgrounds/icon/SpaceTile.png" height="64" width="64" />
-								<span class="theme-option-name">Nebula Bricks</span>
-								<input type="radio" name="theme-option" id="spacetiles" checked>
-							</div>
-						</label>
 
-						<label for="queertiles">
-							<div class="label-content">
-								<img src="/backgrounds/icon/QueerTile.png" height="64" width="64" />
-								<span class="theme-option-name">Queer Cubes</span>
-								<input type="radio" name="theme-option" id="queertiles">
-							</div>
-						</label>
+				<!-- This is for a checkbox that hides/shows the side menu for mobile users -->
+				<label class="aside-menu-toggler" for="aside-toggle">
+					<div>✶ Menu ✶</div>
+					<input type="checkbox" id="aside-toggle" checked>
+				</label>
 
-						<label for="testtiles">
-							<div class="label-content">
-								<img src="/backgrounds/icon/QueerTile.png" height="64" width="64" />
-								<span class="theme-option-name">Test Tiles</span>
-								<input type="radio" name="theme-option" id="testtiles">
-							</div>
-						</label>
+				<div class="aside-menu-items">
 
-					</fieldset>
-				</form>
+					<form class="theme-selector">
+						<fieldset>
+							<legend>Theme</legend>
+							
+							<label for="spacetiles">
+								<div class="label-content">
+									<img src="/backgrounds/icon/SpaceTile.png" height="64" width="64" />
+									<span class="theme-option-name">Nebula Bricks</span>
+									<input type="radio" name="theme-option" id="spacetiles" checked>
+								</div>
+							</label>
 
-				<nav class="links-container">
-					<h3>Links</h3>
+							<label for="queertiles">
+								<div class="label-content">
+									<img src="/backgrounds/icon/QueerTile.png" height="64" width="64" />
+									<span class="theme-option-name">Queer Cubes</span>
+									<input type="radio" name="theme-option" id="queertiles">
+								</div>
+							</label>
 
-					<div class="link-list">
-						<a href="/" class="link" id="index">
-							<div class="link-content">
-								<img src="/backgrounds/icon/QueerTile.png" height="64" width="64" />
-								<span class="link-name">Home</span>
-							</div>
-						</a>
-						<a href="/testing" class="link">
-							<div class="link-content">
-								<img src="/backgrounds/icon/QueerTile.png" height="64" width="64" />
-								<span class="link-name">Test</span>
-							</div>
-						</a>
-						<a href="/blog/testblog" class="link">
-							<div class="link-content">
-								<img src="/backgrounds/icon/QueerTile.png" height="64" width="64" />
-								<span class="link-name">Test Blog</span>
-							</div>
-						</a>
+							<label for="frutigeraero">
+								<div class="label-content">
+									<img src="/backgrounds/icon/QueerTile.png" height="64" width="64" />
+									<span class="theme-option-name">Frutiger Aero</span>
+									<input type="radio" name="theme-option" id="frutigeraero">
+								</div>
+							</label>
+						</fieldset>
+					</form>
+
+					<nav class="links-container">
+						<h3>Links</h3>
+
+						<div class="link-list">
+							<a href="/" class="link" id="index">
+								<div class="link-content">
+									<img src="/link/icon/home.png" height="64" width="64" />
+									<span class="link-name">Home</span>
+								</div>
+							</a>
+							<a href="/games" class="link" id="games">
+								<div class="link-content">
+									<img class="smooth-img" src="/backgrounds/icon/QueerTile.png" height="64" width="64" />
+									<span class="link-name">Games</span>
+								</div>
+							</a>
+							<a href="/mods" class="link" id="mods">
+								<div class="link-content">
+									<img src="/backgrounds/icon/QueerTile.png" height="64" width="64" />
+									<span class="link-name">Mods</span>
+								</div>
+							</a>
+							<a href="/blog" class="link" id="blog">
+								<div class="link-content">
+									<img src="/backgrounds/icon/QueerTile.png" height="64" width="64" />
+									<span class="link-name">Blog</span>
+								</div>
+							</a>
+							<a href="/88x31" class="link" id="web-btns">
+								<div class="link-content">
+									<img src="/backgrounds/icon/QueerTile.png" height="64" width="64" />
+									<span class="link-name">88x31</span>
+								</div>
+							</a>
+						</div>
+					</nav>
+
+					<div class="links-container">
+						<h3>Socials</h3>
+
+						<div class="link-list">
+							<a class="link" href="https://www.youtube.com/@Lumelore" target="_blank" rel="noreferrer">
+								<div class="link-content">
+									<img class="smooth-img" src="/link/icon/favp.png" height="64" width="64" decoding=async />
+									<span class="link-name">Youtube</span>
+								</div>
+							</a>
+							<a class="link" href="https://lemmy.blahaj.zone/u/Lumelore" target="_blank" rel="noreferrer">
+								<div class="link-content">
+									<img class="smooth-img" src="/link/icon/falb.png" height="64" width="64" decoding=async />
+									<span class="link-name">Lemmy</span>
+								</div>
+							</a>
+							<a class="link" href="https://github.com/Lumelore" target="_blank" rel="noreferrer">
+								<div class="link-content">
+									<img class="smooth-img" src="/link/icon/favc.png" height="64" width="64" decoding=async />
+									<span class="link-name">Github</span>
+								</div>
+							</a>
+						</div>
+
 					</div>
-				</nav>
 
-				<div class="links-container">
-					<h3>Socials</h3>
-
-					<div class="link-list">
-						<a class="link" href="https://www.youtube.com/@Lumelore" target="_blank" rel="noreferrer">
-							<div class="link-content">
-								<img class="smooth-img" src="/link/icon/favp.png" height="64" width="64" decoding=async />
-								<span class="link-name">Youtube</span>
-							</div>
-						</a>
-						<a class="link" href="https://lemmy.blahaj.zone/u/Lumelore" target="_blank" rel="noreferrer">
-							<div class="link-content">
-								<img class="smooth-img" src="/link/icon/falb.png" height="64" width="64" decoding=async />
-								<span class="link-name">Lemmy</span>
-							</div>
-						</a>
-						<a class="link" href="https://github.com/Lumelore" target="_blank" rel="noreferrer">
-							<div class="link-content">
-								<img class="smooth-img" src="/link/icon/favc.png" height="64" width="64" decoding=async />
-								<span class="link-name">Github</span>
-							</div>
-						</a>
-					</div>
 				</div>
 			</aside>
 
