@@ -465,15 +465,22 @@ aside {
         padding: 0;
     }
 
-    aside:has(#aside-toggle:checked) .aside-menu-items {
-        width: 0; height: 0;
+    .aside-menu-items {
         overflow: hidden;
+        height: 40em;
+        height: calc-size(auto); /* calc-size is chrome only for now :( */
 
         transition: height 0.33s ease;
     }
 
+    aside:has(#aside-toggle:checked) .aside-menu-items {
+        height: 0px;
+        
+    }
+
     aside:has(#aside-toggle:checked) .aside-menu-toggler{
-        border-bottom: none;
+        border-bottom-width: 0px;
+        transition: border-bottom-width 0.33s ease-out;
     }
 
 
