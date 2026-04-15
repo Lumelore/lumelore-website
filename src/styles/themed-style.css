@@ -1,5 +1,5 @@
 :root {
-    --bg-image: url("/backgrounds/SpaceBricksIsoTile.gif");
+    --bg-image: url("/theme/space/SpaceBricksIsoTile.gif");
     --bg-html: rgb(39, 68, 140);;
     --bg-image-size: 176px;
 
@@ -30,7 +30,7 @@
 }
 
 :root:has(#spacetiles:checked) {
-    --bg-image: url("/backgrounds/SpaceBricksIsoTile.gif");
+    --bg-image: url("/theme/space/SpaceBricksIsoTile.gif");
     --bg-html: rgb(39, 68, 140);
     --bg-image-size: 176px;
 
@@ -59,7 +59,7 @@
 }
 
 :root:has(#queertiles:checked) {
-    --bg-image: url("/backgrounds/QueerTilesIso.png");
+    --bg-image: url("/theme/queer/QueerTilesIso.png");
     --bg-html: #69b3cf;
     --bg-image-size: 176px;
 
