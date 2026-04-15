@@ -53,7 +53,7 @@
     --link-color: var(--secondary-main);
 
     --aside-fg: rgb(29, 44, 128);
-    --aside-btn-fg: var(--primary-main);
+    --aside-btn-fg: url("/theme/space/SpaceStatic.png");
     --aside-btn-bg: var(--secondary-main);
     --aside-btn-pressed-bg: var(--secondary-below);
 }
