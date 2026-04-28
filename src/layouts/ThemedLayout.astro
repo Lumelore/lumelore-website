@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import '../styles/themed-style.css';
+import '../styles/themed-style-icons.css';
 
 import '@fontsource/opendyslexic';
 import '@fontsource/dejavu-sans';
@@ -36,94 +37,117 @@ const { title } = Astro.props;
 
 				<div class="aside-menu-items">
 
-					<form class="theme-selector">
-						<fieldset>
-							<legend>Theme</legend>
+					<form class="panel-container">
+						<fieldset class="panel-list">
+							<legend class="panel-title">Theme</legend>
 							
-							<label for="spacetiles">
-								<div class="label-content">
+							<label for="spacetiles" class="panel-li">
+								<div class="panel-li-background" />
+								<div class="panel-li-img-container">
 									<img src="/theme/space/SpaceTile.png" height="64" width="64" />
-									<span class="theme-option-name">Nebula Bricks</span>
-									<input type="radio" name="theme-option" id="spacetiles" checked>
 								</div>
+								<div class="panel-li-name">Nebula Bricks</div>
+								<div class="panel-li-overlay" />
+								<input type="radio" name="theme-option" id="spacetiles" checked>
 							</label>
 
-							<label for="queertiles">
-								<div class="label-content">
+							<label for="queertiles" class="panel-li">
+								<div class="panel-li-background" />
+								<div class="panel-li-img-container">
 									<img src="/theme/queer/QueerTile.png" height="64" width="64" />
-									<span class="theme-option-name">Queer Cubes</span>
-									<input type="radio" name="theme-option" id="queertiles">
 								</div>
+								<div class="panel-li-name">Queer Cubes</div>
+								<div class="panel-li-overlay" />
+								<input type="radio" name="theme-option" id="queertiles">
 							</label>
 
-							<label for="frutigeraero">
-								<div class="label-content">
+							<label for="frutigeraero" class="panel-li">
+								<div class="panel-li-background" />
+								<div class="panel-li-img-container">
 									<img src="/theme/queer/QueerTile.png" height="64" width="64" />
-									<span class="theme-option-name">Frutiger Aero</span>
-									<input type="radio" name="theme-option" id="frutigeraero">
 								</div>
+								<div class="panel-li-name">Frutiger Aero</div>
+								<div class="panel-li-overlay" />
+								<input type="radio" name="theme-option" id="frutigeraero">
 							</label>
 						</fieldset>
 					</form>
 
-					<nav class="links-container">
-						<h3>Links</h3>
+					<nav class="panel-container">
+						<h3 class="panel-title">Links</h3>
 
-						<div class="link-list">
-							<a href="/" class="link" id="index">
-								<div class="link-content">
-									<img src="/link/icon/home.png" height="64" width="64" />
-									<span class="link-name">Home</span>
-								</div>
+						<div class="panel-list">
+							<a href="/" class="panel-li" id="index">
+									<div class="panel-li-background" />
+									<div class="panel-li-img-container">
+										<img class="smooth-img" id="index-icon" src="/theme/space/icon/home.png" height="64" width="64" />
+									</div>
+									<div class="panel-li-name">Home</div>
+									<div class="panel-li-overlay" />
 							</a>
-							<a href="/games" class="link" id="games">
-								<div class="link-content">
-									<img class="smooth-img" src="/theme/queer/QueerTile.png" height="64" width="64" />
-									<span class="link-name">Games</span>
-								</div>
+							<a href="/games" class="panel-li" id="games">
+									<div class="panel-li-background" />
+									<div class="panel-li-img-container">
+										<img class="smooth-img" id="games-icon" src="/theme/space/icon/games.png" height="64" width="64" />
+									</div>
+									<div class="panel-li-name">Games</div>
+									<div class="panel-li-overlay" />
 							</a>
-							<a href="/mods" class="link" id="mods">
-								<div class="link-content">
-									<img src="/theme/queer/QueerTile.png" height="64" width="64" />
-									<span class="link-name">Mods</span>
-								</div>
+							<a href="/mods" class="panel-li" id="mods">
+									<div class="panel-li-background" />
+									<div class="panel-li-img-container">
+										<img class="smooth-img" id="mods-icon" src="/theme/space/icon/mods.png" height="64" width="64" />
+									</div>
+									<div class="panel-li-name">Mods</div>
+									<div class="panel-li-overlay" />
 							</a>
-							<a href="/blog" class="link" id="blog">
-								<div class="link-content">
-									<img src="/theme/queer/QueerTile.png" height="64" width="64" />
-									<span class="link-name">Blog</span>
-								</div>
+							<a href="/blog" class="panel-li" id="blog">
+									<div class="panel-li-background" />
+									<div class="panel-li-img-container">
+										<img class="smooth-img" id="blog-icon" src="/theme/space/icon/blog.png" height="64" width="64" />
+									</div>
+									<div class="panel-li-name">Blog</div>
+									<div class="panel-li-overlay" />
 							</a>
-							<a href="/88x31" class="link" id="web-btns">
-								<div class="link-content">
-									<img src="/theme/queer/QueerTile.png" height="64" width="64" />
-									<span class="link-name">88x31</span>
-								</div>
+							<a href="/88x31" class="panel-li" id="pxbtn">
+									<div class="panel-li-background" />
+									<div class="panel-li-img-container">
+										<img class="smooth-img" id="pxbtn-icon" src="/theme/space/icon/88x31.png" height="64" width="64" />
+									</div>
+									<div class="panel-li-name">88x31</div>
+									<div class="panel-li-overlay" />
 							</a>
 						</div>
 					</nav>
+					
+					<!-- Social links -->
+					<div class="panel-container">
+						<h3 class="panel-title">Socials</h3>
 
-					<div class="links-container">
-						<h3>Socials</h3>
-
-						<div class="link-list">
-							<a class="link" href="https://www.youtube.com/@Lumelore" target="_blank" rel="noreferrer">
-								<div class="link-content">
-									<img class="smooth-img" src="/link/icon/favp.png" height="64" width="64" decoding=async />
-									<span class="link-name">Youtube</span>
+						<div class="panel-list">
+							<a class="panel-li" href="https://www.youtube.com/@Lumelore" target="_blank" rel="noreferrer">
+								<div class="panel-li-background" />
+								<div class="panel-li-img-container">
+									<img class="smooth-img" id="videos-icon" src="/link/icon/favp.png" height="64" width="64" decoding=async />
 								</div>
+								<div class="panel-li-name">Youtube</div>
+								<div class="panel-li-overlay" />
 							</a>
-							<a class="link" href="https://lemmy.blahaj.zone/u/Lumelore" target="_blank" rel="noreferrer">
-								<div class="link-content">
-									<img class="smooth-img" src="/link/icon/falb.png" height="64" width="64" decoding=async />
-									<span class="link-name">Lemmy</span>
+							<a class="panel-li" href="https://lemmy.blahaj.zone/u/Lumelore" target="_blank" rel="noreferrer">
+								<div class="panel-li-background" />
+								<div class="panel-li-img-container">
+									<img class="smooth-img" id="lemmy-blahaj-icon" src="/link/icon/falb.png" height="64" width="64" decoding=async />
 								</div>
+								<div class="panel-li-name">Lemmy</div>
+								<div class="panel-li-overlay" />
 							</a>
-							<a class="link" href="https://github.com/Lumelore" target="_blank" rel="noreferrer">
-								<div class="link-content">
-									<img class="smooth-img" src="/link/icon/favc.png" height="64" width="64" decoding=async />
-									<span class="link-name">Github</span>
+							<a class="panel-li" href="https://github.com/Lumelore" target="_blank" rel="noreferrer">
+								<div class="panel-li-background" />
+								<div class="panel-li-img-container">
+									<img class="smooth-img" id="code-icon" src="/link/icon/favc.png" height="64" width="64" decoding=async />
 								</div>
+								<div class="panel-li-name">Github</div>
+								<div class="panel-li-overlay" />
 							</a>
 						</div>
 

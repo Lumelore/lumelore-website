@@ -23,10 +23,19 @@
     --link-color: var(--secondary-above);
     --link-text-shadow: 1px 1px 2px var(--text-shadow);
 
-    --aside-fg: var(--fg-color);
-    --aside-btn-fg: var(--primary-main);
-    --aside-btn-bg: var(--secondary-main);
-    --aside-btn-pressed-bg: var(--secondary-below);
+    --panel-background: rgb(29, 44, 128);
+    /* BG */
+    --panel-li-background: var(--secondary-main);
+    --panel-li-background-pressed: var(--secondary-below);
+    --panel-li-background-filter: none;
+    /* FG */
+    --panel-li-foreground: var(--primary-main);
+    --panel-li-foreground-filter: none;
+    /* OL */
+    --panel-li-overlay: none;
+    --panel-li-overlay-repeat: repeat;
+    --panel-li-overlay-mix: normal;
+    --panel-li-overlay-animation: none;
 }
 
 :root:has(#spacetiles:checked) {
@@ -52,10 +61,15 @@
     --text-color: #e1faf7;
     --link-color: var(--secondary-main);
 
-    --aside-fg: rgb(29, 44, 128);
-    --aside-btn-fg: url("/theme/space/SpaceStatic.png");
-    --aside-btn-bg: var(--secondary-main);
-    --aside-btn-pressed-bg: var(--secondary-below);
+    --panel-background: rgb(29, 44, 128);
+    --panel-li-background: var(--secondary-main);
+    --panel-li-background-pressed: var(--secondary-below);
+    --panel-li-background-filter: drop-shadow(-0.08rem 0.08rem 0.15rem rgb(234, 15, 70)) drop-shadow(0.08rem -0.08rem 0.15rem rgb(15, 38, 241));
+    --panel-li-foreground: var(--primary-main);
+    --panel-li-overlay: url(/theme/space/SpaceLines.png);
+    --panel-li-overlay-repeat: repeat;
+    --panel-li-overlay-mix: hard-light;
+    --panel-li-overlay-animation: panel-li-overlay-scroll 7s linear infinite;
 }
 
 :root:has(#queertiles:checked) {
@@ -82,16 +96,16 @@
     --link-color: var(--secondary-main);
     --link-text-shadow: 1px 1px 0.1rem #0d3167;
 
-    --aside-fg: repeating-linear-gradient(286deg, #de2c0dff 0%, #f28518ff 2%, #fcea45ff 3%, #42b61bff 5%, #0c7fe4ff 7%, #6b45deff 9%, #a810daff 11%, #de2c0dff 12%);
-    --aside-btn-fg: var(--fg-color);
-    --aside-btn-bg: var(--secondary-below);
-    --aside-btn-pressed-bg: var(--secondary-below);
+    --panel-background: repeating-linear-gradient(286deg, #de2c0dff 0%, #f28518ff 2%, #fcea45ff 3%, #42b61bff 5%, #0c7fe4ff 7%, #6b45deff 9%, #a810daff 11%, #de2c0dff 12%);
+    --panel-li-background: var(--secondary-below);
+    --panel-li-background-pressed: var(--secondary-below);
+    --panel-li-foreground: var(--fg-color);
 }
 
 :root:has(#frutigeraero:checked) {
-    --aside-btn-fg: linear-gradient(0deg,rgba(132, 245, 230, 1) 3%, rgba(68, 189, 189, 1) 22%, rgba(32, 139, 168, 1) 44%, rgba(32, 139, 168, 1) 50%, rgba(68, 189, 189, 1) 74%, rgba(132, 245, 230, 1) 100%);
-    --aside-btn-bg: linear-gradient(0deg,rgba(250, 175, 202, 1) 3%, rgba(242, 111, 159, 1) 22%, rgba(176, 46, 113, 1) 44%, rgba(176, 46, 113, 1) 50%, rgba(242, 111, 159, 1) 74%, rgba(250, 175, 202, 1) 100%);
-    --aside-btn-pressed-bg: linear-gradient(0deg,rgba(242, 111, 159, 1) 3%, rgba(176, 46, 113, 1) 22%, rgba(145, 28, 106, 1) 44%, rgba(145, 28, 106, 1) 50%, rgba(176, 46, 113, 1) 74%, rgba(242, 111, 159, 1) 100%);
+    --panel-li-foreground: linear-gradient(0deg,rgba(132, 245, 230, 1) 3%, rgba(68, 189, 189, 1) 22%, rgba(32, 139, 168, 1) 44%, rgba(32, 139, 168, 1) 50%, rgba(68, 189, 189, 1) 74%, rgba(132, 245, 230, 1) 100%);
+    --panel-li-background: linear-gradient(0deg,rgba(250, 175, 202, 1) 3%, rgba(242, 111, 159, 1) 22%, rgba(176, 46, 113, 1) 44%, rgba(176, 46, 113, 1) 50%, rgba(242, 111, 159, 1) 74%, rgba(250, 175, 202, 1) 100%);
+    --panel-li-background-pressed: linear-gradient(0deg,rgba(242, 111, 159, 1) 3%, rgba(176, 46, 113, 1) 22%, rgba(145, 28, 106, 1) 44%, rgba(145, 28, 106, 1) 50%, rgba(176, 46, 113, 1) 74%, rgba(242, 111, 159, 1) 100%);
 }
 
 .primary {
@@ -105,7 +119,8 @@
 }
 
 .side-margin {
-    flex-basis: 6.25%;
+    flex-basis: 7.5rem;
+    min-width: 0; /* This prevents the item from pushing on main and shrinking it */
 }
 
 /* Screen Reader Only */
@@ -160,14 +175,18 @@ a {
 }
 
 aside {
-    flex-basis: 12.5%;
+    flex-basis: 15rem;
 
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
-    
+
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    min-width: 0; /* This prevents the item from pushing on main and shrinking it */
 }
 
 /* ========================= *
@@ -197,146 +216,18 @@ aside {
     padding: 0;
 }
 
-/* ================ *
- *  Theme Selector  *
- * ================ */
+/* =========================================== *
+ *  Theme Selector, Navigation, & Aside Links  *
+ * =========================================== */
 
-
-.theme-selector {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-}
-
-.theme-selector fieldset {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    justify-content: center;
-    gap: 0.5rem;
-
-    margin-top: 0.5rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    border: none;
-
-    background: var(--aside-fg);
-    background-attachment: fixed; /* Allows gradient to apply without seams between this element and the legend */
-    border-radius: 0.75rem;
-
-    transition: background-color 0.1s ease;
-}
-
-.theme-selector fieldset legend {
-    float: none;
-    width: min-content;
-
-    margin: auto;
-    padding: 0.25rem 2rem 0 2rem;
-
-    background: var(--aside-fg);
-    background-attachment: fixed; /* Allows gradient to apply without seams between this element and the fieldset */
-    border-radius: 0.75rem;
-
-    transition: background-color 0.1s ease;
-}
-
-/* Hide all theme selector radio buttons */
-.theme-selector input[type="radio"] {
-    height: 0px; width: 0px;
-    position: absolute;
-    white-space: nowrap;
-    clip-path: inset(50%);
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-}
-
-/*  
-    Theme selector labels are split into the label itself and the content.
-    Unless checked or hovered, the label is entirely behind the content it holds.
-*/
-
-/* Style for all theme selector labels (background) */
-.theme-selector label {
-    width: 100%;
-    box-sizing: border-box;
-
-    cursor: pointer;
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    
-    background: var(--aside-btn-bg);
-    border-radius: 0.5rem;
-}
-
-/* Style for chosen theme selector label (background) */
-.theme-selector label:has(input:checked)  {
-    width: 100%;
-    background: var(--aside-btn-pressed-bg);
-}
-
-/* Style for theme selector content (foreground) */
-.theme-selector label .label-content {
-    width: 100%;
-    height: 2.25rem;
-    box-sizing: border-box;
-
-    background: var(--aside-btn-fg);
-    border-radius: 0.5rem;
-    margin-left: 3px;
-    margin-right: 3px;
-
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    transition: margin 0.5s ease;
-}
-
-/* Style for hovered theme selector content (foreground) */
-.theme-selector label:hover .label-content {
-    margin-right: 0.6rem;
-}
-
-
-/* Style for chosen theme selector content (foreground)  */
-.theme-selector label:has(input:checked) .label-content {
-    margin-right: 0.55rem;
-}
-
-.theme-selector label img {
-    width: 2rem;
-    height: 2rem;
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
-}
-
-.theme-selector .theme-option-name {
-    margin: auto;
-    padding-right: 1.5rem;
-}
-
-/* ========================== *
- *  Navigation & Aside Links  *
- * ========================== */
-
-/*
-    I recognize that I am repeating most the theme css here,
-    but there are slight differences, primarily cause of how
-    the html is laid out
-*/
-
-    .links-container {
+    .panel-container {
         padding: 0;
         margin: 0;
         width: 100%;
     }
 
     /* This is the title of the nav bar */
-    .links-container h3 {
+    .panel-container .panel-title {
         font-size: medium;
         font-weight: normal;
         text-align: center;
@@ -348,14 +239,14 @@ aside {
         margin-bottom: -0.57em;
         padding: 0.25rem 2rem 0 2rem;
 
-        background: var(--aside-fg);
+        background: var(--panel-background);
         background-attachment: fixed;
         border-radius: 0.75rem 0.75rem 0 0;
 
         transition: background-color 0.1s ease;
     }
 
-    .links-container .link-list {
+    .panel-container .panel-list {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -364,46 +255,66 @@ aside {
         gap: 0.5rem;
 
         margin: 0 0.5rem 0 0.5rem;
-        padding: 0.76em;
+        padding: 0.75em;
         padding-top: 1.05em;
         padding-bottom: 0.6em;
 
-        background: var(--aside-fg);
+        background: var(--panel-background);
         background-attachment: fixed;
         border-radius: 0.75rem;
 
         transition: background-color 0.1s ease;
     }
 
-    .link-list .link {
-        box-sizing: border-box;
-        text-align: center;
-        text-decoration: none;
+    .panel-container fieldset.panel-list {
+        min-inline-size: 0; /* Set this to 0 because fieldset is a bitchass mf'er */
+        border: none;
+    }
 
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
+    .panel-list .panel-li {
+        box-sizing: border-box;
+        text-decoration: none;
+        color: var(--text-color);
+
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px; 
 
         width: 100%;
         height: 2.25rem;
 
         cursor: pointer;
 
-        background: var(--aside-btn-bg);
+        background: var(--panel-li-background);
+        filter: var(--panel-li-background-filter, none);
         border-radius: 0.5rem;
     }
 
-    .link .link-content {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        
-        width: 100%;
+    .panel-li input[type="radio"] {
+        /* Hide the actual radio button */
+        height: 0px; width: 0px;
+        position: absolute;
+        white-space: nowrap;
+        clip-path: inset(50%);
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+    }
+
+    .panel-li:has(input:checked) {
+        background: var(--panel-li-background-pressed);
+    }
+
+    .panel-li .panel-li-background {
+        grid-area: 1 / 1 / 2 / 2;
+
         height: 2.25rem;
 
-        background: var(--aside-btn-fg);
+        background: var(--panel-li-foreground);
+        filter: var(--panel-li-foreground-filter, none);
         border-radius: 0.5rem;
         margin-left: 3px;
         margin-right: 3px;
@@ -411,23 +322,65 @@ aside {
         transition: margin 0.5s ease;
     }
 
-    .link:hover .link-content {
+    .panel-li:hover .panel-li-background {
         margin-right: 0.6rem;
     }
 
-    .link-content img {
-        width: 2rem;
-        height: 2rem;
-        padding-left: 0.25rem;
-        padding-right: 0.25rem;
+    .panel-li:has(input:checked) .panel-li-background  {
+        margin-right: 0.6rem;
     }
 
-    .link-name {
-        margin: auto;
-        padding-right: 2.5rem;
-        color: var(--text-color);
-        text-shadow: var(--text-shadow);
+    .panel-li .panel-li-img-container {
+        grid-area: 1 / 1 / 2 / 2;
+
+        height: 2.25rem;
     }
+
+    .panel-li .panel-li-img-container img {
+        width: 32px;
+        height: 32px;
+        box-sizing: border-box;
+        
+        margin-left: 0.3cqw;
+        margin-top: 0.12rem;
+
+        padding-top: 2rem;
+    }
+
+    label.panel-li .panel-li-img-container img {
+        /* 
+            Padding moves the img out of frame so
+            it can be replaced by theme img but
+            I don't want that for theme selectors.
+        */
+        padding-top: 0;
+    }
+
+    .panel-li .panel-li-name {
+        grid-area: 1 / 1 / 2 / 2;
+
+        text-align: center;
+        align-self: center;
+        user-select: none;
+        font-size: medium;
+    }
+
+    .panel-li .panel-li-overlay {
+        grid-area: 1 / 1 / 2 / 2;
+        background: var(--panel-li-overlay);
+        background-repeat: var(--panel-li-overlay-repeat);
+        mix-blend-mode: var(--panel-li-overlay-mix);
+        border-radius: 0.5rem;
+        animation: var(--panel-li-overlay-animation);
+    }
+
+    @keyframes panel-li-overlay-scroll {
+        from {background-position-y: 0px;}
+        to {background-position-y: 64px;}
+    }
+
+
+
 
 @media screen and (max-width: 767px) {
 

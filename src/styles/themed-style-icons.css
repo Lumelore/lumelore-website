@@ -1,0 +1,81 @@
+:root:has(#spacetiles:checked) {
+
+    #index-icon {
+        background-image: url("/theme/space/icon/home.png");
+        background-size: 32px;
+        background-position: 0px;
+        background-repeat: no-repeat;
+    }
+
+    #games-icon {
+        background-image: url("/theme/space/icon/games.png");
+        background-size: 32px;
+        background-position: 0px;
+        background-repeat: no-repeat;   
+    }
+
+    #mods-icon {
+        background-image: url("/theme/space/icon/mods.png");
+        background-size: 32px;
+        background-position: 0px;
+        background-repeat: no-repeat;   
+    }
+
+    #blog-icon {
+        background-image: url("/theme/space/icon/blog.png");
+        background-size: 32px;
+        background-position: 0px;
+        background-repeat: no-repeat;   
+    }
+
+    #pxbtn-icon {
+        background-image: url("/theme/space/icon/88x31.png");
+        background-size: 32px;
+        background-position: 0px;
+        background-repeat: no-repeat;  
+    }
+
+    #lemmy-blahaj-icon {
+        background-image: url("/theme/space/icon/lemmy-blahaj.png");
+        background-size: 32px;
+        background-position: 0px;
+        background-repeat: no-repeat;  
+    }
+
+}
+
+:root:has(#queertiles:checked) {
+
+    #index-icon {
+        background-image: url("/theme/space/icon/games.png");
+        background-size: 32px;
+        background-position: 0px;
+        background-repeat: no-repeat;
+    }
+
+}
+
+:root:has(#frutigeraero:checked) {
+
+    #videos-icon {
+        background-image: url("/theme/frutiger-aero/icon/videos.png");
+        background-size: 32px;
+        background-position: 0px;
+        background-repeat: no-repeat;
+    }
+
+    #lemmy-blahaj-icon {
+        background-image: url("/theme/frutiger-aero/icon/lemmy-blahaj.png");
+        background-size: 32px;
+        background-position: 0px;
+        background-repeat: no-repeat;
+    }
+
+    #code-icon {
+        background-image: url("/theme/frutiger-aero/icon/code.png");
+        background-size: 32px;
+        background-position: 0px;
+        background-repeat: no-repeat;
+    }
+
+}

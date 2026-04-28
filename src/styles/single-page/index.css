@@ -1,9 +1,9 @@
 /* This is to indicate that home page is the current page, WITH NO JS!!!! */
 
 #index {
-    background: var(--aside-btn-pressed-bg);
+    background: var(--panel-li-background-pressed);
 }
 
-#index .link-content {
+#index .panel-li-background {
     margin-right: 0.6rem;
 }
