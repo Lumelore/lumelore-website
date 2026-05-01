@@ -35,11 +35,32 @@
         background-repeat: no-repeat;  
     }
 
+    #videos-icon {
+        background-image: url("/theme/space/icon/videos.png");
+        background-size: 32px;
+        background-position: 0px;
+        background-repeat: no-repeat;
+    }
+
     #lemmy-blahaj-icon {
         background-image: url("/theme/space/icon/lemmy-blahaj.png");
         background-size: 32px;
         background-position: 0px;
         background-repeat: no-repeat;  
+    }
+
+    #itchio-icon {
+        background-image: url("/theme/space/icon/games.png");
+        background-size: 32px;
+        background-position: 0px;
+        background-repeat: no-repeat;
+    }
+
+    #code-icon {
+        background-image: url("/theme/space/icon/code.png");
+        background-size: 32px;
+        background-position: 0px;
+        background-repeat: no-repeat;
     }
 
 }
