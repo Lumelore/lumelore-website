@@ -103,9 +103,20 @@
 }
 
 :root:has(#frutigeraero:checked) {
+    --bg-image: url("/theme/frutiger-aero/frutiger-aero-background-img/frutiger-aero-background-img.webp");
+    --bg-html: #69b3cf;
+    --bg-image-size: cover;
+
+    --fg-color: rgba(3, 20, 49, 0.228);
+    --fg-filter: blur(2px);
+    --fg-border-left-style: 0.2rem solid var(--secondary-below);
+    --fg-border-right-style: var(--fg-border-left-style);
+    --outline-style: none;
+    --outline-offset: 0;
+
     --panel-li-foreground: linear-gradient(0deg,rgba(132, 245, 230, 1) 3%, rgba(68, 189, 189, 1) 22%, rgba(32, 139, 168, 1) 44%, rgba(32, 139, 168, 1) 50%, rgba(68, 189, 189, 1) 74%, rgba(132, 245, 230, 1) 100%);
-    --panel-li-background: linear-gradient(0deg,rgba(250, 175, 202, 1) 3%, rgba(242, 111, 159, 1) 22%, rgba(176, 46, 113, 1) 44%, rgba(176, 46, 113, 1) 50%, rgba(242, 111, 159, 1) 74%, rgba(250, 175, 202, 1) 100%);
-    --panel-li-background-pressed: linear-gradient(0deg,rgba(242, 111, 159, 1) 3%, rgba(176, 46, 113, 1) 22%, rgba(145, 28, 106, 1) 44%, rgba(145, 28, 106, 1) 50%, rgba(176, 46, 113, 1) 74%, rgba(242, 111, 159, 1) 100%);
+    --panel-li-background: linear-gradient(0deg,rgba(132, 245, 230, 1) 3%, rgba(68, 189, 189, 1) 22%, rgba(32, 139, 168, 1) 44%, rgba(32, 139, 168, 1) 50%, rgba(68, 189, 189, 1) 74%, rgba(132, 245, 230, 1) 100%);
+    --panel-li-background-pressed: linear-gradient(0deg,rgba(132, 245, 230, 1) 3%, rgba(68, 189, 189, 1) 22%, rgba(32, 139, 168, 1) 44%, rgba(32, 139, 168, 1) 50%, rgba(68, 189, 189, 1) 74%, rgba(132, 245, 230, 1) 100%);
 }
 
 .primary {
@@ -183,9 +194,6 @@ aside {
     justify-content: flex-start;
     align-items: center;
 
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-
     min-width: 0; /* This prevents the item from pushing on main and shrinking it */
 }
 
@@ -201,6 +209,8 @@ aside {
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 
     gap: 1rem;
 }
@@ -398,7 +408,7 @@ aside {
         height: 2.5rem;
         cursor: pointer;
         user-select: none;
-        background: var(--aside-btn-fg);
+        background: var(--panel-background);
         text-align: center;
         align-content: center;
         font-weight: bold;
@@ -420,15 +430,20 @@ aside {
 
     .aside-menu-items {
         overflow: hidden;
-        height: 40em;
+        height: 45em;
         height: calc-size(auto); /* calc-size is chrome only for now :( */
 
         transition: height 0.33s ease;
     }
 
+    aside {
+        flex-basis: 10%;
+    }
+
     aside:has(#aside-toggle:checked) .aside-menu-items {
         height: 0px;
-        
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     aside:has(#aside-toggle:checked) .aside-menu-toggler{
