@@ -6,4 +6,5 @@
 
 #index .panel-li-background {
     margin-right: 0.6rem;
+    background: var(--panel-li-background-foreground-pressed);
 }
