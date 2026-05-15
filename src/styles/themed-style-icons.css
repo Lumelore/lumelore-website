@@ -92,6 +92,13 @@
         background-repeat: no-repeat;   
     }
 
+    #mods-icon {
+        background-image: url("/theme/frutiger-aero/icon/mods.png");
+        background-size: 32px;
+        background-position: 0px;
+        background-repeat: no-repeat;   
+    }
+
     #videos-icon {
         background-image: url("/theme/frutiger-aero/icon/videos.png");
         background-size: 32px;
