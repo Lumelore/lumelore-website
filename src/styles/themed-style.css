@@ -26,10 +26,13 @@
     --panel-background: rgb(29, 44, 128);
     /* BG */
     --panel-li-background: var(--secondary-main);
+    --panel-li-background-hover: var(--panel-li-background);
     --panel-li-background-pressed: var(--secondary-below);
     --panel-li-background-filter: none;
     /* FG */
     --panel-li-foreground: var(--primary-main);
+    --panel-li-foreground-hover: var(--panel-li-foreground);
+    --panel-li-background-foreground-pressed: var(--panel-li-foreground);
     --panel-li-foreground-filter: none;
     /* OL */
     --panel-li-overlay: none;
@@ -114,23 +117,28 @@
     --outline-style: none;
     --outline-offset: 0;
 
-    --primary-below: #1661ab;
-    --primary-main: #2084ba;
-    --primary-above: #33a8d6;
+    --primary-below: #040b39;
+    --primary-main: #11195e;
+    --primary-above: #1f2d78;
 
-    --secondary-below: #040b39;
-    --secondary-main: #11195e;
-    --secondary-above: #1f2d78;
+    --secondary-below: #1661ab;
+    --secondary-main: #2084ba;
+    --secondary-above: #33a8d6;
 
     --text-color: #d6f7ff;
-    --text-shadow: 1px 1px 0.1rem var(--secondary-below);
+    --text-shadow: 1px 1px 0.1rem var(--primary-below);
     --link-color: var(--primary-main);
     --link-text-shadow: 1px 1px 0.1rem var(--secondary-below);;
 
     --panel-background: rgba(3, 20, 49, 0.228);
-    --panel-li-foreground: linear-gradient(0deg,rgba(51, 168, 214, 1) 0%, rgba(32, 132, 186, 1) 22%, rgba(22, 97, 171, 1) 46%, rgba(27, 114, 178, 1) 52%, rgba(51, 168, 214, 1) 74%, rgba(75, 195, 242, 1) 97%);
+    --panel-li-foreground: linear-gradient(0deg,#33a8d6 0%, #2084ba 22%, #1661ab 46%, #1b72b2 52%, #33a8d6 74%, #4bc3f2 97%);
+    --panel-li-foreground-hover: var(--panel-li-background-pressed);
+    --panel-li-background-foreground-pressed: var(--panel-li-background-pressed);
+    
     --panel-li-background: var(--panel-li-foreground);
-    --panel-li-background-pressed: linear-gradient(0deg,rgba(132, 245, 230, 1) 3%, rgba(68, 189, 189, 1) 22%, rgba(32, 139, 168, 1) 44%, rgba(32, 139, 168, 1) 50%, rgba(68, 189, 189, 1) 74%, rgba(132, 245, 230, 1) 100%);
+    --panel-li-background-filter: drop-shadow(-0.02rem 0.02rem 0.05rem #094480) drop-shadow(0.02rem -0.02rem 0.05rem #094480);
+    --panel-li-background-pressed: linear-gradient(0deg,#2084ba 0%, #1661ab 22%, #0b4a89 46%, #115e96 52%, #2084ba 74%, #33a8d6 97%);
+    --panel-li-background-hover: var(--panel-li-background-pressed);
 }
 
 .primary {
@@ -348,9 +356,13 @@ aside {
         margin: 0;
     }
 
+    .panel-li:hover {
+        background: var(--panel-li-background-hover);
+    }
+
     .panel-li:has(input:checked) {
         background: var(--panel-li-background-pressed);
-    }
+    }    
 
     .panel-li .panel-li-background {
         grid-area: 1 / 1 / 2 / 2;
@@ -368,10 +380,12 @@ aside {
 
     .panel-li:hover .panel-li-background {
         margin-right: 0.6rem;
+        background: var(--panel-li-foreground-hover);
     }
 
-    .panel-li:has(input:checked) .panel-li-background  {
+    .panel-li:has(input:checked) .panel-li-background {
         margin-right: 0.6rem;
+        background: var(--panel-li-background-foreground-pressed);
     }
 
     .panel-li .panel-li-img-container {
