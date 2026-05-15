@@ -78,6 +78,20 @@
 
 :root:has(#frutigeraero:checked) {
 
+    #index-icon {
+        background-image: url("/theme/frutiger-aero/icon/home.png");
+        background-size: 32px;
+        background-position: 0px;
+        background-repeat: no-repeat;
+    }
+
+    #games-icon {
+        background-image: url("/theme/frutiger-aero/icon/games.png");
+        background-size: 32px;
+        background-position: 0px;
+        background-repeat: no-repeat;   
+    }
+
     #videos-icon {
         background-image: url("/theme/frutiger-aero/icon/videos.png");
         background-size: 32px;
