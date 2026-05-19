@@ -99,6 +99,20 @@
         background-repeat: no-repeat;   
     }
 
+    #blog-icon {
+        background-image: url("/theme/frutiger-aero/icon/blog.png");
+        background-size: 32px;
+        background-position: 0px;
+        background-repeat: no-repeat;   
+    }
+
+    #pxbtn-icon {
+        background-image: url("/theme/frutiger-aero/icon/88x31.png");
+        background-size: 32px;
+        background-position: 0px;
+        background-repeat: no-repeat;  
+    }
+
     #videos-icon {
         background-image: url("/theme/frutiger-aero/icon/videos.png");
         background-size: 32px;
@@ -112,6 +126,14 @@
         background-position: 0px;
         background-repeat: no-repeat;
     }
+
+    #itchio-icon {
+        background-image: url("/theme/frutiger-aero/icon/mods.png");
+        background-size: 32px;
+        background-position: 0px;
+        background-repeat: no-repeat;
+    }
+
 
     #code-icon {
         background-image: url("/theme/frutiger-aero/icon/code.png");
