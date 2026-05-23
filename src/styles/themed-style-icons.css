@@ -128,12 +128,11 @@
     }
 
     #itchio-icon {
-        background-image: url("/theme/frutiger-aero/icon/mods.png");
+        background-image: url("/theme/frutiger-aero/icon/games-alt.png");
         background-size: 32px;
         background-position: 0px;
         background-repeat: no-repeat;
     }
-
 
     #code-icon {
         background-image: url("/theme/frutiger-aero/icon/code.png");
