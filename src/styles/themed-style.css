@@ -173,6 +173,7 @@ html {
     background-size: var(--bg-image-size);
     background-repeat: repeat;
     image-rendering: pixelated;
+    
     width: 100vw;
     height: 100vh;
 
@@ -403,15 +404,6 @@ aside {
         margin-top: 0.12rem;
 
         padding-top: 2rem;
-    }
-
-    label.panel-li .panel-li-img-container img {
-        /* 
-            Padding moves the img out of frame so
-            it can be replaced by theme img but
-            I don't want that for theme selectors.
-        */
-        padding-top: 0;
     }
 
     .panel-li .panel-li-name {
