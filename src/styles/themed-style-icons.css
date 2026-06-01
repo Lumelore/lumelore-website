@@ -93,16 +93,15 @@
     }
 
     #nebula-theme-icon {
-        background-image: url("/theme/iso-cube/nebula-brick.png");
-        image-rendering: pixelated !important;
+        background-image: url("/theme/frutiger-aero/nebula-sphere.png");
     }
 
     #queer-theme-icon {
-        background-image: url("/theme/iso-cube/queer-cube.png");
+        background-image: url("/theme/frutiger-aero/queer-sphere.png");
     }
 
     #frutiger-aero-theme-icon {
-        background-image: url("/theme/iso-cube/medium-aero-cube.png");
+        background-image: url("/theme/frutiger-aero/aero-sphere.png");
     }
 
     #index-icon {
