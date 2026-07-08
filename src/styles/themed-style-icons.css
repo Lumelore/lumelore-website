@@ -79,7 +79,39 @@
     }
 
     #index-icon {
-        background-image: url("/theme/space/icon/games.png");
+        background-image: url("/theme/queer/icon/home.png");
+    }
+
+    #games-icon {
+        background-image: url("/theme/queer/icon/games.png");
+    }
+
+    #mods-icon {
+        background-image: url("/theme/queer/icon/mods.png");
+    }
+
+    #blog-icon {
+        background-image: url("/theme/queer/icon/blog.png");
+    }
+
+    #pxbtn-icon {
+        background-image: url("/theme/queer/icon/88x31.png");
+    }
+
+    #videos-icon {
+        background-image: url("/theme/queer/icon/videos.png");
+    }
+
+    #lemmy-blahaj-icon {
+        background-image: url("/theme/queer/icon/lemmy-blahaj.png");
+    }
+
+    #itchio-icon {
+        background-image: url("/theme/queer/icon/games-alt.png");
+    }
+
+    #code-icon {
+        background-image: url("/theme/queer/icon/code.png");
     }
 
 }
