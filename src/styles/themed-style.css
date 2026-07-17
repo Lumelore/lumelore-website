@@ -1,6 +1,6 @@
 :root {
     --bg-image: url("/theme/space/SpaceBricksIsoTile.gif");
-    --bg-html: rgb(39, 68, 140);;
+    --bg-html: rgb(39, 68, 140);
     --bg-image-size: 176px;
 
     --fg-color: rgba(29, 44, 128, 0.95);
@@ -28,6 +28,49 @@
     --panel-li-background: var(--secondary-main);
     --panel-li-background-hover: var(--panel-li-background);
     --panel-li-background-pressed: var(--secondary-below);
+    --panel-li-background-filter: none;
+    /* FG */
+    --panel-li-foreground: var(--primary-main);
+    --panel-li-foreground-hover: var(--panel-li-foreground);
+    --panel-li-background-foreground-pressed: var(--panel-li-foreground);
+    --panel-li-foreground-filter: none;
+    /* OL */
+    --panel-li-overlay: none;
+    --panel-li-overlay-repeat: repeat;
+    --panel-li-overlay-mix: normal;
+    --panel-li-overlay-animation: none;
+}
+
+:root:has(#violet:checked) {
+    --bg-image: none;
+    --bg-html: #5b4a75;
+    --bg-image-size: 0;
+
+    --fg-color: #8972a1;
+    --fg-filter: none;
+    --fg-border-left-style: 5px solid #775f94;
+    --fg-border-right-style: var(--fg-border-left-style);
+    --outline-style: none;
+    --outline-offset: 0;
+
+    --primary-below: #6960a3;
+    --primary-main: #847ebd;
+    --primary-above: #9fa2d7;
+
+    --secondary-below: #b35996;
+    --secondary-main: #c977a4;
+    --secondary-above: #e596bb;
+    
+    --text-color: #e1faf7;
+    --text-shadow: 1px 1px 2px var(--secondary-below);
+    --link-color: var(--secondary-above);
+    --link-text-shadow: 1px 1px 2px var(--text-shadow);
+
+    --panel-background: rgba(41, 22, 49, 0.461);
+    /* BG */
+    --panel-li-background: var(--primary-below);
+    --panel-li-background-hover: var(--panel-li-background);
+    --panel-li-background-pressed: var(--primary-below);
     --panel-li-background-filter: none;
     /* FG */
     --panel-li-foreground: var(--primary-main);

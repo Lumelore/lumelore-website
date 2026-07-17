@@ -1,9 +1,75 @@
+:root:has(#violet:checked) {
+
+    .panel-li-img-container img {
+        background-size: 32px;
+        background-position: 0px;
+        background-repeat: no-repeat;
+    }
+
+    #violet-theme-icon {
+        background-image: url("/theme/violet/icon/violet.png");
+    }
+
+    #nebula-theme-icon {
+        background-image: url("/theme/violet/icon/nebula-stars.png");
+    }
+
+    #queer-theme-icon {
+        background-image: url("/theme/violet/icon/queer-heart.png");
+    }
+
+    #frutiger-aero-theme-icon {
+        background-image: url("/theme/violet/icon/aero-dolphin.png");
+    }
+
+    #index-icon {
+        background-image: url("/theme/violet/icon/home.png");
+    }
+
+    #games-icon {
+        background-image: url("/theme/violet/icon/games.png");
+    }
+
+    #mods-icon {
+        background-image: url("/theme/violet/icon/mods.png");
+    }
+
+    #blog-icon {
+        background-image: url("/theme/violet/icon/blog.png");
+    }
+
+    #pxbtn-icon {
+        background-image: url("/theme/violet/icon/88x31.png");
+    }
+
+    #videos-icon {
+        background-image: url("/theme/violet/icon/videos.png");
+    }
+
+    #lemmy-blahaj-icon {
+        background-image: url("/theme/violet/icon/lemmy-blahaj.png");
+    }
+
+    #itchio-icon {
+        background-image: url("/theme/violet/icon/games-alt.png");
+    }
+
+    #code-icon {
+        background-image: url("/theme/violet/icon/code.png");
+    }
+
+}
+
 :root:has(#spacetiles:checked) {
 
     .panel-li-img-container img {
         background-size: 32px;
         background-position: 0px;
         background-repeat: no-repeat;
+    }
+
+    #violet-theme-icon {
+        background-image: url("/theme/iso-cube/violet-cube.png");
     }
 
     #nebula-theme-icon {
@@ -48,7 +114,7 @@
     }
 
     #itchio-icon {
-        background-image: url("/theme/space/icon/games.png");
+        background-image: url("/theme/space/icon/games-alt.png");
     }
 
     #code-icon {
@@ -65,17 +131,20 @@
         background-repeat: no-repeat;
     }
 
+    #violet-theme-icon {
+        background-image: url("/theme/queer/icon/violet.png");
+    }
+
     #nebula-theme-icon {
-        background-image: url("/theme/iso-cube/nebula-brick.png");
-        image-rendering: pixelated !important;
+        background-image: url("/theme/queer/icon/nebula-stars.png");
     }
 
     #queer-theme-icon {
-        background-image: url("/theme/iso-cube/queer-cube.png");
+        background-image: url("/theme/queer/icon/queer-heart.png");
     }
 
     #frutiger-aero-theme-icon {
-        background-image: url("/theme/iso-cube/aero-cube.png");
+        background-image: url("/theme/queer/icon/aero-dolphin.png");
     }
 
     #index-icon {
@@ -122,6 +191,10 @@
         background-size: 32px;
         background-position: 0px;
         background-repeat: no-repeat;
+    }
+
+    #violet-theme-icon {
+        background-image: url("/theme/frutiger-aero/violet-sphere.png");
     }
 
     #nebula-theme-icon {

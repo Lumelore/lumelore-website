@@ -54,14 +54,25 @@ const { title, desc="Lumelore's game dev and indie web spot!" } = Astro.props;
 						</div>
 
 						<fieldset class="panel-list">
+							<label for="violet" class="panel-li">
+								<div class="panel-li-background" />
+								<div class="panel-li-img-container">
+									<img class="smooth-img" id="violet-theme-icon" src="/theme/iso-cube/nebula-brick.png" height="64" width="64" />
+								</div>
+								<div class="panel-li-name">Violet</div>
+								<div class="panel-li-overlay" />
+								<input type="radio" name="theme-option" id="violet" checked>
+							</label>
+
+
 							<label for="spacetiles" class="panel-li">
 								<div class="panel-li-background" />
 								<div class="panel-li-img-container">
 									<img class="smooth-img" id="nebula-theme-icon" src="/theme/iso-cube/nebula-brick.png" height="64" width="64" />
 								</div>
-								<div class="panel-li-name">Nebula Bricks</div>
+								<div class="panel-li-name">Nebula</div>
 								<div class="panel-li-overlay" />
-								<input type="radio" name="theme-option" id="spacetiles" checked>
+								<input type="radio" name="theme-option" id="spacetiles">
 							</label>
 
 							<label for="queertiles" class="panel-li">
@@ -69,7 +80,7 @@ const { title, desc="Lumelore's game dev and indie web spot!" } = Astro.props;
 								<div class="panel-li-img-container">
 									<img class="smooth-img" id="queer-theme-icon" src="/theme/iso-cube/queer-cube.png" height="64" width="64" />
 								</div>
-								<div class="panel-li-name">Queer Cubes</div>
+								<div class="panel-li-name">Queer</div>
 								<div class="panel-li-overlay" />
 								<input type="radio" name="theme-option" id="queertiles">
 							</label>
@@ -79,7 +90,7 @@ const { title, desc="Lumelore's game dev and indie web spot!" } = Astro.props;
 								<div class="panel-li-img-container">
 									<img class="smooth-img" id="frutiger-aero-theme-icon" src="/theme/iso-cube/aero-cube.png" height="64" width="64" />
 								</div>
-								<div class="panel-li-name">Frutiger Aero</div>
+								<div class="panel-li-name">Aero</div>
 								<div class="panel-li-overlay" />
 								<input type="radio" name="theme-option" id="frutigeraero">
 							</label>
