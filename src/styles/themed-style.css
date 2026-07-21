@@ -296,6 +296,21 @@ aside {
     min-width: 0; /* This prevents the item from pushing on main and shrinking it */
 }
 
+.no-js-congrats {
+    background: var(--panel-background);
+    background-attachment: fixed;
+    border-radius: 0.75rem;
+        
+    font-size: small;
+    text-align: center;
+    text-wrap: pretty;
+
+    margin: 0.5rem;
+    padding: 0.5rem;
+
+    transition: background-color 0.1s ease;
+}
+
 /* ========================= *
  *  Aside Menu Toggle Stuff  *
  * ========================= */
