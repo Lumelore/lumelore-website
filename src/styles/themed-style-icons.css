@@ -4,7 +4,7 @@
         background-size: 32px;
         background-position: 0px;
         background-repeat: no-repeat;
-        image-rendering: optimizeQuality !important;
+        image-rendering: pixelated !important;
     }
 
     #violet-theme-icon {
