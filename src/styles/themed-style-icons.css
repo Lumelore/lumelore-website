@@ -4,6 +4,7 @@
         background-size: 32px;
         background-position: 0px;
         background-repeat: no-repeat;
+        image-rendering: smooth !important;
     }
 
     #violet-theme-icon {
@@ -191,6 +192,7 @@
         background-size: 32px;
         background-position: 0px;
         background-repeat: no-repeat;
+        image-rendering: smooth !important;
     }
 
     #violet-theme-icon {
