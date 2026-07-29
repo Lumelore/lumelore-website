@@ -5,8 +5,7 @@ interface Props {
 
 const { error } = Astro.props;
 
-import '@fontsource/dejavu-sans/400.css';
-import '@fontsource/dejavu-mono/400.css';
+import '../styles/global.css';
 ---
 
 <html lang="en">
@@ -27,7 +26,7 @@ import '@fontsource/dejavu-mono/400.css';
                 font-family: "DejaVu Sans", sans-serif;
                 color: #f6f4e6;
 
-                background: #3d2431;
+                background: #5b4a75;
                 
             }
 
@@ -38,9 +37,9 @@ import '@fontsource/dejavu-mono/400.css';
 
                 padding: 2rem;
 
-                background: #543d46;
+                background: #8972a1;
                 border-radius: 2rem;
-                border: 0.25rem solid #1a0e15;
+                border: 0.25rem solid #775f94;
             }
 
             #error-msg-border {
@@ -56,9 +55,9 @@ import '@fontsource/dejavu-mono/400.css';
                 
                 padding: 0rem 2rem 1.5rem 2rem;
                 margin: 0.25rem;
-                font-family: "DejaVu Mono", monospace;
+                font-family: 'Courier New', Courier, monospace;
 
-                background: #1a0e15;
+                background: #775f94;
                 border-radius: 2rem;
             }
 
