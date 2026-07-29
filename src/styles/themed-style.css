@@ -3,6 +3,9 @@
     --bg-html: rgb(39, 68, 140);
     --bg-image-size: 176px;
 
+    --font-family: 'DejaVu Sans', sans-serif, system-ui;
+    --line-height: normal;
+
     --fg-color: rgba(29, 44, 128, 0.95);
     --fg-filter: none;
     --fg-border-left-style: 5px solid var(--secondary-main);
@@ -39,6 +42,11 @@
     --panel-li-overlay-repeat: repeat;
     --panel-li-overlay-mix: normal;
     --panel-li-overlay-animation: none;
+}
+
+:root:has(#dyslexicfont:checked) {
+    --font-family: 'OpenDyslexic', system-ui;
+    --line-height: 1.19;
 }
 
 :root:has(#violet:checked) {
@@ -210,7 +218,9 @@
     flex-wrap: nowrap;
     flex-direction: row;
 
-    font-family: 'DejaVu Sans', sans-serif, system-ui;
+    font-family: var(--font-family);
+    font-size: medium;
+    line-height: var(--line-height);
     color: var(--text-color);
     text-shadow: var(--text-shadow);
 }
@@ -240,8 +250,6 @@ html {
     
     width: 100vw;
     height: 100vh;
-
-    transition: background-color 0.33s ease;
 }
 
 main {
@@ -415,6 +423,21 @@ aside {
         border: none;
     }
 
+    .theme-panel-list {
+        border-bottom-left-radius: 0rem !important;
+        border-bottom-right-radius: 0rem !important;
+    }
+
+    .font-panel-list {
+        border-top-left-radius: 0rem !important;
+        border-top-right-radius: 0rem !important;
+        padding-top: 0 !important; 
+    }
+
+    .font-panel-list .panel-title-container { 
+        padding-bottom: 0.6em;
+    }
+
     .panel-list .panel-li {
         box-sizing: border-box;
         text-decoration: none;
@@ -513,6 +536,16 @@ aside {
         mix-blend-mode: var(--panel-li-overlay-mix);
         border-radius: 0.5rem;
         animation: var(--panel-li-overlay-animation);
+    }
+
+    #use-regular {
+        font-family: 'DejaVu Sans', sans-serif, system-ui !important;
+        line-height: normal !important;
+    }
+
+    #use-dyslexic {
+        font-family: 'OpenDyslexic', sytem-ui !important;
+        line-height: 1.4 !important;
     }
 
     @keyframes panel-li-overlay-scroll {

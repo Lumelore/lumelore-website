@@ -3,9 +3,6 @@ import '../styles/global.css';
 import '../styles/themed-style.css';
 import '../styles/themed-style-icons.css';
 
-import '@fontsource/opendyslexic';
-import '@fontsource/dejavu-sans';
-
 interface Props {
     title: string;
 	desc?: string;
@@ -21,6 +18,7 @@ const { title, desc="Lumelore's game dev and indie web spot!" } = Astro.props;
 		<meta name="viewport" content="width=device-width, viewport-fit=cover" />
 		<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
 		<script src="../scripts/save-theme.ts" />
+		<script src="../scripts/save-font.ts" />
 		<script src="../scripts/block-css-transitions-on-load.ts" />
 		<title>{title}</title>
 
@@ -46,16 +44,17 @@ const { title, desc="Lumelore's game dev and indie web spot!" } = Astro.props;
 					<input type="checkbox" id="aside-toggle" checked>
 				</label>
 
-				<noscript class="no-js-congrats">Congrats on using a JS Blocker! I use HTML & CSS for as much as possible, so most things will work without JS. JS is required to save your theme choice and load fonts (I use Fontsource).</noscript>
-
 				<div class="aside-menu-items">
+
+					<noscript class="no-js-congrats">Congrats on using a JS Blocker! I use HTML & CSS for as much as possible, so most things will work without JS. JS is required to save your theme choice.</noscript>
+
 					<form class="panel-container">
 						<div class="panel-title-container">
 							<div class="panel-title-background" />
 							<h3 class="panel-title">Theme</h3>
 						</div>
 
-						<fieldset class="panel-list">
+						<fieldset class="panel-list theme-panel-list">
 							<label for="violet" class="panel-li">
 								<div class="panel-li-background" />
 								<div class="panel-li-img-container">
@@ -65,7 +64,6 @@ const { title, desc="Lumelore's game dev and indie web spot!" } = Astro.props;
 								<div class="panel-li-overlay" />
 								<input type="radio" name="theme-option" id="violet" checked>
 							</label>
-
 
 							<label for="spacetiles" class="panel-li">
 								<div class="panel-li-background" />
@@ -95,6 +93,25 @@ const { title, desc="Lumelore's game dev and indie web spot!" } = Astro.props;
 								<div class="panel-li-name">Aero</div>
 								<div class="panel-li-overlay" />
 								<input type="radio" name="theme-option" id="frutigeraero">
+							</label>
+						</fieldset>
+
+						<fieldset class="panel-list font-panel-list">
+						<div class="panel-title-container">
+							<h3 class="panel-title">Font</h3>
+						</div>
+							<label for="defaultfont" class="panel-li">
+								<div class="panel-li-background" />
+								<div class="panel-li-name" id="use-regular">DejaVu Sans</div>
+								<div class="panel-li-overlay" />
+								<input type="radio" name="font-option" id="defaultfont">
+							</label>
+
+							<label for="dyslexicfont" class="panel-li">
+								<div class="panel-li-background" />
+								<div class="panel-li-name" id="use-dyslexic">OpenDyslexic</div>
+								<div class="panel-li-overlay" />
+								<input type="radio" name="font-option" id="dyslexicfont">
 							</label>
 						</fieldset>
 					</form>
