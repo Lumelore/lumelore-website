@@ -14,3 +14,87 @@ body {
 .smooth-img {
     image-rendering: smooth !important;
 }
+
+/* ============= *
+ *  DejaVu Sans  *
+ * ============= */
+
+@font-face {
+    font-family: "DejaVu Sans";
+    src: local("DejaVu Sans"), local("dejavu-sans"),
+        url("/font/dejavu-sans/font-files/dejavu-sans-latin-400-normal.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DejaVu Sans";
+    src: local("DejaVu Sans Italic"), local("dejavu-sans-italic"),
+        url("/font/dejavu-sans/font-files/dejavu-sans-latin-400-italic.woff2") format("woff2");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DejaVu Sans";
+    src: local("DejaVu Sans Bold"), local("dejavu-sans-bold"),
+        url("/font/dejavu-sans/font-files/dejavu-sans-latin-700-normal.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DejaVu Sans";
+    src: local("DejaVu Sans Bold Italic"), local("dejavu-sans-bold-italic"),
+        url("/font/dejavu-sans/font-files/dejavu-sans-latin-700-italic.woff2") format("woff2");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* ============== *
+ *  OpenDyslexic  *
+ * ============== */
+
+@font-face {
+    font-family: "OpenDyslexic";
+    src: local("opendyslexic"),
+        url("/font/opendyslexic/font-files/opendyslexic-latin-400-normal.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+    size-adjust: 90%;
+}
+
+@font-face {
+    font-family: "OpenDyslexic";
+    src: local("opendyslexic-italic"),
+        url("/font/opendyslexic/font-files/opendyslexic-latin-400-italic.woff2") format("woff2");
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+    size-adjust: 90%;
+}
+
+@font-face {
+    font-family: "OpenDyslexic";
+    src: local("opendyslexic-bold"),
+        url("/font/opendyslexic/font-files/opendyslexic-latin-700-normal.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+    size-adjust: 90%;
+}
+
+@font-face {
+    font-family: "OpenDyslexic";
+    src: local("opendyslexic-bold-italic"),
+        url("/font/opendyslexic/font-files/opendyslexic-latin-700-italic.woff2") format("woff2");
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+    size-adjust: 90%;
+}
