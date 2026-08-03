@@ -8,7 +8,8 @@
 
     --fg-color: rgba(29, 44, 128, 0.95);
     --fg-filter: none;
-    --fg-border-left-style: 5px solid var(--secondary-main);
+    --fg-border-width: 5px;
+    --fg-border-left-style: var(--fg-border-width) solid var(--secondary-main);
     --fg-border-right-style: var(--fg-border-left-style);
     --outline-style: solid 2.5px var(--secondary-above);
     --outline-offset: 1px;
@@ -56,7 +57,8 @@
 
     --fg-color: #8972a1;
     --fg-filter: none;
-    --fg-border-left-style: 5px solid #775f94;
+    --fg-border-width: 5px;
+    --fg-border-left-style: var(--fg-border-width) solid #775f94;
     --fg-border-right-style: var(--fg-border-left-style);
     --outline-style: none;
     --outline-offset: 0;
@@ -79,7 +81,7 @@
     --selection-text-shadow: 1px 1px 2px var(--primary-below);
     --selection-link-text-color: var(--primary-below);
 
-    --panel-background: rgba(41, 22, 49, 0.461);
+    --panel-background: #443156;
     /* BG */
     --panel-li-background: var(--primary-below);
     --panel-li-background-hover: var(--panel-li-background);
@@ -105,6 +107,9 @@
     --fg-color: rgba(29, 44, 128, 0.95);
     --fg-filter: blur(2px);
     --fg-border-left-style: 5px solid var(--secondary-main);
+    
+    --fg-border-width: 5px;
+    --fg-border-left-style: var(--fg-border-width) solid var(--secondary-main);
     --fg-border-right-style: var(--fg-border-left-style);
     --outline-style: solid 2.5px var(--secondary-above);
     --outline-offset: 1px;
@@ -142,7 +147,8 @@
     --bg-image-size: 176px;
 
     --fg-color: linear-gradient(90deg,rgba(78, 176, 230, 1) 0%, rgba(78, 176, 230, 1) 20%, rgba(237, 128, 179, 1) 20%, rgba(237, 128, 179, 1) 40%, rgba(247, 240, 235, 1) 40%, rgba(247, 240, 235, 1) 50%, rgba(247, 240, 235, 1) 60%, rgba(237, 128, 179, 1) 60%, rgba(237, 128, 179, 1) 80%, rgba(78, 176, 230, 1) 80%, rgba(78, 176, 230, 1) 100%);
-    --fg-border-left-style: 0.5rem solid var(--secondary-below);
+    --fg-border-width: 0.5rem;
+    --fg-border-left-style: var(--fg-border-width) solid var(--secondary-below);
     --fg-border-right-style: var(--fg-border-left-style);
     --outline-style: none;
     --outline-offset: 0;
@@ -178,7 +184,8 @@
 
     --fg-color: rgba(3, 20, 49, 0.228);
     --fg-filter: blur(2px);
-    --fg-border-left-style: 0.2rem solid var(--secondary-below);
+    --fg-border-width: 0.2rem;
+    --fg-border-left-style: var(--fg-border-width) solid var(--secondary-below);
     --fg-border-right-style: var(--fg-border-left-style);
     --outline-style: none;
     --outline-offset: 0;
@@ -213,21 +220,14 @@
     --panel-li-background-hover: var(--panel-li-background-pressed);
 }
 
-.primary {
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-
-    font-family: var(--font-family);
-    font-size: medium;
-    line-height: var(--line-height);
-    color: var(--text-color);
-    text-shadow: var(--text-shadow);
+#use-regular {
+    font-family: 'DejaVu Sans', sans-serif, system-ui !important;
+    line-height: normal !important;
 }
 
-.side-margin {
-    flex-basis: 7.5rem;
-    min-width: 0; /* This prevents the item from pushing on main and shrinking it */
+#use-dyslexic {
+    font-family: 'OpenDyslexic', sytem-ui !important;
+    line-height: 1.4 !important;
 }
 
 /* Screen Reader Only */
@@ -242,35 +242,56 @@
 }
 
 html {
+    position: relative;
     background: var(--bg-html);
     background-image: var(--bg-image);
     background-size: var(--bg-image-size);
     background-repeat: repeat;
+    background-attachment: fixed;
     image-rendering: pixelated;
-    
+
     width: 100vw;
     height: 100vh;
 }
 
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+
+    font-family: var(--font-family);
+    font-size: medium;
+    line-height: var(--line-height);
+    color: var(--text-color);
+    text-shadow: var(--text-shadow);
+}
+
 main {
+    position: relative;
+    left: max(min(15rem, 25vw), 7.5rem);
+    width: calc(calc(100vw - 15rem) - min(12rem, 12.5%));
+
+    min-height: 100vh; /* Fallback if browser doesn't support lvh */
+    min-height: 100lvh;
+
     color: var(--text-color);
     background: var(--fg-color);
     backdrop-filter: var(--fg-filter);
     border-left: var(--fg-border-left-style);
     border-right: var(--fg-border-right-style);
 
-    min-height: 100vh; /* Fallback if browser doesn't support lvh */
-    min-height: 100lvh;
-    flex-grow: 2;
-
-    padding: 0 2rem 0 2rem;
+    /*  
+        For some reason unbeknownst to me (and maybe even the gods),
+        adding a teensy top padding fixes this from not positioning 
+        itself at the very top 
+    */
+    padding: 1px 2rem 0 2rem; 
     outline: var(--outline-style);
     outline-offset: var(--outline-offset);
 
     transition: color 0.33s ease;
     transition: background-color 0.33s ease;
     transition: border 0.25s ease;
-    
 }
 
 ::selection {
@@ -293,7 +314,8 @@ a::selection {
 }
 
 aside {
-    flex-basis: 15rem;
+    position: fixed;
+    z-index: 1;
 
     display: flex;
     flex-direction: column;
@@ -301,7 +323,9 @@ aside {
     justify-content: flex-start;
     align-items: center;
 
-    min-width: 0; /* This prevents the item from pushing on main and shrinking it */
+    min-width: 7.5rem;
+    width: 15rem;
+    max-width: 25vw;
 }
 
 .no-js-congrats {
@@ -326,13 +350,16 @@ aside {
 .aside-menu-items {
     width: 100%;
 
+    overflow-y: scroll;
+    height: 100vh;
+
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 
     gap: 1rem;
 }
@@ -538,29 +565,61 @@ aside {
         animation: var(--panel-li-overlay-animation);
     }
 
-    #use-regular {
-        font-family: 'DejaVu Sans', sans-serif, system-ui !important;
-        line-height: normal !important;
-    }
-
-    #use-dyslexic {
-        font-family: 'OpenDyslexic', sytem-ui !important;
-        line-height: 1.4 !important;
-    }
-
     @keyframes panel-li-overlay-scroll {
         from {background-position-y: 0px;}
         to {background-position-y: 64px;}
     }
 
 
-
-
 @media screen and (max-width: 767px) {
+
+    body {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    aside {
+        z-index: auto;
+        position: relative;
+        margin-bottom: calc(2.5rem + var(--fg-border-width, 0));
+        min-width: none;
+        width: 100%;
+        max-width: none;
+    }
+
+    main {
+
+        position: relative;
+        left: auto;
+        width: auto;
+
+        border-left: none;
+        border-right: none;
+        border-top: var(--fg-border-left-style);
+        border-bottom: var(--fg-border-right-style);
+
+        outline: none;
+    }
+
+    /* =================== *
+     *  Aside Mobile Menu  *
+     * =================== */
+
+    aside:has(#aside-toggle:checked) .aside-menu-items {
+        height: 0px;
+        margin-top: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    aside:has(#aside-toggle:checked) .aside-menu-toggler{
+        border-bottom-width: 0px;
+        transition: border-bottom-width 0.33s ease-out;
+    }
 
     .aside-menu-toggler {
         /* Unset the values that make it hidden for desktop */
-        position: relative;
         white-space: normal;
         clip-path: none;
         overflow: visible;
@@ -581,6 +640,20 @@ aside {
         border-bottom: var(--fg-border-right-style);
     }
 
+    .aside-menu-items {
+        width: 100%;
+        overflow: hidden;
+        height: 52em;
+        height: calc-size(auto); /* calc-size is chrome only for now :( */
+
+        padding-top: 2.5rem;
+        margin-top: 1rem;
+
+        transition: height 0.33s ease;
+        transition: margin 0.17s ease;
+        transition: padding 0.17s ease;
+    }
+
     /* Completely hide the actual checkbox */
     #aside-toggle {
         width: 0px; height: 0px;
@@ -592,44 +665,4 @@ aside {
         padding: 0;
     }
 
-    .aside-menu-items {
-        overflow: hidden;
-        height: 45em;
-        height: calc-size(auto); /* calc-size is chrome only for now :( */
-
-        transition: height 0.33s ease;
-    }
-
-    aside {
-        flex-basis: 10%;
-    }
-
-    aside:has(#aside-toggle:checked) .aside-menu-items {
-        height: 0px;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    aside:has(#aside-toggle:checked) .aside-menu-toggler{
-        border-bottom-width: 0px;
-        transition: border-bottom-width 0.33s ease-out;
-    }
-
-
-    .primary {
-        flex-direction: column;
-    }
-
-    .side-margin {
-        flex-basis: 0;
-    }
-
-    main {
-        border-left: none;
-        border-right: none;
-        border-top: var(--fg-border-left-style);
-        border-bottom: var(--fg-border-right-style);
-
-        outline: none;
-    }
 }

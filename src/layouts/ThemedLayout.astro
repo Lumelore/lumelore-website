@@ -34,192 +34,187 @@ const { title, desc="Lumelore's game dev and indie web spot!" } = Astro.props;
 	</head>
 	<body>
 
-		<div class="primary">
+		<aside>
 
-			<aside>
+			<!-- This is for a checkbox that hides/shows the side menu for mobile users -->
+			<label class="aside-menu-toggler" for="aside-toggle">
+				<div>✶ Menu ✶</div>
+				<input type="checkbox" id="aside-toggle" checked>
+			</label>
 
-				<!-- This is for a checkbox that hides/shows the side menu for mobile users -->
-				<label class="aside-menu-toggler" for="aside-toggle">
-					<div>✶ Menu ✶</div>
-					<input type="checkbox" id="aside-toggle" checked>
-				</label>
+			<div class="aside-menu-items">
 
-				<div class="aside-menu-items">
+				<noscript class="no-js-congrats">Congrats on using a JS Blocker! I use HTML & CSS for as much as possible, so most things will work without JS. JS is required to save your theme choice.</noscript>
 
-					<noscript class="no-js-congrats">Congrats on using a JS Blocker! I use HTML & CSS for as much as possible, so most things will work without JS. JS is required to save your theme choice.</noscript>
+				<form class="panel-container">
+					<div class="panel-title-container">
+						<div class="panel-title-background" />
+						<h3 class="panel-title">Theme</h3>
+					</div>
 
-					<form class="panel-container">
-						<div class="panel-title-container">
-							<div class="panel-title-background" />
-							<h3 class="panel-title">Theme</h3>
-						</div>
+					<fieldset class="panel-list theme-panel-list">
+						<label for="violet" class="panel-li">
+							<div class="panel-li-background" />
+							<div class="panel-li-img-container">
+								<img class="smooth-img" id="violet-theme-icon" src="/theme/iso-cube/nebula-brick.png" height="64" width="64" />
+							</div>
+							<div class="panel-li-name">Violet</div>
+							<div class="panel-li-overlay" />
+							<input type="radio" name="theme-option" id="violet" checked>
+						</label>
 
-						<fieldset class="panel-list theme-panel-list">
-							<label for="violet" class="panel-li">
+						<label for="spacetiles" class="panel-li">
+							<div class="panel-li-background" />
+							<div class="panel-li-img-container">
+								<img class="smooth-img" id="nebula-theme-icon" src="/theme/iso-cube/nebula-brick.png" height="64" width="64" />
+							</div>
+							<div class="panel-li-name">Nebula</div>
+							<div class="panel-li-overlay" />
+							<input type="radio" name="theme-option" id="spacetiles">
+						</label>
+
+						<label for="queertiles" class="panel-li">
+							<div class="panel-li-background" />
+							<div class="panel-li-img-container">
+								<img class="smooth-img" id="queer-theme-icon" src="/theme/iso-cube/queer-cube.png" height="64" width="64" />
+							</div>
+							<div class="panel-li-name">Queer</div>
+							<div class="panel-li-overlay" />
+							<input type="radio" name="theme-option" id="queertiles">
+						</label>
+
+						<label for="frutigeraero" class="panel-li">
+							<div class="panel-li-background" />
+							<div class="panel-li-img-container">
+								<img class="smooth-img" id="frutiger-aero-theme-icon" src="/theme/iso-cube/aero-cube.png" height="64" width="64" />
+							</div>
+							<div class="panel-li-name">Aero</div>
+							<div class="panel-li-overlay" />
+							<input type="radio" name="theme-option" id="frutigeraero">
+						</label>
+					</fieldset>
+
+					<fieldset class="panel-list font-panel-list">
+					<div class="panel-title-container">
+						<h3 class="panel-title">Font</h3>
+					</div>
+						<label for="defaultfont" class="panel-li">
+							<div class="panel-li-background" />
+							<div class="panel-li-name" id="use-regular">DejaVu Sans</div>
+							<div class="panel-li-overlay" />
+							<input type="radio" name="font-option" id="defaultfont">
+						</label>
+
+						<label for="dyslexicfont" class="panel-li">
+							<div class="panel-li-background" />
+							<div class="panel-li-name" id="use-dyslexic">OpenDyslexic</div>
+							<div class="panel-li-overlay" />
+							<input type="radio" name="font-option" id="dyslexicfont">
+						</label>
+					</fieldset>
+				</form>
+
+				<nav class="panel-container">
+					<div class="panel-title-container">
+						<div class="panel-title-background" />
+						<h3 class="panel-title">Links</h3>
+					</div>
+
+					<div class="panel-list">
+						<a href="/" class="panel-li" id="index">
 								<div class="panel-li-background" />
 								<div class="panel-li-img-container">
-									<img class="smooth-img" id="violet-theme-icon" src="/theme/iso-cube/nebula-brick.png" height="64" width="64" />
+									<img class="smooth-img" id="index-icon" src="/theme/space/icon/home.png" height="64" width="64" />
 								</div>
-								<div class="panel-li-name">Violet</div>
+								<div class="panel-li-name">Home</div>
 								<div class="panel-li-overlay" />
-								<input type="radio" name="theme-option" id="violet" checked>
-							</label>
-
-							<label for="spacetiles" class="panel-li">
+						</a>
+						<a href="/games" class="panel-li" id="games">
 								<div class="panel-li-background" />
 								<div class="panel-li-img-container">
-									<img class="smooth-img" id="nebula-theme-icon" src="/theme/iso-cube/nebula-brick.png" height="64" width="64" />
+									<img class="smooth-img" id="games-icon" src="/theme/space/icon/games.png" height="64" width="64" />
 								</div>
-								<div class="panel-li-name">Nebula</div>
+								<div class="panel-li-name">Games</div>
 								<div class="panel-li-overlay" />
-								<input type="radio" name="theme-option" id="spacetiles">
-							</label>
-
-							<label for="queertiles" class="panel-li">
+						</a>
+						<a href="/mods" class="panel-li" id="mods">
 								<div class="panel-li-background" />
 								<div class="panel-li-img-container">
-									<img class="smooth-img" id="queer-theme-icon" src="/theme/iso-cube/queer-cube.png" height="64" width="64" />
+									<img class="smooth-img" id="mods-icon" src="/theme/space/icon/mods.png" height="64" width="64" />
 								</div>
-								<div class="panel-li-name">Queer</div>
+								<div class="panel-li-name">Mods</div>
 								<div class="panel-li-overlay" />
-								<input type="radio" name="theme-option" id="queertiles">
-							</label>
-
-							<label for="frutigeraero" class="panel-li">
+						</a>
+						<a href="/blog" class="panel-li" id="blog">
 								<div class="panel-li-background" />
 								<div class="panel-li-img-container">
-									<img class="smooth-img" id="frutiger-aero-theme-icon" src="/theme/iso-cube/aero-cube.png" height="64" width="64" />
+									<img class="smooth-img" id="blog-icon" src="/theme/space/icon/blog.png" height="64" width="64" />
 								</div>
-								<div class="panel-li-name">Aero</div>
+								<div class="panel-li-name">Blog</div>
 								<div class="panel-li-overlay" />
-								<input type="radio" name="theme-option" id="frutigeraero">
-							</label>
-						</fieldset>
-
-						<fieldset class="panel-list font-panel-list">
-						<div class="panel-title-container">
-							<h3 class="panel-title">Font</h3>
-						</div>
-							<label for="defaultfont" class="panel-li">
-								<div class="panel-li-background" />
-								<div class="panel-li-name" id="use-regular">DejaVu Sans</div>
-								<div class="panel-li-overlay" />
-								<input type="radio" name="font-option" id="defaultfont">
-							</label>
-
-							<label for="dyslexicfont" class="panel-li">
-								<div class="panel-li-background" />
-								<div class="panel-li-name" id="use-dyslexic">OpenDyslexic</div>
-								<div class="panel-li-overlay" />
-								<input type="radio" name="font-option" id="dyslexicfont">
-							</label>
-						</fieldset>
-					</form>
-
-					<nav class="panel-container">
-						<div class="panel-title-container">
-							<div class="panel-title-background" />
-							<h3 class="panel-title">Links</h3>
-						</div>
-
-						<div class="panel-list">
-							<a href="/" class="panel-li" id="index">
-									<div class="panel-li-background" />
-									<div class="panel-li-img-container">
-										<img class="smooth-img" id="index-icon" src="/theme/space/icon/home.png" height="64" width="64" />
-									</div>
-									<div class="panel-li-name">Home</div>
-									<div class="panel-li-overlay" />
-							</a>
-							<a href="/games" class="panel-li" id="games">
-									<div class="panel-li-background" />
-									<div class="panel-li-img-container">
-										<img class="smooth-img" id="games-icon" src="/theme/space/icon/games.png" height="64" width="64" />
-									</div>
-									<div class="panel-li-name">Games</div>
-									<div class="panel-li-overlay" />
-							</a>
-							<a href="/mods" class="panel-li" id="mods">
-									<div class="panel-li-background" />
-									<div class="panel-li-img-container">
-										<img class="smooth-img" id="mods-icon" src="/theme/space/icon/mods.png" height="64" width="64" />
-									</div>
-									<div class="panel-li-name">Mods</div>
-									<div class="panel-li-overlay" />
-							</a>
-							<a href="/blog" class="panel-li" id="blog">
-									<div class="panel-li-background" />
-									<div class="panel-li-img-container">
-										<img class="smooth-img" id="blog-icon" src="/theme/space/icon/blog.png" height="64" width="64" />
-									</div>
-									<div class="panel-li-name">Blog</div>
-									<div class="panel-li-overlay" />
-							</a>
-							<a href="/88x31" class="panel-li" id="pxbtn">
-									<div class="panel-li-background" />
-									<div class="panel-li-img-container">
-										<img class="smooth-img" id="pxbtn-icon" src="/theme/space/icon/88x31.png" height="64" width="64" />
-									</div>
-									<div class="panel-li-name">88x31</div>
-									<div class="panel-li-overlay" />
-							</a>
-						</div>
-					</nav>
-					
-					<!-- Social links -->
-					<div class="panel-container">
-						<div class="panel-title-container">
-							<div class="panel-title-background" />
-							<h3 class="panel-title">Socials</h3>
-						</div>
-
-						<div class="panel-list">
-							<a class="panel-li" href="https://www.youtube.com/@Lumelore" target="_blank" rel="noreferrer">
+						</a>
+						<a href="/88x31" class="panel-li" id="pxbtn">
 								<div class="panel-li-background" />
 								<div class="panel-li-img-container">
-									<img class="smooth-img" id="videos-icon" src="/theme/space/icon/videos.png" height="64" width="64" decoding=async />
+									<img class="smooth-img" id="pxbtn-icon" src="/theme/space/icon/88x31.png" height="64" width="64" />
 								</div>
-								<div class="panel-li-name">Youtube</div>
+								<div class="panel-li-name">88x31</div>
 								<div class="panel-li-overlay" />
-							</a>
-							<a class="panel-li" href="https://lemmy.blahaj.zone/u/Lumelore" target="_blank" rel="noreferrer">
-								<div class="panel-li-background" />
-								<div class="panel-li-img-container">
-									<img class="smooth-img" id="lemmy-blahaj-icon" src="/theme/space/icon/lemmy-blahaj.png" height="64" width="64" decoding=async />
-								</div>
-								<div class="panel-li-name">Lemmy</div>
-								<div class="panel-li-overlay" />
-							</a>
-							<a class="panel-li" href="https://lumelore.itch.io/" target="_blank" rel="noreferrer">
-								<div class="panel-li-background" />
-								<div class="panel-li-img-container">
-									<img class="smooth-img" id="itchio-icon" src="/theme/space/icon/games.png" height="64" width="64" decoding=async />
-								</div>
-								<div class="panel-li-name">itch.io</div>
-								<div class="panel-li-overlay" />
-							</a>
-							<a class="panel-li" href="https://github.com/Lumelore" target="_blank" rel="noreferrer">
-								<div class="panel-li-background" />
-								<div class="panel-li-img-container">
-									<img class="smooth-img" id="code-icon" src="/theme/space/icon/code.png" height="64" width="64" decoding=async />
-								</div>
-								<div class="panel-li-name">Github</div>
-								<div class="panel-li-overlay" />
-							</a>
-						</div>
+						</a>
+					</div>
+				</nav>
+				
+				<!-- Social links -->
+				<div class="panel-container">
+					<div class="panel-title-container">
+						<div class="panel-title-background" />
+						<h3 class="panel-title">Socials</h3>
+					</div>
 
+					<div class="panel-list">
+						<a class="panel-li" href="https://www.youtube.com/@Lumelore" target="_blank" rel="noreferrer">
+							<div class="panel-li-background" />
+							<div class="panel-li-img-container">
+								<img class="smooth-img" id="videos-icon" src="/theme/space/icon/videos.png" height="64" width="64" decoding=async />
+							</div>
+							<div class="panel-li-name">Youtube</div>
+							<div class="panel-li-overlay" />
+						</a>
+						<a class="panel-li" href="https://lemmy.blahaj.zone/u/Lumelore" target="_blank" rel="noreferrer">
+							<div class="panel-li-background" />
+							<div class="panel-li-img-container">
+								<img class="smooth-img" id="lemmy-blahaj-icon" src="/theme/space/icon/lemmy-blahaj.png" height="64" width="64" decoding=async />
+							</div>
+							<div class="panel-li-name">Lemmy</div>
+							<div class="panel-li-overlay" />
+						</a>
+						<a class="panel-li" href="https://lumelore.itch.io/" target="_blank" rel="noreferrer">
+							<div class="panel-li-background" />
+							<div class="panel-li-img-container">
+								<img class="smooth-img" id="itchio-icon" src="/theme/space/icon/games.png" height="64" width="64" decoding=async />
+							</div>
+							<div class="panel-li-name">itch.io</div>
+							<div class="panel-li-overlay" />
+						</a>
+						<a class="panel-li" href="https://github.com/Lumelore" target="_blank" rel="noreferrer">
+							<div class="panel-li-background" />
+							<div class="panel-li-img-container">
+								<img class="smooth-img" id="code-icon" src="/theme/space/icon/code.png" height="64" width="64" decoding=async />
+							</div>
+							<div class="panel-li-name">Github</div>
+							<div class="panel-li-overlay" />
+						</a>
 					</div>
 
 				</div>
-			</aside>
 
-			<main>
-				<slot />
-			</main>
+			</div>
+		</aside>
 
-			<div class="side-margin" />
+		<main>
+			<slot />
+		</main>
 
-		</div>
 
 	</body>
 </html>
