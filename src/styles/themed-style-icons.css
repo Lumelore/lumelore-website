@@ -1,8 +1,8 @@
 :root:has(#violet:checked) {
 
     .panel-li-img-container img {
+        background-image: url("/theme/violet/icon/icon-sheet.png");
         background-size: 32px;
-        background-position: 0px;
         background-repeat: no-repeat;
     }
 
@@ -23,39 +23,48 @@
     }
 
     #index-icon {
-        background-image: url("/theme/violet/icon/home.png");
+        background-position: 0px 0px;
+        background-size: 96px;
     }
 
     #games-icon {
-        background-image: url("/theme/violet/icon/games.png");
+        background-position: -32px 0px;
+        background-size: 96px;
     }
 
     #mods-icon {
-        background-image: url("/theme/violet/icon/mods.png");
+        background-position: -64px 0px;
+        background-size: 96px;
     }
 
     #blog-icon {
-        background-image: url("/theme/violet/icon/blog.png");
+        background-position: 0px -32px;
+        background-size: 96px;
     }
 
     #pxbtn-icon {
-        background-image: url("/theme/violet/icon/88x31.png");
+        background-position: -32px -32px;
+        background-size: 96px;
     }
 
     #videos-icon {
-        background-image: url("/theme/violet/icon/videos.png");
+        background-position: -64px -32px;
+        background-size: 96px;
     }
 
     #lemmy-blahaj-icon {
-        background-image: url("/theme/violet/icon/lemmy-blahaj.png");
+        background-position: 0px -64px;
+        background-size: 96px;
     }
 
     #itchio-icon {
-        background-image: url("/theme/violet/icon/games-alt.png");
+        background-position: -32px -64px;
+        background-size: 96px;
     }
 
     #code-icon {
-        background-image: url("/theme/violet/icon/code.png");
+        background-position: -64px -64px;
+        background-size: 96px;
     }
 
 }
