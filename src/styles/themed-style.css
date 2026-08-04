@@ -268,8 +268,10 @@ body {
 
 main {
     position: relative;
-    left: max(min(15rem, 25vw), 7.5rem);
-    width: calc(calc(100vw - 15rem) - min(12rem, 12.5%));
+    left: max(min(15rem, 25vw), 7.5rem); /* Match width of aside */
+    
+    /* Make main content fill viewport width minus width of aside and right margin */
+    width: calc(calc(calc(100vw - max(min(15rem, 25vw), 7.5rem)) - min(12rem, 12.5%)));
 
     min-height: 100vh; /* Fallback if browser doesn't support lvh */
     min-height: 100lvh;
