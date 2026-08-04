@@ -1,0 +1,10 @@
+/* This is to indicate that mods is the current page, WITH NO JS!!!! */
+
+#mods {
+    background: var(--panel-li-background-pressed);
+}
+
+#mods .panel-li-background {
+    margin-right: 0.6rem;
+    background: var(--panel-li-background-foreground-pressed);
+}

@@ -1,0 +1,10 @@
+/* This is to indicate that games is the current page, WITH NO JS!!!! */
+
+#games {
+    background: var(--panel-li-background-pressed);
+}
+
+#games .panel-li-background {
+    margin-right: 0.6rem;
+    background: var(--panel-li-background-foreground-pressed);
+}

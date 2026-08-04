@@ -1,0 +1,10 @@
+/* This is to indicate that blog is the current page, WITH NO JS!!!! */
+
+#blog {
+    background: var(--panel-li-background-pressed);
+}
+
+#blog .panel-li-background {
+    margin-right: 0.6rem;
+    background: var(--panel-li-background-foreground-pressed);
+}
