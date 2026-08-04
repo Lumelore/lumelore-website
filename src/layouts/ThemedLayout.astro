@@ -1,7 +1,6 @@
 ---
-export const prerender = false;
-
 import '../styles/global.css';
+import '../styles/themed-style-values.css';
 import '../styles/themed-style.css';
 import '../styles/themed-style-icons.css';
 
@@ -19,9 +18,12 @@ const { title, desc="Lumelore's game dev and indie web spot!" } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, viewport-fit=cover" />
 		<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+		
 		<script src="../scripts/save-theme.ts" />
 		<script src="../scripts/save-font.ts" />
 		<script src="../scripts/block-css-transitions-on-load.ts" />
+
+
 		<title>{title}</title>
 
 		<meta property="og:title" content={title} />
