@@ -1,11 +1,11 @@
 :root {
-    --bg-html: rgb(39, 68, 140);
+    --bg-html: #453651;
     --bg-image-size: 176px;
 
     --font-family: 'DejaVu Sans', sans-serif, system-ui;
     --line-height: normal;
 
-    --fg-color: rgba(29, 44, 128, 0.95);
+    --fg-color: #453651;
     --fg-filter: none;
     --fg-border-width: 5px;
     --fg-border-left-style: var(--fg-border-width) solid var(--secondary-main);
@@ -13,20 +13,20 @@
     --outline-style: solid 2.5px var(--secondary-above);
     --outline-offset: 1px;
 
-    --primary-below: #208ba8;
-    --primary-main: #44bdbd;
-    --primary-above: #84f5e6;
+    --primary-below: #453651;
+    --primary-main: #453651;
+    --primary-above: #453651;
 
-    --secondary-below: #b02e71;
-    --secondary-main: #f26f9f;
-    --secondary-above: #faafca;
+    --secondary-below: #453651;
+    --secondary-main: #453651;
+    --secondary-above: #453651;
     
     --text-color: #e1faf7;
     --text-shadow: 1px 1px 2px var(--secondary-below);
     --link-color: var(--secondary-above);
     --link-text-shadow: 1px 1px 2px var(--text-shadow);
 
-    --panel-background: rgb(29, 44, 128);
+    --panel-background: #453651;
     /* BG */
     --panel-li-background: var(--secondary-main);
     --panel-li-background-hover: var(--panel-li-background);
