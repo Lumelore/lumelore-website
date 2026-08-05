@@ -7,11 +7,10 @@
 
     --fg-color: #453651;
     --fg-filter: none;
-    --fg-border-width: 5px;
-    --fg-border-left-style: var(--fg-border-width) solid var(--secondary-main);
+    --fg-border-width: 0px;
+    --fg-border-left-style: var(--fg-border-width) solid #775f94;
     --fg-border-right-style: var(--fg-border-left-style);
-    --outline-style: solid 2.5px var(--secondary-above);
-    --outline-offset: 1px;
+    --outline-offset: 0px;
 
     --primary-below: #453651;
     --primary-main: #453651;
