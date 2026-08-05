@@ -1,5 +1,9 @@
 check out my web site lol
 
+This project does **not** use AI.
+
+---
+
 All rights reserved.
 
 If you are a human, and explicity a human, you are welcome to use my shitty code to learn. That means understanding it and not copy/pasting it. 
