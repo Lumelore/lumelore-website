@@ -5,20 +5,20 @@
     --font-family: 'DejaVu Sans', sans-serif, system-ui;
     --line-height: normal;
 
-    --fg-color: #453651;
+    --fg-color: #8972a1;
     --fg-filter: none;
-    --fg-border-width: 0px;
+    --fg-border-width: 5px;
     --fg-border-left-style: var(--fg-border-width) solid #775f94;
     --fg-border-right-style: var(--fg-border-left-style);
     --outline-offset: 0px;
 
-    --primary-below: #453651;
-    --primary-main: #453651;
-    --primary-above: #453651;
+    --primary-below: #6960a3;
+    --primary-main: #847ebd;
+    --primary-above: #9fa2d7;
 
-    --secondary-below: #453651;
-    --secondary-main: #453651;
-    --secondary-above: #453651;
+    --secondary-below: #b35996;
+    --secondary-main: #c977a4;
+    --secondary-above: #e596bb;
     
     --text-color: #e1faf7;
     --text-shadow: 1px 1px 2px var(--secondary-below);
