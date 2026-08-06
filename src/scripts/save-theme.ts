@@ -27,13 +27,11 @@ colorThemes.forEach((themeOption) => {
     })
 });
 
+setTheme();
+
 // Apply theme when returning to saved pages
 window.addEventListener('pageshow', (event) => {
     if (event.persisted) {
         setTheme();
     }
 });
-
-setTheme();
-
-

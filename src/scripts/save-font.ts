@@ -27,13 +27,11 @@ fontOptions.forEach((fontOption) => {
     })
 });
 
+setFont();
+
 // Apply font when returning to saved pages
 window.addEventListener('pageshow', (event) => {
     if (event.persisted) {
         setFont();
     }
 });
-
-setFont();
-
-
