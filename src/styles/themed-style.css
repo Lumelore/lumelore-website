@@ -326,6 +326,11 @@ aside {
     min-width: 7.5rem;
     width: 15rem;
     max-width: 25vw;
+    height: 100vh;
+
+    /* Make scrollbar go on left side */
+    direction: rtl;
+    overflow-y: scroll;
 }
 
 .no-js-congrats {
@@ -350,8 +355,8 @@ aside {
 .aside-menu-items {
     width: 100%;
 
-    overflow-y: scroll;
-    height: 100vh;
+    /* Unset rtl from aside */
+    direction: ltr;
 
     display: flex;
     flex-direction: column;
