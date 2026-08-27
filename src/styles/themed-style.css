@@ -1,6 +1,7 @@
 :root {
     --bg-html: #453651;
     --bg-image-size: 176px;
+    --bg-blend: normal;
 
     --font-family: 'DejaVu Sans', sans-serif, system-ui;
     --line-height: normal;
@@ -34,7 +35,7 @@
     /* FG */
     --panel-li-foreground: var(--primary-main);
     --panel-li-foreground-hover: var(--panel-li-foreground);
-    --panel-li-background-foreground-pressed: var(--panel-li-foreground);
+    --panel-li-foreground-pressed: var(--panel-li-foreground);
     --panel-li-foreground-filter: none;
     /* OL */
     --panel-li-overlay: none;
@@ -51,7 +52,7 @@
 :root:has(#violet:checked) {
     --bg-image: none;
     --bg-html: #5b4a75;
-    --bg-image-size: 0;
+    --bg-image-size: 0px;
 
     --fg-color: #8972a1;
     --fg-filter: none;
@@ -60,6 +61,7 @@
     --fg-border-right-style: var(--fg-border-left-style);
     --outline-style: none;
     --outline-offset: 0;
+    --hr-color: var(--primary-below);
 
     --primary-below: #6960a3;
     --primary-main: #847ebd;
@@ -88,13 +90,8 @@
     /* FG */
     --panel-li-foreground: var(--primary-main);
     --panel-li-foreground-hover: var(--panel-li-foreground);
-    --panel-li-background-foreground-pressed: var(--panel-li-foreground);
+    --panel-li-foreground-pressed: var(--panel-li-foreground);
     --panel-li-foreground-filter: none;
-    /* OL */
-    --panel-li-overlay: none;
-    --panel-li-overlay-repeat: repeat;
-    --panel-li-overlay-mix: normal;
-    --panel-li-overlay-animation: none;
 }
 
 :root:has(#spacetiles:checked) {
@@ -140,20 +137,23 @@
 }
 
 :root:has(#queertiles:checked) {
-    --bg-image: url("/theme/queer/QueerTilesIso.png");
-    --bg-html: #69b3cf;
-    --bg-image-size: 176px;
+    --bg-image: linear-gradient(to bottom right, #e15141ff 0% 17%, #fa9d33ff 17% 33%, #ffe70aff 33% 50%, #4bc02aff 50% 66%, #5147d1ff 66% 83%, #931dd3ff 83% 100%), radial-gradient(circle farthest-corner at 50% 50%, #edededff 0%, #474747ff 100%);
+    --bg-image-size: 100vw;
+    --bg-html: #ffffff;
+    --bg-blend: multiply;
 
-    --fg-color: linear-gradient(90deg,rgba(78, 176, 230, 1) 0%, rgba(78, 176, 230, 1) 20%, rgba(237, 128, 179, 1) 20%, rgba(237, 128, 179, 1) 40%, rgba(247, 240, 235, 1) 40%, rgba(247, 240, 235, 1) 50%, rgba(247, 240, 235, 1) 60%, rgba(237, 128, 179, 1) 60%, rgba(237, 128, 179, 1) 80%, rgba(78, 176, 230, 1) 80%, rgba(78, 176, 230, 1) 100%);
-    --fg-border-width: 0.5rem;
-    --fg-border-left-style: var(--fg-border-width) solid var(--secondary-below);
+    --fg-color: rgba(0, 0, 0, 0.285);
+    --fg-filter: blur(2px);
+    --fg-border-width: 2px;
+    --fg-border-left-style: var(--fg-border-width) solid #0d041280;
     --fg-border-right-style: var(--fg-border-left-style);
     --outline-style: none;
     --outline-offset: 0;
+    --hr-color: var(--text-color);
 
-    --primary-below: #ae5dc9;
-    --primary-main: #d275e0;
-    --primary-above: #eb9cf7;
+    --primary-below: #0d0412;
+    --primary-main: #1b0f30;
+    --primary-above: #221c4a;
 
     --secondary-below: #3b75cc;
     --secondary-main: #4eb0e6;
@@ -165,14 +165,16 @@
     --selection-link-text-color: var(--primary-above);
 
     --text-color: #e1faf7;
-    --text-shadow: 1px 1px 0.1rem rgb(4, 3, 23);
+    --text-shadow: 1px 1px 0.1rem rgb(4, 3, 23), -1px -1px 0.1rem rgb(4, 3, 23), 1px -1px 0.1rem rgb(4, 3, 23), -1px 1px 0.1rem rgb(4, 3, 23);
     --link-color: var(--secondary-main);
     --link-text-shadow: 1px 1px 0.1rem #0d3167;
 
-    --panel-background: repeating-linear-gradient(286deg, #de2c0dff 0%, #f28518ff 2%, #fcea45ff 3%, #42b61bff 5%, #0c7fe4ff 7%, #6b45deff 9%, #a810daff 11%, #de2c0dff 12%);
-    --panel-li-background: var(--secondary-below);
-    --panel-li-background-pressed: var(--secondary-below);
-    --panel-li-foreground: var(--fg-color);
+    --panel-background: rgba(0, 0, 0, 0.285);
+    --panel-li-background-pressed: linear-gradient(90deg, #63b7d6ff 0% 20%, #db93b5ff 20% 40%, #f7f0ebff 40% 60%, #db93b5ff 60% 80%, #63b7d6ff 80% 100%), radial-gradient(circle farthest-corner at 50% 50%, #00000000 0%, #dededeff 100%);
+    --panel-li-background: linear-gradient(90deg, #4885b8 0%, #4885b8 20%, #c2729e 20%, #c2729e 40%, #d9cad2 40%, #d9cad2 60%, #c2729e 60%, #c2729e 80%, #4885b8 80%, #4885b8 100%);
+    --panel-li-background-hover: var(--panel-li-background-pressed);
+    --panel-li-background-filter: drop-shadow(-0.02rem 0.02rem 0.05rem #1c3f7a) drop-shadow(0.02rem -0.02rem 0.05rem #1c3f7a);
+    --panel-li-foreground: #ffffff00; /* Intentionally 100% transparent */
 }
 
 :root:has(#frutigeraero:checked) {
@@ -210,7 +212,7 @@
     --panel-background: rgba(3, 20, 49, 0.228);
     --panel-li-foreground: linear-gradient(0deg,#33a8d6 0%, #2084ba 22%, #1661ab 46%, #1b72b2 52%, #33a8d6 74%, #4bc3f2 97%);
     --panel-li-foreground-hover: var(--panel-li-background-pressed);
-    --panel-li-background-foreground-pressed: var(--panel-li-background-pressed);
+    --panel-li-foreground-pressed: var(--panel-li-background-pressed);
     
     --panel-li-background: var(--panel-li-foreground);
     --panel-li-background-filter: drop-shadow(-0.02rem 0.02rem 0.05rem #094480) drop-shadow(0.02rem -0.02rem 0.05rem #094480);
@@ -244,6 +246,7 @@ html {
     background: var(--bg-html);
     background-image: var(--bg-image);
     background-size: var(--bg-image-size);
+    background-blend-mode:var(--bg-blend);
     background-repeat: repeat;
     background-attachment: fixed;
     image-rendering: pixelated;
@@ -265,6 +268,10 @@ body {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
     position: relative;
     left: max(min(15rem, 25vw), 7.5rem); /* Match width of aside */
     
@@ -292,6 +299,12 @@ main {
     transition: color 0.33s ease;
     transition: background-color 0.33s ease;
     transition: border 0.25s ease;
+}
+
+hr {
+    border-color: var(--hr-color, var(--secondary-main, white));
+    width: 100%;
+    border-radius: 1%;
 }
 
 ::selection {
@@ -488,6 +501,8 @@ aside {
         cursor: pointer;
 
         background: var(--panel-li-background);
+
+        background-blend-mode: multiply;
         filter: var(--panel-li-background-filter, none);
         border-radius: 0.5rem;
     }
@@ -532,7 +547,7 @@ aside {
 
     .panel-li:has(input:checked) .panel-li-foreground {
         margin-right: 0.6rem;
-        background: var(--panel-li-background-foreground-pressed);
+        background: var(--panel-li-foreground-pressed);
     }
 
     .panel-li .panel-li-img-container {
