@@ -511,7 +511,7 @@ aside {
         background: var(--panel-li-background-pressed);
     }    
 
-    .panel-li .panel-li-background {
+    .panel-li .panel-li-foreground {
         grid-area: 1 / 1 / 2 / 2;
 
         height: 2.25rem;
@@ -525,12 +525,12 @@ aside {
         transition: margin 0.5s ease;
     }
 
-    .panel-li:hover .panel-li-background {
+    .panel-li:hover .panel-li-foreground {
         margin-right: 0.6rem;
         background: var(--panel-li-foreground-hover);
     }
 
-    .panel-li:has(input:checked) .panel-li-background {
+    .panel-li:has(input:checked) .panel-li-foreground {
         margin-right: 0.6rem;
         background: var(--panel-li-background-foreground-pressed);
     }
