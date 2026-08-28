@@ -25,6 +25,7 @@
     --text-shadow: 1px 1px 2px var(--secondary-below);
     --link-color: var(--secondary-above);
     --link-text-shadow: 1px 1px 2px var(--text-shadow);
+    --panel-li-text-shadow: var(--text-shadow);
 
     --panel-background: #453651;
     /* BG */
@@ -32,6 +33,7 @@
     --panel-li-background-hover: var(--panel-li-background);
     --panel-li-background-pressed: var(--secondary-below);
     --panel-li-background-filter: none;
+    --panel-li-background-blend: normal;
     /* FG */
     --panel-li-foreground: var(--primary-main);
     --panel-li-foreground-hover: var(--panel-li-foreground);
@@ -145,11 +147,11 @@
     --fg-color: rgba(0, 0, 0, 0.285);
     --fg-filter: blur(2px);
     --fg-border-width: 2px;
-    --fg-border-left-style: var(--fg-border-width) solid #0d041280;
+    --fg-border-left-style: var(--fg-border-width) solid #0d041280;  /*--primary-below with translucency*/
     --fg-border-right-style: var(--fg-border-left-style);
     --outline-style: none;
     --outline-offset: 0;
-    --hr-color: var(--text-color);
+    --hr-color: #e1faf7a3; /*--text-color with translucency*/
 
     --primary-below: #0d0412;
     --primary-main: #1b0f30;
@@ -170,10 +172,11 @@
     --link-text-shadow: 1px 1px 0.1rem #0d3167;
 
     --panel-background: rgba(0, 0, 0, 0.285);
-    --panel-li-background-pressed: linear-gradient(90deg, #63b7d6ff 0% 20%, #db93b5ff 20% 40%, #f7f0ebff 40% 60%, #db93b5ff 60% 80%, #63b7d6ff 80% 100%), radial-gradient(circle farthest-corner at 50% 50%, #00000000 0%, #dededeff 100%);
-    --panel-li-background: linear-gradient(90deg, #4885b8 0%, #4885b8 20%, #c2729e 20%, #c2729e 40%, #d9cad2 40%, #d9cad2 60%, #c2729e 60%, #c2729e 80%, #4885b8 80%, #4885b8 100%);
+    --panel-li-background: linear-gradient(90deg, #63b7d6ff 0% 20%, #db93b5ff 20% 40%, #f7f0ebff 40% 60%, #db93b5ff 60% 80%, #63b7d6ff 80% 100%), radial-gradient(circle farthest-corner at 50% 50%, #00000000 0%, #dededeff 100%);
+    --panel-li-background-pressed: linear-gradient(90deg, #63b7d6ff 0% 20%, #db93b5ff 20% 40%, #f7f0ebff 40% 60%, #db93b5ff 60% 80%, #63b7d6ff 80% 100%), radial-gradient(circle farthest-corner at 50% 50%, #00000000 0%, #91909dff 100%);
     --panel-li-background-hover: var(--panel-li-background-pressed);
     --panel-li-background-filter: drop-shadow(-0.02rem 0.02rem 0.05rem #1c3f7a) drop-shadow(0.02rem -0.02rem 0.05rem #1c3f7a);
+    --panel-li-background-blend: multiply;
     --panel-li-foreground: #ffffff00; /* Intentionally 100% transparent */
 }
 
@@ -487,7 +490,7 @@ aside {
         box-sizing: border-box;
         text-decoration: none;
         color: var(--text-color);
-
+        text-shadow: var(--panel-li-text-shadow);
 
         display: grid;
         grid-template-columns: 1fr;
@@ -502,7 +505,7 @@ aside {
 
         background: var(--panel-li-background);
 
-        background-blend-mode: multiply;
+        background-blend-mode: var(--panel-li-background-blend, normal);
         filter: var(--panel-li-background-filter, none);
         border-radius: 0.5rem;
     }
