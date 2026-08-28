@@ -63,7 +63,7 @@
     --fg-border-right-style: var(--fg-border-left-style);
     --outline-style: none;
     --outline-offset: 0;
-    --hr-color: var(--primary-below);
+    --hr-color: #e1faf7aa;
 
     --primary-below: #6960a3;
     --primary-main: #847ebd;
@@ -169,7 +169,7 @@
     --text-color: #e1faf7;
     --text-shadow: 1px 1px 0.1rem rgb(4, 3, 23), -1px -1px 0.1rem rgb(4, 3, 23), 1px -1px 0.1rem rgb(4, 3, 23), -1px 1px 0.1rem rgb(4, 3, 23);
     --link-color: var(--secondary-main);
-    --link-text-shadow: 1px 1px 0.1rem #0d3167;
+    --link-text-shadow: var(--text-shadow);
 
     --panel-background: rgba(0, 0, 0, 0.285);
     --panel-li-background: linear-gradient(90deg, #63b7d6ff 0% 20%, #db93b5ff 20% 40%, #f7f0ebff 40% 60%, #db93b5ff 60% 80%, #63b7d6ff 80% 100%), radial-gradient(circle farthest-corner at 50% 50%, #00000000 0%, #dededeff 100%);
@@ -187,11 +187,12 @@
 
     --fg-color: rgba(3, 20, 49, 0.228);
     --fg-filter: blur(2px);
-    --fg-border-width: 0.2rem;
-    --fg-border-left-style: var(--fg-border-width) solid var(--secondary-below);
+    --fg-border-width: 2px;
+    --fg-border-left-style: var(--fg-border-width) solid #1661ab73;
     --fg-border-right-style: var(--fg-border-left-style);
     --outline-style: none;
     --outline-offset: 0;
+    --hr-color: #d6f7ff;
 
     --primary-below: #040b39;
     --primary-main: #11195e;
@@ -202,9 +203,9 @@
     --secondary-above: #33a8d6;
 
     --text-color: #d6f7ff;
-    --text-shadow: 1px 1px 0.1rem var(--primary-below);
-    --link-color: var(--primary-main);
-    --link-text-shadow: 1px 1px 0.1rem var(--secondary-below);
+    --text-shadow: -1px 1px 0.1rem var(--primary-below);
+    --link-color: var(--secondary-above);
+    --link-text-shadow: -1px 1px 0.1rem var(--primary-below);
 
     --selection-bg-color: var(--secondary-main);
     --selection-text-color: var(--text-color);
