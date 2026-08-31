@@ -23,20 +23,21 @@
      inkscape:pagecheckerboard="1"
      inkscape:deskcolor="#505050"
      inkscape:zoom="11.313709"
-     inkscape:cx="3.314563"
-     inkscape:cy="13.037281"
+     inkscape:cx="13.567611"
+     inkscape:cy="23.378717"
      inkscape:window-width="1920"
      inkscape:window-height="1008"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer6" />
+     inkscape:current-layer="layer2" />
   <g
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="back-pixels"
      inkscape:highlight-color="#840729"
-     style="display:inline">
+     style="display:inline"
+     transform="matrix(-1,0,0,1,33,0)">
     <rect
        style="fill:#cf406b;fill-opacity:1;stroke-width:0.5;stroke-linecap:square;paint-order:markers fill stroke"
        id="rect53"
@@ -284,7 +285,8 @@
      id="layer1"
      inkscape:label="face-pixels"
      style="display:inline"
-     sodipodi:insensitive="true">
+     sodipodi:insensitive="true"
+     transform="matrix(-1,0,0,1,33,0)">
     <rect
        style="fill:#e0a08b;fill-opacity:1;stroke:none;stroke-linecap:square;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
        x="15"
