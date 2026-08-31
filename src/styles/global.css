@@ -15,6 +15,31 @@ body {
     image-rendering: smooth !important;
 }
 
+.center-text {
+    text-align: center;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    width: clamp(10%, 11in, 100%);
+    margin: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0.2rem;
+}
+
+p, small {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    margin-left: 0.4rem;
+    margin-right: 0.4rem;
+}
+
+
 /* ============= *
  *  DejaVu Sans  *
  * ============= */
