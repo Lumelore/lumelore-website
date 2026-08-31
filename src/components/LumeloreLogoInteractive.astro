@@ -1,0 +1,87 @@
+---
+interface Props {
+    size?: number | undefined;
+}
+
+/* size = width and height multiplier */
+const { size=1 } = Astro.props;
+---
+<style>
+    .lumelore-logo-interactive {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+
+        image-rendering: pixelated !important;
+    }
+
+    .animated-body:hover .animated-main {
+        animation-name: rotate-logo-start, rotate-logo;
+        animation-duration: 1s, 2s;
+        animation-iteration-count: 1, infinite;
+        animation-timing-function: ease-in-out, ease-in-out;
+        animation-delay: 0s, 1s;
+        animation-direction: normal, alternate;
+    }
+
+    .lumelore-logo-interactive .preload-face {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    .lumelore-logo-interactive .lumelore-logo-face {
+        background-image: url("/faces/pixel-dragon.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        cursor: pointer;
+    }
+
+    .lumelore-logo-interactive .lumelore-logo-face:hover {
+        background-image: url("/faces/pixel-dragon-blink.png");
+    }
+
+    @keyframes rotate-logo {
+        0% {
+            transform: rotate(4deg);
+        }
+
+        100% {
+            transform: rotate(-4deg);
+        }    
+    }
+
+    @keyframes rotate-logo-start {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(4deg);
+        }    
+    }
+</style>
+
+<div class="lumelore-logo-interactive">
+    <div class="animated-body">
+        <div
+            class="animated-main"
+            style="
+                width:fit-content;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+                justify-content: center;
+            ">
+            <!-- Displayed with background-img, this img includes a src of a single transparent pixel to remove the weird border it puts around blank imgs -->
+            <img class="lumelore-logo-face" width={32 * size} height={32 * size} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAAXNSR0IArs4c6QAAAANQTFRFAAAAp3o92gAAAAF0Uk5TAEDm2GYAAAAKSURBVAiZY2AAAAACAAH0cWSmAAAAAElFTkSuQmCC" />
+            <img class="preload-face" src="/faces/pixel-dragon.png" width="0" height="0" />
+            <img class="preload-face" src="/faces/pixel-dragon-blink.png" width="0" height="0" />
+
+            <img class="lumelore-logo-name" src="/faces/lumelore-name.png" width={64 * size} height={16 * size} />
+        </div>
+    </div>
+</div>
