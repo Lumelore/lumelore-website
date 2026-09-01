@@ -77,11 +77,19 @@ const { size=1 } = Astro.props;
                 justify-content: center;
             ">
             <!-- Displayed with background-img, this img includes a src of a single transparent pixel to remove the weird border it puts around blank imgs -->
-            <img class="lumelore-logo-face" width={32 * size} height={32 * size} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAAXNSR0IArs4c6QAAAANQTFRFAAAAp3o92gAAAAF0Uk5TAEDm2GYAAAAKSURBVAiZY2AAAAACAAH0cWSmAAAAAElFTkSuQmCC" />
+            <img class="lumelore-logo-face" onclick="playLumelore()" width={32 * size} height={32 * size} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAMAAAAoyzS7AAAAAXNSR0IArs4c6QAAAANQTFRFAAAAp3o92gAAAAF0Uk5TAEDm2GYAAAAKSURBVAiZY2AAAAACAAH0cWSmAAAAAElFTkSuQmCC" />
             <img class="preload-face" src="/faces/pixel-dragon.png" width="0" height="0" />
             <img class="preload-face" src="/faces/pixel-dragon-blink.png" width="0" height="0" />
 
             <img class="lumelore-logo-name" src="/faces/lumelore-name.png" width={64 * size} height={16 * size} />
+            <audio id="lumelore-voice" src="/audio/lumelore-bitcrush.mp3" />
+
+            <script is:inline>
+                function playLumelore() {
+                    var lumeloreAudio = document.getElementById("lumelore-voice");
+                    lumeloreAudio.play();
+                }
+            </script>
         </div>
     </div>
 </div>
