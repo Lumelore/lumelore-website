@@ -73,7 +73,7 @@
     --secondary-main: #c977a4;
     --secondary-above: #e596bb;
     
-    --text-color: #e1faf7;
+    --text-color: #f2f1f3;
     --text-shadow: 1px 1px 2px var(--secondary-below);
     --link-color: var(--secondary-above);
     --link-text-shadow: var(--text-shadow);
@@ -166,7 +166,7 @@
     --selection-text-shadow: 1px 1px 2px var(--primary-below);
     --selection-link-text-color: var(--primary-above);
 
-    --text-color: #e1faf7;
+    --text-color: #f4f5f3;
     --text-shadow: 1px 1px 0.1rem rgb(4, 3, 23), -1px -1px 0.1rem rgb(4, 3, 23), 1px -1px 0.1rem rgb(4, 3, 23), -1px 1px 0.1rem rgb(4, 3, 23);
     --link-color: var(--secondary-main);
     --link-text-shadow: var(--text-shadow);
@@ -230,7 +230,7 @@
 }
 
 #use-dyslexic {
-    font-family: 'OpenDyslexic', sytem-ui !important;
+    font-family: 'OpenDyslexic', system-ui !important;
     line-height: 1.4 !important;
 }
 
