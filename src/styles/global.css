@@ -42,6 +42,11 @@ p, small {
     margin-bottom: 1rem;
     margin-left: 0.4rem;
     margin-right: 0.4rem;
+    line-height: 1.4rem;
+}
+
+:root:has(#dyslexicfont:checked) p, :root:has(#dyslexicfont:checked) small {
+    line-height: 1.75rem;
 }
 
 section {
