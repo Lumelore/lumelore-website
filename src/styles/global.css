@@ -28,15 +28,24 @@ body {
     margin: auto;
 }
 
+hr {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
 h1, h2, h3, h4, h5, h6 {
     margin: 0.2rem;
 }
 
 p, small {
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     margin-left: 0.4rem;
     margin-right: 0.4rem;
+}
+
+section {
+    padding-bottom: 1rem;
 }
 
 
