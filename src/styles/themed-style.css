@@ -12,6 +12,7 @@
     --fg-border-left-style: var(--fg-border-width) solid #775f94;
     --fg-border-right-style: var(--fg-border-left-style);
     --outline-offset: 0px;
+    --hr-color: var(--secondary-main);
 
     --primary-below: #6960a3;
     --primary-main: #847ebd;
@@ -293,10 +294,10 @@ main {
 
     /*  
         For some reason unbeknownst to me (and maybe even the gods),
-        adding a teensy top padding fixes this from not positioning 
-        itself at the very top 
+        adding at least 1px top padding fixes this from not positioning 
+        itself at the very top. 
     */
-    padding: 1px 2rem 0 2rem; 
+    padding: 1.5rem 2rem 0 2rem; 
     outline: var(--outline-style);
     outline-offset: var(--outline-offset);
     
