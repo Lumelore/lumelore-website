@@ -1,8 +1,86 @@
 ---
 import '../styles/single-page/88x31.css';
 import ThemedLayout from '../layouts/ThemedLayout.astro';
+import BiSplitView from '../components/BiSplitView.astro';
+import Button88x31 from '../components/Button88x31.astro';
 ---
 
+<style>
+    .pxbtn-list {
+        display: grid; 
+        grid-template-columns: repeat(auto-fill, 176px); /* 2nd param should be width pxbtn */
+        gap: 3px;
+        justify-content: space-evenly; 
+    }
+</style>
+
 <ThemedLayout title="88x31">
+    <section>
+		<h2>88x31 Buttons</h2>
+		<hr/>
+        <BiSplitView>
+            <div slot="left">[Lumelore's button is a WIP. Will be added later. It's 1:30 AM and I'm much to tired to work on it right now...]</div>
+            <div slot="right">88x31 buttons are small graphics originating from the early web used to link to other indie websites or make a statement. They get their name from being 88 by 31 pixels large. These buttons are meant to be shared, so please feel free to add my button to your indie website if you'd like!</div>
+        </BiSplitView>
+	</section>
+
+    <section>
+		<h2>Cool Buttons</h2>
+		<hr/>
+        <div class="pxbtn-list">
+            <Button88x31 src="/88x31/trans.png"/>
+            <Button88x31 src="/88x31/pan.png"/>
+            <Button88x31 src="/88x31/minnesota.png"/>
+            <Button88x31 src="/88x31/e2v2-88x31.gif"/>
+            <Button88x31 src="/88x31/trans-rights-now.png" link="https://transequality.org/"/>
+            <Button88x31 src="/88x31/internet-privacy.gif" link="https://www.eff.org/"/>
+            <Button88x31 src="/88x31/librewolf-now.png" link="https://librewolf.net/"/>
+            <Button88x31 src="/88x31/nofuckingthanks.gif"/>
+            <Button88x31 src="/88x31/femboy-son.png"/>
+            <Button88x31 src="/88x31/steam.gif"/>
+            <Button88x31 src="/88x31/i-am-good-with-computer.png"/>
+            <Button88x31 src="/88x31/trans-your-gender.gif"/>
+            
+        </div>
+	</section>
+
+    <section>
+		<h2>Cool Websites</h2>
+		<hr/>
+        <p>Alphabetical assortment of indie sites that I think are super cool!</p>
+        <div class="pxbtn-list">
+            <Button88x31 src="/88x31/theabsoluterealm.com.gif" link="https://theabsoluterealm.com"/>
+            <Button88x31 src="/88x31/antikrist.lol.png" link="https://antikrist.lol"/>
+            <Button88x31 src="/88x31/breadcat.run.gif" link="https://breadcat.run"/>
+            <Button88x31 src="/88x31/crouton.net.png" link="https://crouton.net"/>
+            <Button88x31 src="/88x31/dog-house.neocities.org.gif" link="https://dog-house.neocities.org"/>
+            <Button88x31 src="/88x31/dollzrevival.neocities.org.gif" link="https://dollzrevival.neocities.org"/>
+            <Button88x31 src="/88x31/estrogenandspite.neocities.org.png" link="https://estrogenandspite.neocities.org"/>
+            <Button88x31 src="/88x31/freakphone.net.gif" link="https://freakphone.net"/>
+            <Button88x31 src="/88x31/freaksaint.neocities.org.png" link="https://freaksaint.neocities.org"/>
+            <Button88x31 src="/88x31/frutigeraeroarchive.org.png" link="https://frutigeraeroarchive.org"/>
+            <Button88x31 src="/88x31/99gifshop.neocities.org.png" link="https://99gifshop.neocities.org"/>
+            <Button88x31 src="/88x31/girlcreature.neocities.org.gif" link="https://girlcreature.neocities.org"/>
+            <Button88x31 src="/88x31/hog.neocities.org.gif" link="https://hog.neocities.org"/>
+            <Button88x31 src="/88x31/humanfinny.neocities.org.png" link="https://humanfinny.neocities.org"/>
+            <Button88x31 src="/88x31/ita.toys.gif" link="https://ita.toys"/>
+            <Button88x31 src="/88x31/lint.neocities.org.png" link="https://lint.neocities.org"/>
+            <Button88x31 src="/88x31/lyra.horse.png" link="https://lyra.horse"/>
+            <Button88x31 src="/88x31/melonking.net.png" link="https://melonking.net"/>
+            <Button88x31 src="/88x31/mesoscale.neocities.org.gif" link="https://mesoscale.neocities.org"/>
+            <Button88x31 src="/88x31/mooeena.neocities.org.png" link="https://mooeena.neocities.org"/>
+            <Button88x31 src="/88x31/ninacti0n.art.gif" link="https://ninacti0n.art"/>
+            <Button88x31 src="/88x31/pupbeedog.world.png" link="https://pupbeedog.world"/>
+            <Button88x31 src="/88x31/ribboncable.net.gif" link="https://ribboncable.net"/>
+            <Button88x31 src="/88x31/saltedslug.net.png" link="https://saltedslug.net"/>
+            <Button88x31 src="/88x31/solaria.neocities.org.png" link="https://solaria.neocities.org"/>
+            <Button88x31 src="/88x31/spiritcellar.neocities.org.gif" link="https://spiritcellar.neocities.org"/>
+            <Button88x31 src="/88x31/starrs.neocities.org.gif" link="https://starrs.neocities.org"/>
+            <Button88x31 src="/88x31/starry-knight.neocities.org.png" link="https://starry-knight.neocities.org"/>
+            <Button88x31 src="/88x31/sweetfish.site.png" link="https://sweetfish.site"/>
+            <Button88x31 src="/88x31/warp.zone.gif" link="https://warp.zone"/>
+        </div>
+        
+	</section>
 
 </ThemedLayout>
