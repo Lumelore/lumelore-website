@@ -1,0 +1,37 @@
+---
+import '../styles/themed-style.css';
+
+interface Props {
+    rule?: boolean | undefined;
+}
+
+/* size = width and height multiplier */
+const { rule=true } = Astro.props;
+---
+
+<div 
+    style="
+        display:flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    "
+>
+    <div style="box-sizing: border-box; flex-basis: 50%; flex-shrink: 0; flex-grow: 0; padding: 0.5rem 1rem 0.5rem 1rem">
+        <slot name="left" />
+    </div>
+
+    {rule && <hr style="border-radius: 10%;"/>}
+
+    <div style="box-sizing: border-box; flex-basis: 50%; flex-shrink: 0; flex-grow: 0; padding: 0.5rem 1rem 0.5rem 1rem">
+        <slot name="right" />
+    </div>
+</div>
+
+{/*
+    To use this component, put slot="left" or "right" on the HTML like so:
+
+    <BiSplitView>
+        <p slot="left">My left side</p>
+        <p slot="right">My right side</p>
+    </BiSplitView>
+*/}

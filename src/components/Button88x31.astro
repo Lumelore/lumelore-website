@@ -1,0 +1,40 @@
+---
+interface Props {
+    size?: number | undefined;
+    src: string;
+    link?: string | undefined;
+    smooth?: boolean | undefined;
+}
+
+/* size = width and height multiplier */
+const { size=2, src, link, smooth=false } = Astro.props;
+---
+
+{
+    link ?
+        <a href={link} rel="noopener noreferrer" target="_blank">
+            <img 
+                class="pxbtn-img"
+                src={src}
+                width={88 * size} 
+                height={31 * size} 
+                style={
+                    (smooth ? "image-rendering: optimizeQuality;" 
+                            : "image-rendering: pixelated;"
+                    )
+                }
+            />
+        </a>
+    :
+        <img 
+            class="pxbtn-img"
+            src={src}
+            width={88 * size} 
+            height={31 * size} 
+            style={
+                (smooth ? "image-rendering: optimizeQuality;" 
+                        : "image-rendering: pixelated;"
+                )
+            }
+        />
+}
