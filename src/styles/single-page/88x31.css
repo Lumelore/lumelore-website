@@ -4,7 +4,7 @@
     background: var(--panel-li-background-pressed);
 }
 
-#pxbtn .panel-li-background {
+#pxbtn .panel-li-foreground {
     margin-right: 0.6rem;
-    background: var(--panel-li-background-foreground-pressed);
+    background: var(--panel-li-foreground-pressed);
 }

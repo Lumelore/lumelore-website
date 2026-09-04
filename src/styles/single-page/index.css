@@ -4,7 +4,10 @@
     background: var(--panel-li-background-pressed);
 }
 
-#index .panel-li-background {
+#index .panel-li-foreground {
     margin-right: 0.6rem;
-    background: var(--panel-li-background-foreground-pressed);
+    background: var(--panel-li-foreground-pressed);
 }
+
+/*Special padding for index top because it looks better*/
+main {padding-top: 1px !important;}
