@@ -1,5 +1,5 @@
 :root {
-    --bg-html: #453651;
+    --bg-html: #5b4a75;
     --bg-image-size: 176px;
     --bg-blend: normal;
 
@@ -30,9 +30,9 @@
 
     --panel-background: #453651;
     /* BG */
-    --panel-li-background: var(--secondary-main);
+    --panel-li-background: var(--primary-below);
     --panel-li-background-hover: var(--panel-li-background);
-    --panel-li-background-pressed: var(--secondary-below);
+    --panel-li-background-pressed: var(--primary-below);
     --panel-li-background-filter: none;
     --panel-li-background-blend: normal;
     /* FG */
@@ -132,7 +132,12 @@
     --panel-li-background: var(--secondary-main);
     --panel-li-background-pressed: var(--secondary-below);
     --panel-li-background-filter: drop-shadow(-0.08rem 0.08rem 0.15rem rgb(234, 15, 70)) drop-shadow(0.08rem -0.08rem 0.15rem rgb(15, 38, 241));
+
     --panel-li-foreground: var(--primary-main);
+    --panel-li-foreground-hover: var(--panel-li-foreground);
+    --panel-li-foreground-pressed: var(--panel-li-foreground);
+    --panel-li-foreground-filter: none;
+
     --panel-li-overlay: url(/theme/space/SpaceLines.png);
     --panel-li-overlay-repeat: repeat;
     --panel-li-overlay-mix: hard-light;
