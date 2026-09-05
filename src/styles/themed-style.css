@@ -12,6 +12,7 @@
     --fg-border-left-style: var(--fg-border-width) solid #775f94;
     --fg-border-right-style: var(--fg-border-left-style);
     --outline-offset: 0px;
+    --hr-color: var(--secondary-main);
 
     --primary-below: #6960a3;
     --primary-main: #847ebd;
@@ -296,6 +297,8 @@ main {
     backdrop-filter: var(--fg-filter);
     border-left: var(--fg-border-left-style);
     border-right: var(--fg-border-right-style);
+
+    overflow-x: hidden;
 
     /*  
         For some reason unbeknownst to me (and maybe even the gods),
