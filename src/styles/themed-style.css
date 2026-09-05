@@ -12,7 +12,6 @@
     --fg-border-left-style: var(--fg-border-width) solid #775f94;
     --fg-border-right-style: var(--fg-border-left-style);
     --outline-offset: 0px;
-    --hr-color: var(--secondary-main);
 
     --primary-below: #6960a3;
     --primary-main: #847ebd;
@@ -111,6 +110,7 @@
     --fg-border-right-style: var(--fg-border-left-style);
     --outline-style: solid 2.5px var(--secondary-above);
     --outline-offset: 1px;
+    --hr-color: var(--secondary-main);
 
     --primary-below: #208ba8;
     --primary-main: #44bdbd;
