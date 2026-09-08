@@ -16,8 +16,15 @@ const setTheme = function () {
     colorThemes.forEach((themeOption) => {
         if (themeOption.id === theme) {
             themeOption.checked = true;
+            return; 
         }
     });
+
+    // Set theme if none selected (nothing checked by default in html cause weird desktop firefox bug)
+    if (localStorage.getItem("theme") === null) {
+        (document.querySelector('[id="violet"]') as HTMLInputElement).checked = true;
+    }
+    
 }
 
 // Add click event for each radio button

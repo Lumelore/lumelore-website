@@ -62,7 +62,9 @@ const { title, desc="Lumelore's game dev and indie web spot!" } = Astro.props;
 							</div>
 							<div class="panel-li-name">Violet</div>
 							<div class="panel-li-overlay" />
-							<input type="radio" name="theme-option" id="violet" >
+							<!-- Required to get around desktop firefox bug while still working with JS blockers -->
+							<noscript><input type="radio" name="theme-option" id="violet" checked></noscript>
+							<input type="radio" name="theme-option" id="violet">
 						</label>
 
 						<label for="spacetiles" class="panel-li">
