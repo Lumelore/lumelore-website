@@ -9,13 +9,15 @@ interface Props {
 const { pfp, author, published, edited=null } = Astro.props;
 
 const formattedPublished: string = published.toLocaleDateString('en-us', 
-                                    { month: 'long',
+                                    { timeZone: 'America/Chicago',
+                                      month: 'long',
                                       day: 'numeric',
                                       year: 'numeric'  
                                     });
 
 const formattedEdited: string | undefined = edited?.toLocaleDateString('en-us', 
-                                    { month: 'long',
+                                    { timeZone: 'America/Chicago',
+                                      month: 'long',
                                       day: 'numeric',
                                       year: 'numeric'  
                                     });
