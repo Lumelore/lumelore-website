@@ -329,8 +329,13 @@ hr {
 a {
     color: var(--link-color);
     text-shadow: var(--link-text-shadow);
+    text-decoration: none;
 
     transition: color 0.33s ease;
+}
+
+a:hover {
+    text-decoration:dotted underline;
 }
 
 a::selection {
