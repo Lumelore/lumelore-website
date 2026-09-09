@@ -344,6 +344,14 @@ a::selection {
     text-shadow: var(--selection-link-text-shadow, var(--selection-text-shadow, var(--text-shadow)));
 }
 
+code {
+    background: var(--primary-below);
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+}
+
 aside {
     position: fixed;
     z-index: 1;
