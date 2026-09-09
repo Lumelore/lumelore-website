@@ -1,0 +1,15 @@
+---
+import ThemedLayout from "./ThemedLayout.astro";
+import "../styles/single-page/blog.css";
+
+interface Props {
+    title: string;
+	desc?: string;
+}
+
+const { title, desc="Lumelore's indie game dev blog, ramblings, and strange noises!" } = Astro.props;
+---
+
+<ThemedLayout title={title + " | Lumelore's Blog"} desc={desc}>
+    <slot />
+</ThemedLayout>
