@@ -1,0 +1,63 @@
+---
+interface Props {
+    pfp: string;
+    author: string;
+    published: Date;
+    edited?: Date | null;
+}
+
+const { pfp, author, published, edited=null } = Astro.props;
+
+const formattedPublished: string = published.toLocaleDateString('en-us', 
+                                    { month: 'long',
+                                      day: 'numeric',
+                                      year: 'numeric'  
+                                    });
+
+const formattedEdited: string | undefined = edited?.toLocaleDateString('en-us', 
+                                    { month: 'long',
+                                      day: 'numeric',
+                                      year: 'numeric'  
+                                    });
+---
+
+<style>
+
+    .author-tag {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .author-tag img {
+        width: 64px;
+        height: 64px;
+    }
+
+    .name-publish-date {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+
+    .edit-date {
+        font-size: small;
+    }
+
+
+</style>
+
+<div class="author-tag">
+    <!-- Author Picture -->
+    <div>
+        <img src={pfp} alt="author" />
+    </div>
+
+    <div class="name-publish-date">
+        <span class="author-name">Written by <b>{author}</b></span>
+        <span class="publish-date">{formattedPublished} {edited && <span class="edit-date">{"(Last edited " + formattedEdited + ")"}</span>}</span>
+        
+    </div>
+
+</div>

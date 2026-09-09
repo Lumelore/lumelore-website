@@ -1,0 +1,13 @@
+---
+import AuthorTag from "./AuthorTag.astro";
+
+interface Props {
+    published: Date;
+    edited?: Date | null;
+}
+
+const { published, edited=null } = Astro.props;
+
+---
+
+<AuthorTag pfp="/faces/pixel-dragon.png" author="Lumelore" published={published} edited={edited} />
