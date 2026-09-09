@@ -1,0 +1,32 @@
+---
+import LumeloreAuthorTag from '../../../../components/LumeloreAuthorTag.astro';
+import ThemedBlogLayout from '../../../../layouts/ThemedBlogLayout.astro';
+---
+
+<ThemedBlogLayout title="Dev Log">
+    <h1>Development Log</h1>
+	<LumeloreAuthorTag published={new Date("2026-09-08T22:43:00-05:00")}/>
+    <section>
+
+		<h2>Desktop Firefox Stale Styling Bug</h2>
+		<hr/>
+		<small>September 4th, 2026</small>
+		<p>While testing something else, I noticed after going back to my homepage that my CSS was not getting applied correctly. It was getting applied, but Firefox just wasn't using the correct selector. If I refreshed or disabled the cache, the styling would work fine. Perplexingly, this was only happening with my default theme (the violet theme).</p>
+
+		<p>I implement my themes with CSS to maximize functionality when using a JS blocker. All my default non-specific theme styling variables are under <code>:root</code> and then every theme has it's own specific selector such as <code>:root:has(#violet:checked)</code> for my violet theme. I quickly figured out that it was applying just <code>:root</code> and not the more specific selector, even though that should have been applied. Figuring out why it was doing this was a bit trickier.</p>
+
+		<p>Over about an hour or two, I tested a multitude various ideas trying to figure out why it was misbehaving. Eventually I booted up my old laptop to test Chrome and discovered this bug was only happening on desktop Firefox. This was a pretty significant discovery, since it meant that my code was fine and the bug was actually in Firefox itself. After a little more testing, I remembered that only the violet theme wasn't working, and the main thing it doesn't have in common with the others is that the violet theme is <code>checked</code> by default. So I unchecked it and pushed the change to test in prod, and lo and behold, it worked!</p>
+
+		<p>Now all that's left is to implement an actual proper solution. Since I want my site to work with JS blockers, and I don't want to do something terribly complex, I have to get a bit creative. Ultimately, I ended up adding two <code style="display: inline-block;">&lt;input &#47;&gt;</code> elements, with one being <code>checked</code> by default and wrapped in a <code style="display: inline-block;">&lt;noscript&gt;</code> element. This allows the violet theme to be selected by default for those using JS blockers, however it also means they have an extra <code style="display: inline-block;">&lt;input &#47;&gt;</code> element for the violet theme. I found through some testing that this really doesn't do anything but add an extra radio button that also selects the violet theme, which users can't see anyways since I hide those with CSS. For those with JS enabled, they only get one <code style="display: inline-block;">&lt;input &#47;&gt;</code> element that is unchecked, so all I have to do is check it with JS if the user doesn't already have a saved theme preference.  </p>
+		<p>Et voilà! Now my themes get their CSS properly applied even with the Firefox bug.</p>
+	</section>
+
+	<section>
+		<h2>Crusty Pixels</h2>
+		<hr/>
+		<small>July 22nd, 2026</small>
+		<p>After checking out how the website looks on my old laptop, I noticed my pixel art icons look crusty even though they look fine on my desktop. This is because scaling by non-integer values results in fractional pixels, which don't exist, and that causes some of the pixels in the image to become rectangular instead of square like they should be.</p>
+
+		<p>Unfortunately, I can't do anything on my side to fix this. The web really wasn't built for pixel art rendering, and other people have already pointed this out, for example, in this <a href="https://github.com/w3c/csswg-drafts/issues/5967" rel="noopener noreferrer" target="_blank">GitHub issue thread</a> for the CSS Working Group. However, as far as I'm aware, nothing yet has actually been implemented that fixes this. Once I am able to fix it on my end, I will, but for the time being, you can try adjusting the zoom level of your browser until the icons look normal. The other thing that can cause this is your monitor's zoom level, but that's less convenient to change, especially to just look at a website.</p>
+	</section>
+</ThemedBlogLayout>
