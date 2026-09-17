@@ -1,0 +1,68 @@
+---
+import ThemedSurface from './ThemedSurface.astro';
+
+interface Props {
+    thumb: string;
+    modName: string;
+    ver: string;
+    desc: string;
+}
+
+const {thumb, modName, ver, desc} = Astro.props;
+---
+
+<style>
+    .mod-listing {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        padding: 0.75rem;
+        border-radius: 1.75rem;
+    }
+
+    .mod-listing:hover {
+        cursor: pointer;
+    }
+
+    .mod-listing-thumb {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 1rem;
+        user-select: none;
+    }
+
+    .mod-name-desc-ver {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem 0.5rem 1rem;
+    }
+
+    .mod-name-desc-ver .mod-name {
+        font-size: larger;
+        font-weight: bold;
+    }
+
+    .no-link-style {
+        color: inherit;
+        text-shadow: inherit;
+        text-decoration: inherit;
+    }
+
+</style>
+
+<ThemedSurface>
+    <a class="mod-listing no-link-style" href="/mods/mc-gaht-mod">
+        
+        <img class="mod-listing-thumb" src={thumb} />
+
+        <!--Name and description-->
+        <div class="mod-name-desc-ver">
+            <div class="mod-name">{modName}</div>
+            <div class="mod-ver">Latest: {ver}</div> <!-- Maybe put a thing here like current ver and x older versions -->
+            <div class="mod-desc">{desc}</div>
+        </div>
+    </a>
+</ThemedSurface>
