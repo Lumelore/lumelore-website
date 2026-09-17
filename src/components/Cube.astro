@@ -1,0 +1,23 @@
+---
+interface Props {
+    size: Number;
+}
+
+const { size } = Astro.props;
+---
+
+<!-- This is what happens when you get bored and decide to make < < CUBE > > instead -->
+
+<div style="width: 14.5rem; scale: 1">
+    <div style="position: relative; width: 14.5rem; height: 14.5rem;">    
+        <!--Top Face -->
+        <div style="position: absolute; width: 7.26rem; height: 7.26rem; background: var(--secondary-above); transform: matrix(0.86525588,-0.50133049,0.86525588,0.50133049,0,0); translate: 3.63rem -0.01rem; z-index: 3" />
+        <!--Left Face -->
+        <div style="position: absolute; width: 7.26rem; height: 7.16rem; background: var(--secondary-main); transform: matrix(0.86525588,0.5013305,0,1,0,0); translate: 0.5rem 5.44rem; z-index: 3" />
+        <!--Right Face -->
+        <div style="position: absolute; width: 7.26rem; height: 7.16rem; background: var(--secondary-below); transform: matrix(-0.86525588,0.5013305,0,1,0,0); translate: 6.78rem 5.44rem; z-index: 3" />
+        <!-- Backing colors to prevent bleed through near edges -->
+        <div style="position: absolute; width: 4.34rem; height: 4.34rem; background: var(--secondary-below); transform: matrix(0.46093032,0.88743633,-0.46093032,0.88743633,0,0); translate: 5.1rem 8.38rem; z-index: 1;" />
+        <div style="position: absolute; width: 12.53rem; height: 3.64rem; background: var(--secondary-above); translate: 1rem 3.6rem; z-index: 2;" />
+    </div>
+</div>
