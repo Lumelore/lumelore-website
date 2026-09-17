@@ -53,6 +53,20 @@ section {
     padding-bottom: 1rem;
 }
 
+.tag-link {
+    color: inherit;
+    text-shadow: inherit;
+    text-decoration: none !important;
+}
+
+.tag-link:hover::before {
+    content: "#";
+    opacity: 0.5;
+    position: absolute;
+    margin-left: -1rem;
+    margin-top: 0.45rem;
+}
+
 /* ============= *
  *  DejaVu Sans  *
  * ============= */
