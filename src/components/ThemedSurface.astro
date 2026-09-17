@@ -1,0 +1,52 @@
+<style>
+    .surface {
+        display: grid;
+        grid-area: 1 / 1 / 2 / 2;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px; 
+
+        border-radius: 1.75rem;
+        border: var(--surface-border);
+
+        background: var(--surface-main);
+
+        color: var(--surface-text-color);
+        text-shadow: var(--surface-text-shadow);
+        transition: background-color 0.33s ease;
+        transition: border-width 0.1s ease;
+    }
+
+    .surface:hover:has(a) {
+        background: var(--surface-hover);
+        border: var(--surface-border-hover);
+        cursor: pointer;
+    }
+
+    .surface-overlay {
+        background: var(--surface-image);
+        background-repeat: repeat;
+        background-size: var(--surface-image-size);
+        mix-blend-mode: var(--surface-overlay-blend, normal);
+        
+        grid-area: 1 / 1 / 2 / 2;
+        width: 100%;
+        height: 100%;
+        border-radius: 1.75rem;
+        animation: var(--surface-image-animation);
+    }
+
+    @keyframes surface-overlay-scroll {
+        from {background-position-y: 192px; background-position-x: 192px;}
+        to {background-position-y: 0px; background-position-x: 0px;}
+    }
+</style>
+
+
+<div class="surface">
+    <div class="surface-overlay" ></div>
+    <div style="grid-area: 1 / 1 / 2 / 2;">
+        <slot />
+    </div>
+</div>
