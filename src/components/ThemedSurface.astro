@@ -29,6 +29,7 @@
         background-repeat: repeat;
         background-size: var(--surface-image-size);
         mix-blend-mode: var(--surface-overlay-blend, normal);
+        pointer-events: none; /*For some reason mix-blend-mode prevents click throughs, so this is needed to explicitly allow that.*/
         
         grid-area: 1 / 1 / 2 / 2;
         width: 100%;
