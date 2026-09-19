@@ -6,9 +6,10 @@ interface Props {
     modName: string;
     ver: string;
     desc: string;
+    link: string;
 }
 
-const {thumb, modName, ver, desc} = Astro.props;
+const {thumb, modName, ver, desc, link} = Astro.props;
 ---
 
 <style>
@@ -54,7 +55,7 @@ const {thumb, modName, ver, desc} = Astro.props;
 </style>
 
 <ThemedSurface>
-    <a class="mod-listing no-link-style" href="/mods/mc-gaht-mod">
+    <a class="mod-listing no-link-style" href={link}>
         
         <img class="mod-listing-thumb" src={thumb} />
 
