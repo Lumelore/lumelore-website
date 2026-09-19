@@ -1,0 +1,181 @@
+---
+import Button88X31 from "../components/Button88x31.astro";
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, viewport-fit=cover" />
+		<link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+		<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+
+		<title>Hunter's Page</title>
+
+		<meta property="og:title" content="Hunter's Page" />
+		<meta property="og:description" content="Dedicated to my good, sweet boy, Hunter. Rest in peace, I miss you bubby." />
+		<meta property="og:image" content="https://lumelore.net/hotlinks/generic-thumb.png" />
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:width" content="512" />
+		<meta property="og:image:height" content="512" />
+		<meta property="og:image:alt" content="A green dragon with pink horns and blonde hair above the text Lumelore" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:site_name" content="Lumelore's domain" />
+
+        <style>
+            html {
+                background: #183014;
+                font-family: "Caveat";
+                color: mintcream;
+                
+            }
+
+            body {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                align-items: center;
+                justify-content: center;
+
+                padding: 1rem;
+            }
+
+            #hunter-lake-vignette {
+                width: 25rem;
+                user-select: none;
+            }
+
+            #volume-slider {
+                width: 192px;
+                height: 8px;
+
+                background: #060c00;
+                background-image: linear-gradient(#576c32, #576c32);
+                background-size: 0% 100%;
+                background-repeat: no-repeat;
+
+                border-radius: 1rem;
+            }
+
+            #volume-slider::-moz-range-thumb,
+            #volume-slider::-webkit-slider-thumb {
+                width: 18px;
+                height: 18px;
+
+                background: #576c32;
+                cursor: ew-resize;
+                
+                border-radius: 1rem;
+                border: none;
+            }
+
+            #volume-slider::-ms-thumb {
+                /* Styling breaks on firefox if I don't put ms separate */
+                width: 18px;
+                height: 18px;
+
+                background: #576c32;
+                cursor: ew-resize;
+                
+                border-radius: 1rem;
+            }
+
+            #volume-slider::-moz-range-track,
+            #volume-slider::-webkit-slider-runnable-track {
+                box-shadow: none;
+                border: none;
+                background: transparent;
+            } #volume-slider::-ms-track {
+                /* Styling breaks on firefox if I don't put ms separate */
+                box-shadow: none;
+                border: none;
+                background: transparent;
+            }
+
+            .audio-controls {
+                background: #00000080;
+                padding: 16px 32px 16px 32px;
+                border-radius: 3rem;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .icons-slider-box {
+                display: none;
+                flex-direction: row;
+                flex-wrap: nowrap;
+
+                align-items: center;
+                justify-content: center;
+            }
+
+            .icons-slider-box span {
+                color: #576c32 !important;
+                font-weight: bold;
+                line-height: 0;
+                user-select: none;
+            }
+
+            h1 {
+                padding-top: 1.5rem;
+                font-size: 2.5rem;
+            }
+
+            @keyframes floating {
+                0% {
+                    transform: translateY(0);
+                }
+                50% {
+                    transform: translateY(0.5rem);
+                }
+                100% {
+                    transform: translateY(0);
+                }
+            }
+
+        </style>
+	</head>
+    <body>
+
+        <div class="audio-controls">
+            <div class="icons-slider-box">
+                <span style="margin-right: 1rem;">-</span>
+                <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="0" aria-label="volume"/>
+                <span style="margin-left: 1rem;">+</span>
+            </div>
+            <audio id="hunter-audio-loop" controls src="/audio/hunter-audio-loop.mp3" loop="true"/>
+            <noscript style="color: mintcream">Custom player requires JavaScript.</noscript>
+        </div>
+
+        <h1>Take a rest...</h1>
+        <img id="hunter-lake-vignette" src="/pet-pics/hunter/hunter-lake-vignette.webp" />
+        <Button88X31 src="/88x31/hunter.png" link="/hunter"/>
+        
+
+        <script is:inline>
+            var campfireAudio = document.getElementById("hunter-audio-loop");
+            campfireAudio.volume = 0;
+            campfireAudio.style.display = "none";
+                
+            var volumeSlider = document.getElementById("volume-slider");
+            volumeSlider.value = 0;
+
+            var customControls = document.getElementsByClassName("icons-slider-box")[0];
+            customControls.style.display = "flex";
+
+            volumeSlider.addEventListener("input", (event) => {
+                if (campfireAudio.paused) {
+                    campfireAudio.play();
+                }
+                campfireAudio.volume = event.target.value;
+
+                event.target.style.backgroundSize = (event.target.value * 100) + '% 100%'
+            });
+        </script>
+
+    </body>
+</html>
