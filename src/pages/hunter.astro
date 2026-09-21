@@ -1,6 +1,7 @@
 ---
 import Button88X31 from "../components/Button88x31.astro";
 import '../styles/global.css';
+import '../styles/special-fonts.css';
 ---
 
 <!doctype html>
@@ -25,8 +26,7 @@ import '../styles/global.css';
 
         <style>
             html {
-                background: #183014;
-                font-family: "Caveat";
+                background: radial-gradient(circle farthest-corner at 50% 50%, #183014ff 56%, #0a1f09ff 100%);
                 color: mintcream;
                 
             }
@@ -56,10 +56,12 @@ import '../styles/global.css';
                 background-repeat: no-repeat;
 
                 border-radius: 1rem;
+                -webkit-appearance: none;
             }
 
             #volume-slider::-moz-range-thumb,
             #volume-slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
                 width: 18px;
                 height: 18px;
 
@@ -68,26 +70,11 @@ import '../styles/global.css';
                 
                 border-radius: 1rem;
                 border: none;
-            }
-
-            #volume-slider::-ms-thumb {
-                /* Styling breaks on firefox if I don't put ms separate */
-                width: 18px;
-                height: 18px;
-
-                background: #576c32;
-                cursor: ew-resize;
-                
-                border-radius: 1rem;
             }
 
             #volume-slider::-moz-range-track,
             #volume-slider::-webkit-slider-runnable-track {
-                box-shadow: none;
-                border: none;
-                background: transparent;
-            } #volume-slider::-ms-track {
-                /* Styling breaks on firefox if I don't put ms separate */
+                -webkit-appearance: none;
                 box-shadow: none;
                 border: none;
                 background: transparent;
@@ -123,18 +110,28 @@ import '../styles/global.css';
             h1 {
                 padding-top: 1.5rem;
                 font-size: 2.5rem;
+
+                font-family: "Caveat", sans-serif;
             }
 
-            @keyframes floating {
-                0% {
-                    transform: translateY(0);
-                }
-                50% {
-                    transform: translateY(0.5rem);
-                }
-                100% {
-                    transform: translateY(0);
-                }
+            .hunter-name-life {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                align-items: center;
+                justify-content: center;
+                font-family: "Tangerine", cursive;
+            }
+
+            .hunter-name-life sup {
+                vertical-align: 15%;
+            }
+
+            .obituary {
+                max-width: 8.5in;
+                text-indent: 1rem;
+                margin-bottom: 0;
+                font-family: "DejaVu Sans";
             }
 
         </style>
@@ -153,8 +150,15 @@ import '../styles/global.css';
 
         <h1>Take a rest...</h1>
         <img id="hunter-lake-vignette" src="/pet-pics/hunter/hunter-lake-vignette.webp" />
-        <Button88X31 src="/88x31/hunter.png" link="/hunter"/>
+        <div class="hunter-name-life">
+            <h2 style="width: auto; font-size: 4rem;">Hunter</h2>
+            <h3 style="width: auto; font-size: 2rem;">December 28<sup>th</sup>, 2012 - December 3<sup>rd</sup>, 2025</h3>
+        </div>
+        <p class="obituary">Hunter was born in Minnesota on December 28th, 2012. His mother was Katrina, named after the hurricane she was born during. Hunter was always very sweet and gentle. If he noticed someone was sad he would always come sit by them until they felt better. Hunter was quite fond of people and he had to make sure he got pets from anyone who came over. He absolutely loved Christmas. He was always very excited to unwrap gifts, and he would carefully rip the paper off and then move right on to the next one.</p>
+
+        <p class="obituary">I remember in the summer before he passed, sharing a huge tomato with him in the garden. He looked so happy and he had tomato juice dripping from his mouth onto his chest and legs. I didn't know he had only a few months left. He had been diagnosed a few years earlier with Cushing's disease. He passed around 3:30 PM on December 3rd, 2025. He was such a kind, gentle soul, and he is dearly loved and missed.</p>
         
+        <footer><br/><br/><br/></footer>
 
         <script is:inline>
             var campfireAudio = document.getElementById("hunter-audio-loop");
