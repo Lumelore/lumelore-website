@@ -1,0 +1,45 @@
+/* This file defines fonts that are not commonly used on the majority of pages */
+
+/* ======== *
+ *  Caveat  *
+ * ======== */
+
+@font-face {
+    font-family: "Caveat";
+    src: local("Caveat"), local("caveat"),
+        url("/font/caveat/font-files/caveat-latin-400-normal.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Caveat";
+    src: local("Caveat Bold"), local("caveat-bold"),
+        url("/font/caveat/font-files/caveat-latin-700-normal.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* =========== *
+ *  Tangerine  *
+ * =========== */
+
+@font-face {
+    font-family: "Tangerine";
+    src: local("Tangerine"), local("tangerine"),
+        url("/font/tangerine/font-files/tangerine-latin-400-normal.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Tangerine";
+    src: local("Tangerine Bold"), local("tangerine-bold"),
+        url("/font/tangerine/font-files/tangerine-latin-700-normal.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
