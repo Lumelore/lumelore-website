@@ -1,0 +1,27 @@
+---
+interface Props {
+    imgLink: string;
+    thumbImgSrc: string;
+}
+
+const { imgLink, thumbImgSrc } = Astro.props;
+
+---
+
+<style>
+    .thumbnail {
+        border-radius: 0.5rem;
+        width: 128px;
+        height: 128px;
+        cursor: pointer;
+    }
+</style>
+
+<div 
+    class="image-grid-child" 
+>
+    <!-- Thumb -->
+    <a href={imgLink} rel="noopener noreferrer" target="_blank">
+        <img class="thumbnail" src={thumbImgSrc} width="128" height="128"/>
+    </a>
+</div>

@@ -1,0 +1,22 @@
+---
+---
+
+<style>
+    .image-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 133px); /* 2nd param should be width of child*/
+        gap: 5px;
+        justify-content: space-evenly; 
+        max-width: min(8.5in, 95vw);
+        padding: 2rem;
+    }
+</style>
+
+<div class="image-grid">
+
+    <div class="image-list">
+        <!-- This slot is expected to contain zero to many ImageGridChild.astro -->
+        <slot />
+    </div>
+
+</div>

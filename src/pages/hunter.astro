@@ -1,5 +1,6 @@
 ---
-import Button88X31 from "../components/Button88x31.astro";
+import ImageGrid from '../components/common/ImageGrid.astro';
+import  ImageGridChild from '../components/common/ImageGridChild.astro';
 import '../styles/global.css';
 import '../styles/special-fonts.css';
 ---
@@ -152,12 +153,111 @@ import '../styles/special-fonts.css';
         <img id="hunter-lake-vignette" src="/pet-pics/hunter/hunter-lake-vignette.webp" />
         <div class="hunter-name-life">
             <h2 style="width: auto; font-size: 4rem;">Hunter</h2>
-            <h3 style="width: auto; font-size: 2rem;">December 28<sup>th</sup>, 2012 - December 3<sup>rd</sup>, 2025</h3>
+            <h3 style="width: auto; font-size: 2rem;">December 28<sup>th</sup>, 2012 &ndash; December 3<sup>rd</sup>, 2025</h3>
         </div>
         <p class="obituary">Hunter was born in Minnesota on December 28th, 2012. His mother was Katrina, named after the hurricane she was born during. Hunter was always very sweet and gentle. If he noticed someone was sad he would always come sit by them until they felt better. Hunter was quite fond of people and he had to make sure he got pets from anyone who came over. He absolutely loved Christmas. He was always very excited to unwrap gifts, and he would carefully rip the paper off and then move right on to the next one.</p>
 
         <p class="obituary">I remember in the summer before he passed, sharing a huge tomato with him in the garden. He looked so happy and he had tomato juice dripping from his mouth onto his chest and legs. I didn't know he had only a few months left. He had been diagnosed a few years earlier with Cushing's disease. He passed around 3:30 PM on December 3rd, 2025. He was such a kind, gentle soul, and he is dearly loved and missed.</p>
         
+        <ImageGrid>
+            <ImageGridChild 
+                imgLink="/hunter/feb-23-2013" 
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-feb-23-13.webp"
+            />
+            <ImageGridChild 
+                imgLink="/hunter/feb-23-2013-a" 
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-feb-23-13-a.webp"
+            />
+            <ImageGridChild 
+                imgLink="/hunter/feb-24-2013"  
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-feb-24-13.webp"
+            />
+            <ImageGridChild 
+                imgLink="/hunter/feb-27-2013"
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-feb-27-13.webp"
+            />
+            <ImageGridChild 
+                imgLink="/hunter/xx-xx-2013" 
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-unk-xx-13.webp"
+            />
+            <ImageGridChild 
+                imgLink="/hunter/dec-25-2014" 
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-dec-25-14.webp"
+            />
+            <ImageGridChild 
+                imgLink="/hunter/jul-08-2022" 
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-jul-08-22.webp"
+            />
+            <ImageGridChild 
+                imgLink="/hunter/dec-10-2022" 
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-dec-10-22.webp"
+            />
+            <ImageGridChild 
+                imgLink="/hunter/dec-22-2022" 
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-dec-22-22.webp"
+            />
+            <ImageGridChild 
+                imgLink="/hunter/feb-05-2023" 
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-feb-05-23.webp"
+            />
+            <ImageGridChild 
+                imgLink="/hunter/jul-07-2023-a" 
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-jul-07-23-a.webp"
+            />
+            <ImageGridChild 
+                imgLink="/hunter/jul-07-2023" 
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-jul-07-23.webp"
+            />
+            <ImageGridChild 
+                imgLink="/hunter/jul-31-2023" 
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-jul-31-23.webp"
+            />
+            <ImageGridChild 
+                imgLink="/hunter/aug-07-2023"
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-aug-07-23.webp"
+            />
+            <ImageGridChild 
+                imgLink="/hunter/oct-04-2023"
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-oct-04-23.webp"
+            />
+            <ImageGridChild 
+                imgLink="/hunter/jan-16-2024"
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-jan-16-24.webp"
+            />
+            <ImageGridChild 
+                imgLink="/hunter/jun-25-2024"
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-jun-25-24.webp"
+            />
+            <ImageGridChild 
+                imgLink="/hunter/23-25-no-date"
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-23-25-no-date.webp"
+            />
+            <ImageGridChild 
+                imgLink="/hunter/dec-xx-xx"
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-dec-xx-xx.webp"
+            />
+            <ImageGridChild 
+                imgLink="/hunter/may-30-2025"
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-may-30-25.webp"
+            />
+            <ImageGridChild 
+                imgLink="/hunter/jul-07-2025"
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-jul-07-25.webp"
+            />
+            <ImageGridChild 
+                imgLink="/hunter/oct-xx-2025"
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-oct-xx-25.webp"
+            />
+            <ImageGridChild 
+                imgLink="/hunter/nov-xx-2025-a"
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-nov-xx-25-a.webp"
+            />
+            <ImageGridChild 
+                imgLink="/hunter/nov-xx-2025"
+                thumbImgSrc="/pet-pics/hunter/thumbs/hunter-nov-xx-25.webp"
+            />
+        </ImageGrid>
+
         <footer><br/><br/><br/></footer>
 
         <script is:inline>
@@ -181,5 +281,6 @@ import '../styles/special-fonts.css';
             });
         </script>
 
+        
     </body>
 </html>
