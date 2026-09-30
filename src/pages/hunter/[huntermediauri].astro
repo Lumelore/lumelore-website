@@ -64,9 +64,9 @@ const {date, text, src, type} = Astro.props;
 		<link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
 		<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
 
-		<title>{date} • Hunter's Page</title>
+		<title>Hunter's Page • {date}</title>
 
-		<meta property="og:title" content={date} />
+		<meta property="og:title" content={"Hunter's Page • " + date} />
 		<meta property="og:description" content={text + " This image has been glazed. No AI allowed."} />
 		<meta property="og:image" content="https://lumelore.net/hotlinks/generic-thumb.png" />
 		<meta property="og:image:type" content="image/png" />
@@ -75,11 +75,40 @@ const {date, text, src, type} = Astro.props;
 		<meta property="og:image:alt" content="A green dragon with pink horns and blonde hair above the text Lumelore" />
 		<meta property="og:locale" content="en_US" />
 		<meta property="og:site_name" content="Lumelore's domain" />
+
+		<style>
+			html {
+                background: radial-gradient(circle farthest-corner at 50% 50%, #183014ff 56%, #0a1f09ff 100%);
+                color: mintcream;
+                
+            }
+
+            body {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                align-items: center;
+                justify-content: center;
+
+                padding: 1rem;
+            }
+
+			.media {
+				width: clamp(0, 800px, 100vw);
+				max-height: 80vh;
+				border-radius: 0.5rem;
+			}
+
+			p {
+				max-width: 8.5in;
+			}
+		</style>
+
     </head>
     <body>
         <div>
-            {(type === "img") && <img src={src} />}
-            {(type === "webm") && <video controls controlslist="nodownload" disablepictureinpicture><source src={src} type="video/webm" /></video>}
+			{(type === "img") && <img src={src} class="media" />}
+			{(type === "webm") && <video class="media" controls controlslist="nodownload" disablepictureinpicture><source src={src} type="video/webm" /></video>}
             <h4>{date}</h4>
             <p>{text}</p>
         </div>
