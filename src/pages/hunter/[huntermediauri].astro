@@ -1,0 +1,87 @@
+---
+/* Use a wrapped line view for this file. There is a space in-between each to delineate them easier. */
+export function getStaticPaths() {
+    return [
+        { props: {date: "February 23rd, 2013", text: "Hunter had just arrived home after a two hour drive. Nine year old me took this picture on her DSi. He has a little ducky toy here, which I certainly don't remember, so he must of ripped it up pretty early on.", src: "/pet-pics/hunter/hunter-feb-23-13.jpg", type: "img"}, params: {huntermediauri: "feb-23-2013"}},
+
+        { props: {date: "February 23rd, 2013", text: "Hunter had just arrived home after a two hour drive. Nine year old me took this picture on her DSi. Puppy!!!!!", src: "/pet-pics/hunter/hunter-feb-23-13-a.jpg", type: "img"}, params: {huntermediauri: "feb-23-2013-a"}},
+
+		{ props: {date: "February 24th, 2013", text: "The day after we brought him home. This one was also taken on my DSi. He's so eepy and cute!", src: "/pet-pics/hunter/hunter-feb-24-13.jpg", type: "img"}, params: {huntermediauri: "feb-24-2013"}},
+
+		{ props: {date: "February 27th, 2013", text: "Hunter always loved his naps. I think that might have been his puppy blanket that smelled like his mom. This one was also taken on my DSi.", src: "/pet-pics/hunter/hunter-feb-27-13.jpg", type: "img"}, params: {huntermediauri: "feb-27-2013"}},
+
+		{ props: {date: "Sometime in 2013", text: "He loved napping on this dog pillow... well, at least up until he ripped it up. I believe this was taken on an old iPod Touch and later screenshot, so its date taken metadata is lost.", src: "/pet-pics/hunter/hunter-unk-xx-13.jpg", type: "img"}, params: {huntermediauri: "xx-xx-2013"}},
+
+		{ props: {date: "December 25th, 2014", text: "Hunter is only a few days away from being two years old here. I was eleven and recorded this on my 3DS XL.", src: "/pet-pics/hunter/hunter-dec-25-14.webm", type: "webm"}, params: {huntermediauri: "dec-25-2014"}},
+
+		{ props: {date: "July 8th, 2022", text: "Hunter loved going camping. He usually preferred to sit with us by the fire rather than going exploring. This is the image I used for his memorial page—I just clone stamped out the lead and put a vignette.", src: "/pet-pics/hunter/hunter-jul-08-22.jpg", type: "img"}, params: {huntermediauri: "jul-08-2022"}},
+
+		{ props: {date: "December 10th, 2022", text: "I love this picture of him. He looks so dignified here. He loved Christmas.", src: "/pet-pics/hunter/hunter-dec-10-22.jpg", type: "img"}, params: {huntermediauri: "dec-10-2022"}},
+
+		{ props: {date: "December 22nd, 2022", text: "Here he's cuddled up with my sister's dog. She's a chihuahua mix, in this picture she's seven years old.", src: "/pet-pics/hunter/hunter-dec-22-22.jpg", type: "img"}, params: {huntermediauri: "dec-22-2022"}},
+
+		{ props: {date: "February 5th, 2023", text: "Hunter playing with his pitaya toy that I got him for his birthday.", src: "/pet-pics/hunter/hunter-feb-05-23.jpg", type: "img"}, params: {huntermediauri: "feb-05-2023"}},
+
+		{ props: {date: "July 7th, 2023", text: "Sweet boy.", src: "/pet-pics/hunter/hunter-jul-07-23-a.jpg", type: "img"}, params: {huntermediauri: "jul-07-2023-a"}},
+
+		{ props: {date: "July 7th, 2023", text: "Big yawn.", src: "/pet-pics/hunter/hunter-jul-07-23.jpg", type: "img"}, params: {huntermediauri: "jul-07-2023"}},
+
+		{ props: {date: "July 31st, 2023", text: "It looks like he's going zoomie with his carrot toy, but it's actually the phone that's going zoomie.", src: "/pet-pics/hunter/hunter-jul-31-23.jpg", type: "img"}, params: {huntermediauri: "jul-31-2023"}},
+
+		{ props: {date: "August 7th, 2023", text: "He so cute. I wish I could still boop his nose.", src: "/pet-pics/hunter/hunter-aug-07-23.jpg", type: "img"}, params: {huntermediauri: "aug-07-2023"}},
+
+		{ props: {date: "October 4th, 2023", text: "Sleepy, sweet boy. I have this one printed out and hanging on my wall.", src: "/pet-pics/hunter/hunter-oct-04-23.jpg", type: "img"}, params: {huntermediauri: "oct-04-2023"}},
+
+		{ props: {date: "January 16th, 2024", text: "HAPPY!!!!", src: "/pet-pics/hunter/hunter-jan-16-24.jpg", type: "img"}, params: {huntermediauri: "jan-16-2024"}},
+
+		{ props: {date: "June 25th, 2024", text: "Hunter on a camping trip.", src: "/pet-pics/hunter/hunter-jun-25-24.jpg", type: "img"}, params: {huntermediauri: "jun-25-2024"}},
+
+		{ props: {date: "Sometime between 2023 and 2025", text: "Such a sweet little boy, all cozy in his little sweater. This picture was missing date information, so I can only guess when it was taken.", src: "/pet-pics/hunter/hunter-23-25-no-date.jpg", type: "img"}, params: {huntermediauri: "23-25-no-date"}},
+
+		{ props: {date: "Sometime between 2023 and 2025", text: "He wants to eated it. This picture was missing date information, so I can only guess when it was taken.", src: "/pet-pics/hunter/hunter-dec-xx-xx.jpg", type: "img"}, params: {huntermediauri: "dec-xx-xx"}},
+
+		{ props: {date: "May 30th, 2025", text: "Such a good boy! He was getting some belly rubs here just off frame.", src: "/pet-pics/hunter/hunter-may-30-25.jpg", type: "img"}, params: {huntermediauri: "may-30-2025"}},
+
+		{ props: {date: "July 7th, 2025", text: "This is my sister's dog's toy and she was worried he was going to rip it up, but he never did.", src: "/pet-pics/hunter/hunter-jul-07-25.jpg", type: "img"}, params: {huntermediauri: "jul-07-2025"}},
+
+		{ props: {date: "October, 2025", text: "He so cute and soft. This image was missing some metadata, but I was still able to approximate when it was taken.", src: "/pet-pics/hunter/hunter-oct-xx-25.jpg", type: "img"}, params: {huntermediauri: "oct-xx-2025"}},
+
+		{ props: {date: "November, 2025", text: "Teefies in the light. This image was missing some metadata, but I was still able to approximate when it was taken. This is one of the last pictures ever taken of him :(", src: "/pet-pics/hunter/hunter-nov-xx-25-a.jpg", type: "img"}, params: {huntermediauri: "nov-xx-2025-a"}},
+
+		{ props: {date: "November, 2025", text: "I wonder what he was thinking about here. This image was missing some metadata, but I was still able to approximate when it was taken. This is one of the last pictures ever taken of him :(", src: "/pet-pics/hunter/hunter-nov-xx-25.jpg", type: "img"}, params: {huntermediauri: "nov-xx-2025"}},
+    ];
+}
+
+const { huntermediauri } = Astro.params;
+const {date, text, src, type} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, viewport-fit=cover" />
+		<link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+		<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+
+		<title>{date} • Hunter's Page</title>
+
+		<meta property="og:title" content={date} />
+		<meta property="og:description" content={text + " This image has been glazed. No AI allowed."} />
+		<meta property="og:image" content="https://lumelore.net/hotlinks/generic-thumb.png" />
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:width" content="512" />
+		<meta property="og:image:height" content="512" />
+		<meta property="og:image:alt" content="A green dragon with pink horns and blonde hair above the text Lumelore" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:site_name" content="Lumelore's domain" />
+    </head>
+    <body>
+        <div>
+            {(type === "img") && <img src={src} />}
+            {(type === "webm") && <video controls controlslist="nodownload" disablepictureinpicture><source src={src} type="video/webm" /></video>}
+            <h4>{date}</h4>
+            <p>{text}</p>
+        </div>
+    </body>
+</html>
