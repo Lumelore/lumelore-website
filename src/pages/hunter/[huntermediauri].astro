@@ -1,4 +1,6 @@
 ---
+import '../../styles/global.css';
+
 /* Use a wrapped line view for this file. There is a space in-between each to delineate them easier. */
 export function getStaticPaths() {
     return [
@@ -14,7 +16,7 @@ export function getStaticPaths() {
 
 		{ props: {date: "December 25th, 2014", text: "Hunter is only a few days away from being two years old here. I was eleven and recorded this on my 3DS XL.", src: "/pet-pics/hunter/hunter-dec-25-14.webm", type: "webm"}, params: {huntermediauri: "dec-25-2014"}},
 
-		{ props: {date: "July 8th, 2022", text: "Hunter loved going camping. He usually preferred to sit with us by the fire rather than going exploring. This is the image I used for his memorial page—I just clone stamped out the lead and put a vignette.", src: "/pet-pics/hunter/hunter-jul-08-22.jpg", type: "img"}, params: {huntermediauri: "jul-08-2022"}},
+		{ props: {date: "July 8th, 2022", text: "Hunter loved going camping. He usually preferred to sit with us by the fire rather than going exploring. This is the image I used for his memorial page; I just clone stamped out the lead and put a vignette.", src: "/pet-pics/hunter/hunter-jul-08-22.jpg", type: "img"}, params: {huntermediauri: "jul-08-2022"}},
 
 		{ props: {date: "December 10th, 2022", text: "I love this picture of him. He looks so dignified here. He loved Christmas.", src: "/pet-pics/hunter/hunter-dec-10-22.jpg", type: "img"}, params: {huntermediauri: "dec-10-2022"}},
 
@@ -79,8 +81,8 @@ const {date, text, src, type} = Astro.props;
 		<style>
 			html {
                 background: radial-gradient(circle farthest-corner at 50% 50%, #183014ff 56%, #0a1f09ff 100%);
-                color: mintcream;
-                
+                color: rgb(233, 243, 226);
+                font-family: 'DejaVu Sans', sans-serif;
             }
 
             body {
@@ -93,10 +95,24 @@ const {date, text, src, type} = Astro.props;
                 padding: 1rem;
             }
 
+			.media-wrapper {
+				width: 8.5in;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
 			.media {
-				width: clamp(0, 800px, 100vw);
+				object-fit: contain;
+				width: auto;
+				height: auto;
+				max-width: 8.5in;
 				max-height: 80vh;
 				border-radius: 0.5rem;
+			}
+
+			h4 {
+				margin-top: 1.5rem;
 			}
 
 			p {
@@ -107,9 +123,11 @@ const {date, text, src, type} = Astro.props;
     </head>
     <body>
         <div>
-			{(type === "img") && <img src={src} class="media" />}
-			{(type === "webm") && <video class="media" controls controlslist="nodownload" disablepictureinpicture><source src={src} type="video/webm" /></video>}
-            <h4>{date}</h4>
+			<div class="media-wrapper">
+				{(type === "img") && <img src={src} class="media" />}
+				{(type === "webm") && <video class="media" controls controlslist="nodownload" disablepictureinpicture><source src={src} type="video/webm" /></video>}
+            </div>
+			<h4>{date}</h4>
             <p>{text}</p>
         </div>
     </body>
