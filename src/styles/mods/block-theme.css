@@ -5,21 +5,40 @@ html {
 }
 
 aside {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+
+    background-image: url('/theme/block/purplegem.png');
+    background-repeat: repeat;
+    background-size: 64px 64px;
+}
+
+nav {
     background-image: url('/theme/block/purplegem.png');
     background-repeat: repeat;
     background-size: 64px 64px;
 
-    height: 64px;
+    height: 96px;
+    width: 12in;
+    z-index: 1;
+    transition: width 0.1s ease;
 }
 
-main {
-    background-image: url('/theme/block/darkslate.png');
+.nav-side-left, .nav-side-right {
+    background-image: url('/theme/block/purplegem.png'), linear-gradient(90deg, #5c5c5c, white);
     background-repeat: repeat;
     background-size: 64px 64px;
+    background-blend-mode: multiply;
 
-    width: 12in;
+    width: 64px;
+    transform: scaleX(50%) translateX(50%);
+    filter: drop-shadow(0 0 3rem black);
+}
 
-    min-height: calc(100vh - 64px);
+.nav-side-right {
+    background-image: url('/theme/block/purplegem.png'), linear-gradient(90deg, white, #5c5c5c);
+    transform: scaleX(50%) translateX(-50%);
 }
 
 .main-container {
@@ -32,6 +51,35 @@ main {
     background-size: 64px 64px;
 }
 
+main {
+    background-image: url('/theme/block/darkslate.png');
+    background-repeat: repeat;
+    background-size: 64px 64px;
+
+    width: 12in;
+
+    min-height: calc(100vh - 96px);
+    z-index: 1;
+
+    transition: width 0.1s ease;
+}
+
+.main-side-left, .main-side-right {
+    background-image: url('/theme/block/darkslate.png'), linear-gradient(90deg, #5c5c5c, white);
+    background-repeat: repeat;
+    background-size: 64px 64px;
+    background-blend-mode: multiply;
+
+    width: 64px;
+    transform: scaleX(50%) translateX(50%);
+    filter: drop-shadow(0 0 3rem black);
+}
+
+.main-side-right {
+    background-image: url('/theme/block/darkslate.png'), linear-gradient(90deg, white, #5c5c5c);
+    transform: scaleX(50%) translateX(-50%);
+}
+
 @media (prefers-color-scheme: light) { 
 
     html {
@@ -39,7 +87,7 @@ main {
         color: black;
     }
 
-    aside {
+    aside, nav {
         background-image: url('/theme/block/pinkwood.png');
     }
 
@@ -51,4 +99,55 @@ main {
         background-image: url('/theme/block/graybark.png');
     }
 
+    .main-side-left {
+        background-image: url('/theme/block/whiteplank.png'), linear-gradient(90deg, #5c5c5c, white);
+    }
+
+    .main-side-right {
+        background-image: url('/theme/block/whiteplank.png'), linear-gradient(90deg, white, #5c5c5c);
+        
+    }
+
+    .nav-side-left {
+        background-image: url('/theme/block/pinkwood.png'), linear-gradient(90deg, #949494, white);
+    }
+
+    .nav-side-right {
+        background-image: url('/theme/block/pinkwood.png'), linear-gradient(90deg, white, #949494);
+    }
+
+}
+
+@media screen and (max-width: 1700px) {
+    nav {
+        width: 10in;
+    }
+
+    main {
+        width: 10in;
+    }
+}
+
+@media screen and (max-width: 1450px) {
+    nav {
+        width: 7in;
+    }
+
+    main {
+        width: 7in;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    nav {
+        width: 100vw;
+    }
+
+    main {
+        width: 100vw;
+    }
+
+    .nav-side-left, .nav-side-right, .main-side-left, .main-side-right {
+        display: none;
+    }
 }

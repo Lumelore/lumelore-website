@@ -37,12 +37,17 @@ const { title, desc="Lumelore's modding and indie web spot!" } = Astro.props;
 	<body>
 
         <aside>
+			<div class="nav-side-left" />
+			<nav></nav>
+			<div class="nav-side-right" />
         </aside>
 
 		<div class="main-container">
+			<div class="main-side-left" />
 			<main>
 				<slot />
 			</main>
+			<div class="main-side-right" />
 		</div>
 
     </body>
