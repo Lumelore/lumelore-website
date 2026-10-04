@@ -83,6 +83,8 @@ const {date, text, src, type} = Astro.props;
                 background: radial-gradient(circle farthest-corner at 50% 50%, #183014ff 56%, #0a1f09ff 100%);
                 color: rgb(233, 243, 226);
                 font-family: 'DejaVu Sans', sans-serif;
+				height: 100vh;
+				height: 100lvh;
             }
 
             body {
@@ -96,7 +98,7 @@ const {date, text, src, type} = Astro.props;
             }
 
 			.media-wrapper {
-				width: 8.5in;
+				max-width: min(8.5in, 95vw);
 				display: flex;
 				align-items: center;
 				justify-content: center;
@@ -106,7 +108,7 @@ const {date, text, src, type} = Astro.props;
 				object-fit: contain;
 				width: auto;
 				height: auto;
-				max-width: 8.5in;
+				max-width: min(8.5in, 95vw);
 				max-height: 80vh;
 				border-radius: 0.5rem;
 			}
@@ -116,7 +118,7 @@ const {date, text, src, type} = Astro.props;
 			}
 
 			p {
-				max-width: 8.5in;
+				max-width: min(8.5in, 95vw);
 			}
 		</style>
 
