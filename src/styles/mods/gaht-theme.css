@@ -1,0 +1,16 @@
+#gaht-logo {
+    background-image: url('/mods/gaht-mod/gaht-mod-logo.png');
+    width: 144px;
+    height: 72px;
+
+    background-size: 144px 144px;
+
+    background-position: 0px 0px;
+
+    image-rendering: pixelated;
+    filter: drop-shadow(-5px 0 0.15rem rgba(0, 0, 0, 0.5)) drop-shadow(5px 0 0.15rem rgba(0, 0, 0, 0.5));
+}
+
+#gaht-logo:hover {
+    background-position: 0px 72px;
+}
