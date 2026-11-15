@@ -2,6 +2,8 @@ html {
     image-rendering: pixelated;
     background-color: black;
     color: aliceblue;
+    font-family: 'DejaVu Sans', sans-serif;
+    font-size: large;
 }
 
 aside {
@@ -20,9 +22,16 @@ nav {
     background-size: 64px 64px;
 
     height: 96px;
-    width: 12in;
-    z-index: 1;
+    width: calc(64px * 18); /* ~ 12in */
+    z-index: 2;
     transition: width 0.1s ease;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+
 }
 
 .nav-side-left, .nav-side-right {
@@ -33,12 +42,14 @@ nav {
 
     width: 64px;
     transform: scaleX(50%) translateX(50%);
-    filter: drop-shadow(0 0 3rem black);
+    filter: drop-shadow(-20px 0 3rem black);
+    z-index: 1;
 }
 
 .nav-side-right {
     background-image: url('/theme/block/purplegem.png'), linear-gradient(90deg, white, #5c5c5c);
     transform: scaleX(50%) translateX(-50%);
+    filter: drop-shadow(20px 0 3rem black);
 }
 
 .main-container {
@@ -56,7 +67,7 @@ main {
     background-repeat: repeat;
     background-size: 64px 64px;
 
-    width: 12in;
+    width: calc(64px * 18);
 
     min-height: calc(100vh - 96px);
     z-index: 1;
@@ -72,12 +83,44 @@ main {
 
     width: 64px;
     transform: scaleX(50%) translateX(50%);
-    filter: drop-shadow(0 0 3rem black);
+    filter: drop-shadow(-20px 0 3rem black);
 }
 
 .main-side-right {
     background-image: url('/theme/block/darkslate.png'), linear-gradient(90deg, white, #5c5c5c);
     transform: scaleX(50%) translateX(-50%);
+    filter: drop-shadow(20px 0 3rem black);
+}
+
+
+#go-back-img {
+    background-image: url('/theme/block/back-sign-dark.png');
+    background-repeat: norepeat;
+    background-size: 72px 144px;
+
+    background-position: 0px 0px;
+
+    width: 72px;
+    height: 72px;
+    filter: drop-shadow(-5px 0 0.15rem rgba(0, 0, 0, 0.5)) drop-shadow(5px 0 0.15rem rgba(0, 0, 0, 0.5));
+    
+}
+
+#wiki-img {
+    background-image: url('/theme/block/wiki-sign-dark.png');
+    background-repeat: norepeat;
+    background-size: 72px 144px;
+
+    background-position: 0px 0px;
+
+    width: 72px;
+    height: 72px;
+    filter: drop-shadow(-5px 0 0.15rem rgba(0, 0, 0, 0.5)) drop-shadow(5px 0 0.15rem rgba(0, 0, 0, 0.5));
+    
+}
+
+.sign-button:hover #go-back-img, .sign-button:hover #wiki-img {
+    background-position: 0px -72px;
 }
 
 @media (prefers-color-scheme: light) { 
@@ -116,25 +159,34 @@ main {
         background-image: url('/theme/block/pinkwood.png'), linear-gradient(90deg, white, #949494);
     }
 
+    #go-back-img {
+        background-image: url('/theme/block/back-sign-light.png');
+    }
+
+    #wiki-img {
+        background-image: url('/theme/block/wiki-sign-light.png');
+        
+    }
+
 }
 
 @media screen and (max-width: 1700px) {
     nav {
-        width: 10in;
+        width: calc(64px * 15); /* ~ 10in */
     }
 
     main {
-        width: 10in;
+        width: calc(64px * 15);
     }
 }
 
 @media screen and (max-width: 1450px) {
     nav {
-        width: 7in;
+        width: calc(64px * 11); /* ~ 7in */
     }
 
     main {
-        width: 7in;
+        width: calc(64px * 11);
     }
 }
 
