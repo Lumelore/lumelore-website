@@ -1,0 +1,15 @@
+---
+import BlockWikiLayout from "./BlockWikiLayout.astro";
+import '../../styles/mods/gaht-theme.css'
+---
+
+<BlockWikiLayout title="GAHT Mod">
+	<nav slot="nav">
+		<a href="/mods" class="sign-button"><div id="go-back-img" /></a>
+		<div />
+		<a href="/mods/mc-gaht-mod" id="go-back-link"><div id="gaht-logo" /></a>
+		<div />
+		<a href="/mods/mc-gaht-mod/wiki" class="sign-button"><div id="wiki-img" /></a>
+	</nav>
+	<slot slot="main" />
+</BlockWikiLayout>

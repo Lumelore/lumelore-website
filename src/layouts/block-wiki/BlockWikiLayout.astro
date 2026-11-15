@@ -1,6 +1,6 @@
 ---
-import '../styles/global.css';
-import '../styles/mods/block-theme.css';
+import '../../styles/global.css';
+import '../../styles/mods/block-theme.css'
 
 interface Props {
     title: string;
@@ -18,9 +18,9 @@ const { title, desc="Lumelore's modding and indie web spot!" } = Astro.props;
 		<link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
 		<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
 		
-		<script src="../scripts/save-theme.ts" />
-		<script src="../scripts/save-font.ts" />
-		<script src="../scripts/block-css-transitions-on-load.ts" />
+		<script src="../../scripts/save-theme.ts" />
+		<script src="../../scripts/save-font.ts" />
+		<script src="../../scripts/block-css-transitions-on-load.ts" />
 
 		<title>{title}</title>
 
@@ -38,14 +38,16 @@ const { title, desc="Lumelore's modding and indie web spot!" } = Astro.props;
 
         <aside>
 			<div class="nav-side-left" />
-			<nav></nav>
+			<!-- use a <nav slot="nav"> to insert here -->
+			<slot name="nav" />
+			
 			<div class="nav-side-right" />
         </aside>
 
 		<div class="main-container">
 			<div class="main-side-left" />
 			<main>
-				<slot />
+				<slot name="main" />
 			</main>
 			<div class="main-side-right" />
 		</div>
